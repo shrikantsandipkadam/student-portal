@@ -1,0 +1,24 @@
+.profile-page .page-hero {
+    margin-bottom: 22px;
+}
+
+.profile-page .profile-showcase .section-card:first-child {
+    background:
+        radial-gradient(circle at top right, rgba(255, 159, 28, 0.16), transparent 30%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(245, 250, 255, 0.82));
+}
+
+.profile-page .profile-editor-panel {
+    margin-top: 22px;
+}
+
+.profile-page .profile-preview-card .info-row strong,
+.profile-page .profile-preview-card .social-tag {
+    word-break: break-word;
+}
+
+body.dark .profile-page .profile-showcase .section-card:first-child {
+    background:
+        radial-gradient(circle at top right, rgba(255, 159, 28, 0.08), transparent 30%),
+        linear-gradient(135deg, rgba(12, 20, 36, 0.94), rgba(10, 18, 32, 0.9));
+}

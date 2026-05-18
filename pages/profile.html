@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/profile.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Your student identity and portal status.</div>
+        </div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Profile</span>
+                    <span class="page-chip">Student Summary</span>
+                </div>
+                <div class="page-topbar-meta">
+                    <span class="page-chip">CampusHelp Identity</span>
+                </div>
+            </div>
+
+            <section class="page-hero">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Personal Space</span>
+                    <h1>Your portal profile, redesigned to feel cleaner and more complete.</h1>
+                    <p>Use this view as your personal identity card inside the portal while the rest of the academic tools stay one click away in the sidebar.</p>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-label">User</span>
+                        <span class="stat-value" data-profile-name>Student</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Profile Score</span>
+                        <span class="stat-value" data-profile-completeness>0%</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-showcase profile-page">
+                <div class="section-card">
+                    <div class="profile-card-hero">
+                        <div class="profile-avatar" data-user-initial>S</div>
+                        <div>
+                            <h2 class="profile-title" data-profile-name>Student</h2>
+                            <p class="profile-subtitle" data-profile-tagline>CampusHelp identity card for academics, planning, and campus life tools.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="section-head">
+                        <div>
+                            <span class="section-eyebrow">Portal Snapshot</span>
+                            <h2>Account state</h2>
+                        </div>
+                    </div>
+                    <div class="info-list">
+                        <div class="info-row"><span>Theme support</span><strong>Light and Dark</strong></div>
+                        <div class="info-row"><span>Navigation shell</span><strong>Unified</strong></div>
+                        <div class="info-row"><span>Quick campus links</span><strong>Enabled</strong></div>
+                        <div class="info-row"><span>Planner tasks</span><strong data-profile-planner-count>0</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="two-column">
+                <div class="section-card">
+                    <div class="section-head">
+                        <div>
+                            <span class="section-eyebrow">Identity</span>
+                            <h2>Student profile card</h2>
+                            <p class="section-subtitle">A stronger foundation for future profile features.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-list">
+                        <div class="info-row"><span>Name</span><strong data-profile-name>Student</strong></div>
+                        <div class="info-row"><span>Branch</span><strong data-profile-branch>Computer Science</strong></div>
+                        <div class="info-row"><span>Year</span><strong data-profile-year>1st Year</strong></div>
+                        <div class="info-row"><span>Hostel</span><strong data-profile-hostel>Nilgiri</strong></div>
+                        <div class="info-row"><span>Portal Status</span><strong>Logged In</strong></div>
+                        <div class="info-row"><span>Workspace</span><strong>IIT Student Portal</strong></div>
+                        <div class="info-row"><span>Favorite Spot</span><strong data-profile-spot>Central Library</strong></div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <div class="section-head">
+                        <div>
+                            <span class="section-eyebrow">Social Identity</span>
+                            <h2>Student vibe card</h2>
+                        </div>
+                    </div>
+                    <div class="profile-preview-card">
+                        <div class="social-strip">
+                            <span class="social-tag" data-profile-instagram>@iitdstudent</span>
+                            <span class="social-tag" data-profile-hometown>Not added yet</span>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-row"><span>Bio</span><strong data-profile-bio>Building a better student life at IIT Delhi.</strong></div>
+                            <div class="info-row"><span>Interests</span><strong data-profile-interests>Academics, coding, campus life</strong></div>
+                            <div class="info-row"><span>Email</span><strong data-profile-email>Not added yet</strong></div>
+                        </div>
+                        <div class="progress-meter">
+                            <div class="info-row"><span>Profile completeness</span><strong data-profile-completeness>0%</strong></div>
+                            <div class="progress-track-soft"><span data-profile-progress></span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card profile-editor-panel">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Edit Profile</span>
+                        <h2>Make this portal feel like your own</h2>
+                        <p class="section-subtitle">Add your IITD identity, student details, and a social-style bio so the portal feels personal and useful.</p>
+                    </div>
+                </div>
+
+                <div class="profile-editor">
+                    <div class="profile-grid">
+                        <label class="profile-field">
+                            <span>Full Name</span>
+                            <input id="profileName" type="text" placeholder="Your full name">
+                        </label>
+                        <label class="profile-field">
+                            <span>Branch</span>
+                            <select id="profileBranch"></select>
+                        </label>
+                        <label class="profile-field">
+                            <span>Year</span>
+                            <input id="profileYear" type="text" placeholder="1st Year">
+                        </label>
+                        <label class="profile-field">
+                            <span>Hostel</span>
+                            <input id="profileHostel" type="text" placeholder="Nilgiri">
+                        </label>
+                        <label class="profile-field">
+                            <span>Instagram Handle</span>
+                            <input id="profileInstagram" type="text" placeholder="@yourhandle">
+                        </label>
+                        <label class="profile-field">
+                            <span>Favorite IITD Spot</span>
+                            <input id="profileFavoriteSpot" type="text" placeholder="Central Library">
+                        </label>
+                        <label class="profile-field">
+                            <span>Email</span>
+                            <input id="profileEmail" type="text" placeholder="you@iitd.ac.in">
+                        </label>
+                        <label class="profile-field">
+                            <span>Hometown</span>
+                            <input id="profileHometown" type="text" placeholder="Your hometown">
+                        </label>
+                        <label class="profile-field full-width">
+                            <span>Tagline</span>
+                            <input id="profileTagline" type="text" placeholder="Study smarter. Live better. Stay connected.">
+                        </label>
+                        <label class="profile-field full-width">
+                            <span>Interests</span>
+                            <input id="profileInterests" type="text" placeholder="Academics, coding, clubs, sports">
+                        </label>
+                        <label class="profile-field full-width">
+                            <span>Bio</span>
+                            <textarea id="profileBio" placeholder="Write a friendly intro about yourself"></textarea>
+                        </label>
+                    </div>
+
+                    <div class="profile-editor-actions">
+                        <button type="button" id="saveProfileBtn">Save Profile</button>
+                        <button type="button" class="secondary" id="resetProfileBtn">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">IIT Delhi Links</span>
+                        <h2>Useful official shortcuts</h2>
+                        <p class="section-subtitle">Fast access to the most helpful IIT Delhi pages from your profile space.</p>
+                    </div>
+                </div>
+
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://home.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">HM</div>
+                        <h3>IITD Home</h3>
+                        <p>Institute-level announcements and official access point.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://acad.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">AC</div>
+                        <h3>Academics</h3>
+                        <p>Academic calendar, updates, and core student information.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">LB</div>
+                        <h3>Library</h3>
+                        <p>Research help, resources, and digital access points.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">ML</div>
+                        <h3>Webmail</h3>
+                        <p>Open your official IIT Delhi mail quickly.</p>
+                    </a>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/student-profile.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/profile.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        checkLogin();
+        initializePortalShell();
+        initializeProfilePage();
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mess Menu</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages/mess-menu.css">
+
+<!-- OneSignal Push Notifications -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+<script>
+window.OneSignalDeferred = window.OneSignalDeferred || [];
+
+OneSignalDeferred.push(async function(OneSignal) {
+
+await OneSignal.init({
+appId: "c58ef1a2-27ae-40d6-90b1-357933776dac",
+
+autoRegister: true,
+
+notifyButton: {
+enable: true
+}
+
+});
+
+});
+</script>
+
+</head>
+
+
+<body onload="checkLogin()">
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>🍽 Nilgiri Mess Dashboard</h2>
+    <p class="tagline">Today's meals & weekly schedule</p>
+
+<div>
+
+<button onclick="window.location.href='../index.html'" class="home-btn">
+Home
+</button>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LIVE MESS SECTION -->
+<section class="live-section">
+
+<h2>🍽 Live Mess Meals</h2>
+
+<!-- STATUS BAR -->
+<div class="mess-status-bar" id="messStatusBar"></div>
+
+<!-- LIVE MENU CARDS -->
+<div id="liveMenu"></div>
+
+</section>
+
+
+<!-- WEEKLY MENU BROWSER -->
+<section class="manual-section">
+
+<h2>📅 Browse Weekly Menu</h2>
+
+<p class="selector-note">
+Select day and meal to view specific mess schedule
+</p>
+
+<div class="selectors">
+
+<select id="daySelect">
+
+<option value="week">Full Week</option>
+<option value="monday">Monday</option>
+<option value="tuesday">Tuesday</option>
+<option value="wednesday">Wednesday</option>
+<option value="thursday">Thursday</option>
+<option value="friday">Friday</option>
+<option value="saturday">Saturday</option>
+<option value="sunday">Sunday</option>
+
+</select>
+
+
+<select id="mealSelect">
+
+<option value="">Select Meal</option>
+<option value="breakfast">Breakfast (07:00-09:30)</option>
+<option value="lunch">Lunch (12:00-14:00)</option>
+<option value="evening">Evening (16:30-17:30)</option>
+<option value="dinner">Dinner (19:00-21:00)</option>
+<option value="all">All Meals</option>
+
+</select>
+
+
+<button onclick="loadMenu()">
+Show Menu
+</button>
+
+</div>
+
+
+<div id="menuContainer" class="menu-container"></div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<p>
+Contact: getcampushelp@gmail.com
+</p>
+
+</footer>
+
+
+<script src="../js/main.js"></script>
+<script src="../js/pages/mess-menu.js"></script>
+
+</body>
+</html>

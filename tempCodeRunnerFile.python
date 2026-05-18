@@ -1,0 +1,13 @@
+class Student:
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+    def total(self):
+        total=0
+        for i in self.marks:
+            total=i+total
+        print(total/3)
+
+obj1=Student("ram", [90,80,70])
+obj1.marks[0]=100
+obj1.total()

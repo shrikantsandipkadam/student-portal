@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/planner.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Plan your day with structure.</div>
+        </div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Planner Dashboard</span>
+                    <span class="page-chip">Study Flow</span>
+                </div>
+                <div class="page-topbar-meta">
+                    <span class="page-chip">For <span data-user-name>Student</span></span>
+                </div>
+            </div>
+
+            <section class="planner-page">
+                <section class="planner-hero">
+                    <div class="planner-hero-text">
+                        <p class="planner-kicker">Smart Daily Planning</p>
+                        <h1>Planner Dashboard</h1>
+                        <p class="planner-subtitle">Organize your study flow, time blocks, and printable schedule in one place.</p>
+                    </div>
+
+                    <div class="planner-clock-card">
+                        <div class="clock-label">Live Time</div>
+                        <div id="liveClock" class="live-clock">00:00:00</div>
+                        <div id="liveDate" class="live-date">00/00/0000</div>
+                    </div>
+                </section>
+
+                <div class="container planner-container">
+                    <section class="card planner-card planner-form-card">
+                        <h3>Add Task</h3>
+
+                        <div class="field-row">
+                            <label for="plannerDay">Day</label>
+                            <select id="plannerDay">
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </select>
+                        </div>
+
+                        <div class="compact-time-block">
+                            <div class="compact-time-title">Start Task</div>
+                            <div class="field-row dual-row">
+                                <label for="startHour">Hour : Minute</label>
+                                <div class="mini-selects">
+                                    <select id="startHour">
+                                        <option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option>
+                                        <option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option>
+                                        <option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option>
+                                        <option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                                        <option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option>
+                                        <option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                                    </select>
+                                    <span class="time-separator">:</span>
+                                    <select id="startMinute">
+                                        <option value="00">00</option>
+                                        <option value="15">15</option>
+                                        <option value="30">30</option>
+                                        <option value="45">45</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="compact-time-block">
+                            <div class="compact-time-title">End Task</div>
+                            <div class="field-row dual-row">
+                                <label for="endHour">Hour : Minute</label>
+                                <div class="mini-selects">
+                                    <select id="endHour">
+                                        <option value="00">00</option><option value="01">01</option><option value="02">02</option><option value="03">03</option>
+                                        <option value="04">04</option><option value="05">05</option><option value="06">06</option><option value="07">07</option>
+                                        <option value="08">08</option><option value="09">09</option><option value="10">10</option><option value="11">11</option>
+                                        <option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option>
+                                        <option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option>
+                                        <option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option>
+                                    </select>
+                                    <span class="time-separator">:</span>
+                                    <select id="endMinute">
+                                        <option value="00">00</option>
+                                        <option value="15">15</option>
+                                        <option value="30">30</option>
+                                        <option value="45">45</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field-row">
+                            <label for="taskMain">Task</label>
+                            <select id="taskMain">
+                                <option value="">No Task</option>
+                                <option value="MTL">MTL</option>
+                                <option value="COL">COL</option>
+                                <option value="TXL">TXL</option>
+                                <option value="PYP">PYP</option>
+                                <option value="PYL">PYL</option>
+                                <option value="General">General</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <input type="text" id="taskMainOther" class="hidden-input" placeholder="Write custom task">
+
+                        <div class="field-row">
+                            <label for="taskSubType">Subtask</label>
+                            <select id="taskSubType">
+                                <option value="">No Subtask</option>
+                                <option value="Practice">Practice</option>
+                                <option value="Theory">Theory</option>
+                                <option value="Tutorial">Tutorial</option>
+                                <option value="PYQ Paper">PYQ Paper</option>
+                                <option value="Revision">Revision</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <input type="text" id="taskSubTypeOther" class="hidden-input" placeholder="Write custom subtask">
+
+                        <div class="field-row">
+                            <label for="plannerTask">Description</label>
+                            <input type="text" id="plannerTask" placeholder="Optional task description">
+                        </div>
+
+                        <div class="planner-actions planner-actions-inline">
+                            <button type="button" onclick="addPlannerTask()">Add Task</button>
+                            <button type="button" onclick="clearPlannerTasks()">Clear All</button>
+                            <button type="button" onclick="printPlannerTasks()">Print / PDF</button>
+                        </div>
+                    </section>
+
+                    <section class="card planner-card">
+                        <div class="planner-list-header">
+                            <h3>Your Tasks</h3>
+                            <span id="taskCount">0 tasks</span>
+                        </div>
+                        <ul id="plannerList" class="planner-list"></ul>
+                    </section>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/planner.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        checkLogin();
+        initializePortalShell();
+        loadPlannerTasks();
+        startPlannerClock();
+    });
+    </script>
+</body>
+</html>

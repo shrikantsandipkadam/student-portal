@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Studio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/cgpa.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Measure performance with clarity.</div>
+        </div>
+
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main cgpa-page">
+        <div class="page-shell">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">CGPA Studio</span>
+                </div>
+            </div>
+
+            <section class="cgpa-hero">
+                <div class="hero-copy">
+                    <p class="eyebrow">CGPA</p>
+                    <h1>Semester SGPA and CGPA</h1>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="hero-metric">
+                        <span class="metric-label">This Semester (SGPA)</span>
+                        <strong id="heroCgpaValue">--</strong>
+                        <span class="metric-caption" id="heroCgpaLabel">Load subjects to start</span>
+                    </div>
+
+                    <div class="hero-progress">
+                        <div class="progress-meta">
+                            <span>Grade Entry Progress</span>
+                            <span id="progressText">0%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cgpa-layout">
+                <div class="cgpa-workspace">
+                    <div class="cgpa-card glass-card">
+                        <div class="section-heading">
+                            <div>
+                                <p class="section-kicker">Setup</p>
+                                <h2>Semester Setup</h2>
+                            </div>
+                        </div>
+
+                        <div class="cgpa-selects">
+                            <label class="field">
+                                <span>Branch</span>
+                                <select id="branch">
+                                    <option value="">Select Branch</option>
+                                    <option value="electrical">Electrical Engineering</option>
+                                    <option value="ee_power">Electrical Engineering (Power and Automation)</option>
+                                    <option value="energy">Energy Engineering</option>
+                                    <option value="materials">Materials Engineering</option>
+                                    <option value="design">Design</option>
+                                    <option value="civil">Civil Engineering</option>
+                                    <option value="mechanical">Mechanical Engineering</option>
+                                    <option value="pie">Production &amp; Industrial Engineering</option>
+                                    <option value="mnc">Mathematics &amp; Computing</option>
+                                    <option value="textile">Textile Engineering</option>
+                                    <option value="ep">Engineering Physics</option>
+                                    <option value="ecm">Engineering &amp; Computational Mechanics</option>
+                                    <option value="biotech">Biochemical Engineering and Biotechnology</option>
+                                    <option value="cse">Computer Science</option>
+                                    <option value="chemical">Chemical Engineering</option>
+                                </select>
+                            </label>
+
+                            <label class="field">
+                                <span>Semester</span>
+                                <select id="semester">
+                                    <option value="">Select Semester</option>
+                                    <option value="sem1">Semester 1</option>
+                                    <option value="sem2">Semester 2</option>
+                                    <option value="sem3">Semester 3</option>
+                                    <option value="sem4">Semester 4</option>
+                                    <option value="sem5">Semester 5</option>
+                                    <option value="sem6">Semester 6</option>
+                                    <option value="sem7">Semester 7</option>
+                                    <option value="sem8">Semester 8</option>
+                                </select>
+                            </label>
+
+                            <label class="field">
+                                <span>Previous CGPA (Optional)</span>
+                                <input type="number" id="previousCGPA" placeholder="e.g., 8.5" min="0" max="10" step="0.01">
+                            </label>
+
+                            <label class="field">
+                                <span>Previous Earned Credits</span>
+                                <input type="number" id="previousCredits" placeholder="e.g., 42" min="0" step="0.5">
+                            </label>
+                        </div>
+
+                        <div class="cgpa-buttons multi-action-row">
+                            <button class="primary-btn" onclick="loadSubjects()">Load Semester</button>
+                            <button class="secondary-btn" onclick="addCustomSubject()">Add Subject</button>
+                            <button class="ghost-btn" onclick="addOpenCourse()">Add Open Course</button>
+                        </div>
+
+                    </div>
+
+                    <div class="cgpa-card subjects-card">
+                        <div class="section-heading">
+                            <div>
+                                <p class="section-kicker">Grades</p>
+                                <h2>Subjects and Grades</h2>
+                            </div>
+                        </div>
+
+                        <div id="subjects" class="subjects-groups">
+                            <div class="empty-state">
+                                <h3>No semester loaded</h3>
+                                <p>Select a branch and semester to begin entering grades.</p>
+                            </div>
+                        </div>
+
+                        <div class="cgpa-buttons action-row">
+                            <button class="secondary-btn" onclick="calculateCGPA()">Calculate SGPA</button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="cgpa-sidebar">
+                    <div class="summary-card">
+                        <p class="section-kicker">Current Semester</p>
+                        <h2>SGPA & Progress</h2>
+
+                        <div class="stats-grid">
+                            <div class="stat-box">
+                                <span>Total Credits</span>
+                                <strong id="statCredits">0</strong>
+                            </div>
+                            <div class="stat-box">
+                                <span>Graded Courses</span>
+                                <strong id="statGraded">0</strong>
+                            </div>
+                            <div class="stat-box">
+                                <span>Completed</span>
+                                <strong id="statCompleted">0</strong>
+                            </div>
+                            <div class="stat-box highlight">
+                                <span>SGPA</span>
+                                <strong id="statCgpa">--</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="summary-card cgpa-history-card">
+                        <p class="section-kicker">Projection</p>
+                        <h2>Cumulative CGPA</h2>
+                        <div id="cgpaHistoryWidget">
+                            <div class="history-item">
+                                <span class="history-label">Cumulative CGPA</span>
+                                <span class="history-value" id="displayCumCGPA">--</span>
+                            </div>
+                            <div class="history-item">
+                                <span class="history-label">Projected (with SGPA)</span>
+                                <span class="history-value" id="projectedCGPA">--</span>
+                            </div>
+                        </div>
+                        <button class="secondary-btn" onclick="addCGPARecord()" style="width: 100%; margin-top: 12px; font-size: 0.9rem;">Save Current Baseline</button>
+                    </div>
+
+                    <div class="summary-card export-card">
+                        <p class="section-kicker">Export</p>
+                        <h2>Result Sheet</h2>
+                        <div class="export-actions">
+                            <button class="primary-btn export-btn" onclick="printCgpaReport()">Print / Save PDF</button>
+                            <button class="ghost-btn export-btn" onclick="downloadResultImage()">Download Result Image</button>
+                        </div>
+                    </div>
+
+                    <div class="summary-card insight-card">
+                        <p class="section-kicker">Status</p>
+                        <h2 id="resultTitle">Ready when you are</h2>
+                        <p id="result">Enter grades to see your SGPA estimate appear here.</p>
+                    </div>
+                </aside>
+            </section>
+
+            <footer class="footer cgpa-footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/cgpa.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        checkLogin();
+        initializePortalShell();
+        initializeCgpaPage();
+    });
+    </script>
+</body>
+</html>

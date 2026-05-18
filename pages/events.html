@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block"><div class="brand-mark">CH</div><div class="brand-copy"><h2>CampusHelp</h2><p>IIT student workspace</p></div></div>
+        <div class="sidebar-user"><div class="sidebar-user-label">Signed In</div><div class="sidebar-user-name" data-user-name>Student</div><div class="sidebar-user-note">Event feed ready for build-out.</div></div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a><a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a><a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a><a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a><a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a><a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a><a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a><a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a><a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a><a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a><a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links"><span class="external-links-title">Campus Links</span><div class="external-links-grid"><a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a><a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a><a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a><a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a></div></div>
+        <div class="sidebar-actions"><button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button><button class="sidebar-btn logout-btn" onclick="logout()">Logout</button></div>
+    </aside>
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar"><div class="page-topbar-meta"><span class="page-chip">Reminders &amp; Events</span></div></div>
+            <section class="section-card" style="margin-bottom: 28px;">
+                <div class="section-head"><div><span class="section-eyebrow">Planner Hub</span><h2>Reminders &amp; Events</h2></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="planner.html">
+                        <span class="quick-link-icon">RM</span>
+                        <h3>Reminders</h3>
+                        <p>Tasks, alerts, deadlines</p>
+                    </a>
+                    <a class="quick-link-card" href="events.html">
+                        <span class="quick-link-icon">EV</span>
+                        <h3>Events</h3>
+                        <p>Campus events and updates</p>
+                    </a>
+                </div>
+            </section>
+            <footer class="footer"><p>Contact: getcampushelp@gmail.com</p><p>IIT Student Portal Copyright 2026</p></footer>
+        </div>
+    </main>
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener("load",function(){checkLogin();initializePortalShell();});</script>
+</body>
+</html>

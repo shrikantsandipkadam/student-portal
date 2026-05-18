@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IIT Student Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+            appId: "c58ef1a2-27ae-40d6-90b1-357933776dac",
+            autoRegister: true,
+            allowLocalhostAsSecureOrigin: true,
+            notifyButton: { enable: true }
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Everything important in one portal.</div>
+        </div>
+
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="pages/cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="pages/timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="pages/notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="pages/planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="pages/reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="pages/resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="pages/mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="pages/permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="pages/events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="pages/profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Welcome <span data-welcome-name>Student</span></span>
+                </div>
+                <div class="page-topbar-meta">
+                    <span class="page-chip">IIT Student Portal</span>
+                    <span class="page-chip">2026 Edition</span>
+                </div>
+            </div>
+
+            <section class="section-card">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">IIT Delhi Quick Access</span>
+                        <h2>Essential resources at your fingertips</h2>
+                        <p class="section-subtitle">Quick access to Moodle, email, academics, and library.</p>
+                    </div>
+                </div>
+
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">MD</div>
+                        <h3>Moodle</h3>
+                        <p>Learning management system.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">WM</div>
+                        <h3>Webmail</h3>
+                        <p>Official email access.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">EA</div>
+                        <h3>eAcademics Portal</h3>
+                        <p>Official academic information.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">LB</div>
+                        <h3>Library</h3>
+                        <p>Digital and physical resources.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://home.iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">HM</div>
+                        <h3>IITD Home</h3>
+                        <p>Institute main portal.</p>
+                    </a>
+                    <a class="quick-link-card" href="https://iitd.ac.in/" target="_blank" rel="noopener noreferrer">
+                        <div class="quick-link-icon">WS</div>
+                        <h3>Official Website</h3>
+                        <p>Public information portal.</p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Portal Modules</span>
+                        <h2>Open the tools you use most</h2>
+                        <p class="section-subtitle">A cleaner dashboard with better hierarchy, faster scanning, and stronger visual consistency.</p>
+                    </div>
+                </div>
+
+                <div class="portal-grid">
+                    <div class="card click-card" onclick="go('pages/cgpa.html')">
+                        <div class="card-icon">CG</div>
+                        <h3>CGPA Studio</h3>
+                        <p>Track semester performance with a more premium grade calculator experience.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/timetable.html')">
+                        <div class="card-icon">TT</div>
+                        <h3>Timetable and Attendance</h3>
+                        <p>Open timetable, roll call, and Acadly from one place.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/notes.html')">
+                        <div class="card-icon">NT</div>
+                        <h3>Notes Library</h3>
+                        <p>Open tutorials, solutions, and revision sheets from one organized shelf.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/planner.html')">
+                        <div class="card-icon">PL</div>
+                        <h3>Planner</h3>
+                        <p>Schedule your study blocks, print plans, and build momentum every day.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/reminders.html')">
+                        <div class="card-icon">RM</div>
+                        <h3>Reminders</h3>
+                        <p>Prepare the space for deadlines, alerts, and upcoming academic priorities.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/resources.html')">
+                        <div class="card-icon">RS</div>
+                        <h3>Resources</h3>
+                        <p>Keep reference material, links, and study assets within fast reach.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/mess-menu.html')">
+                        <div class="card-icon">MS</div>
+                        <h3>Mess Menu</h3>
+                        <p>Check live meals and browse the weekly menu from a cleaner dashboard.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/permutation.html')">
+                        <div class="card-icon">PG</div>
+                        <h3>Permutation Game</h3>
+                        <p>Take a quick study break with the swap-based permutation puzzle inside the portal.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/events.html')">
+                        <div class="card-icon">EV</div>
+                        <h3>Events</h3>
+                        <p>Stay ready for campus activity, workshops, and student opportunities.</p>
+                    </div>
+                    <div class="card click-card" onclick="go('pages/profile.html')">
+                        <div class="card-icon">PR</div>
+                        <h3>Profile</h3>
+                        <p>Review your identity, branch, and portal activity from a polished profile page.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-hero">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Everything in One Place</span>
+                    <h1>Build your best student workflow from one polished portal.</h1>
+                    <p>
+                        Access grades, planning, study resources, mess updates, and your personal dashboard through one clean and attractive experience.
+                    </p>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-label">Active Modules</span>
+                        <span class="stat-value">11</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Branch</span>
+                        <span class="stat-value" data-dashboard-branch>Select Branch</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Year</span>
+                        <span class="stat-value" data-dashboard-year>1st Year</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-layout">
+                <div class="stack-column">
+                    <section class="section-card">
+                        <div class="section-head">
+                            <div>
+                                <span class="section-eyebrow">CampusHelp Hub</span>
+                                <h2>Why students can rely on this portal daily</h2>
+                                <p class="section-subtitle">A single place for academics, planning, food, identity, and official IIT Delhi shortcuts.</p>
+                            </div>
+                        </div>
+                        <div class="hub-list">
+                            <div class="hub-item">
+                                <div class="hub-item-mark">AC</div>
+                                <div>
+                                    <h3>Academic control</h3>
+                                    <p>Keep CGPA, notes, timetable, and resources close together so daily academic decisions feel lighter.</p>
+                                </div>
+                            </div>
+                            <div class="hub-item">
+                                <div class="hub-item-mark">PL</div>
+                                <div>
+                                    <h3>Planner-first workflow</h3>
+                                    <p>Plan blocks, check tasks, and turn study intentions into an actual routine students can follow.</p>
+                                </div>
+                            </div>
+                            <div class="hub-item">
+                                <div class="hub-item-mark">CM</div>
+                                <div>
+                                    <h3>Campus essentials</h3>
+                                    <p>Mess info, library, webmail, and academics all stay within a few clicks instead of many open tabs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section-card">
+                        <div class="section-head">
+                            <div>
+                                <span class="section-eyebrow">Daily Snapshot</span>
+                                <h2>Your IITD student dashboard</h2>
+                            </div>
+                        </div>
+                        <div class="feature-band">
+                            <div class="feature-pill">
+                                <strong>Hostel</strong>
+                                <span class="support-text" data-dashboard-hostel>Nilgiri</span>
+                            </div>
+                            <div class="feature-pill">
+                                <strong>Planner Tasks</strong>
+                                <span class="support-text"><span data-dashboard-task-count>0</span> saved tasks</span>
+                            </div>
+                            <div class="feature-pill">
+                                <strong>Favorite Spot</strong>
+                                <span class="support-text" data-dashboard-spot>Central Library</span>
+                            </div>
+                            <div class="feature-pill">
+                                <strong>CGPA Studio</strong>
+                                <span class="support-text" data-dashboard-cgpa-ready>Ready</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="stack-column">
+                    <section class="section-card">
+                        <div class="section-head">
+                            <div>
+                                <span class="section-eyebrow">Campus Pulse</span>
+                                <h2>Friendly, social product vibe</h2>
+                                <p class="section-subtitle">A more lively tone so the portal feels like a student space, not just a tool.</p>
+                            </div>
+                        </div>
+
+                        <div class="pulse-card">
+                            <div class="pulse-head">
+                                <div class="pulse-badge">IT</div>
+                                <div class="pulse-meta">
+                                    <strong>IITD Student Life</strong>
+                                    <span data-dashboard-tagline>Study smarter. Live better. Stay connected.</span>
+                                </div>
+                            </div>
+                            <p>From first year to final year, the best student portals feel personal, useful, and quick. This one is moving toward that by combining planning, academics, and campus links in one place.</p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/student-profile.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        checkLogin();
+        initializePortalShell();
+        initializeDashboard();
+    });
+    </script>
+</body>
+</html>

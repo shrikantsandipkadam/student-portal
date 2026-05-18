@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IIT Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages/login.css">
+</head>
+<body class="login-page">
+    <button class="theme-toggle-btn" onclick="toggleLoginTheme()" title="Toggle Dark Mode">🌙</button>
+
+    <main class="login-shell">
+        <section class="login-brand">
+            <div class="brand-logo">
+                <div class="logo-mark">CH</div>
+            </div>
+            <p class="login-kicker">IIT Delhi 2026</p>
+            <h1>Welcome Back</h1>
+            <p class="login-subtitle">Sign in to access your student portal with grades, planning, resources, and campus essentials all in one place.</p>
+            
+            <div class="brand-features">
+                <div class="feature-item">
+                    <span class="feature-icon">📊</span>
+                    <span>CGPA & Grades</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📅</span>
+                    <span>Timetable & Planner</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🍽️</span>
+                    <span>Mess Menu</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📚</span>
+                    <span>Resources</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="login-card">
+            <h2>Student Login</h2>
+
+            <form onsubmit="login(event)">
+                <label for="username">Username or Student ID</label>
+                <input id="username" type="text" placeholder="Enter your username" required autofocus>
+
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter your password" required>
+
+                <button type="submit" class="login-btn">Sign In</button>
+
+                <p id="msg" class="login-msg"></p>
+            </form>
+
+            <div class="login-footer">
+                <p class="login-note">Demo: Use any username and password.</p>
+                <p class="login-contact">Need help? Contact 9503159566</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Dark theme toggle for login page
+        function toggleLoginTheme() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeToggle();
+        }
+
+        function updateThemeToggle() {
+            const btn = document.querySelector('.theme-toggle-btn');
+            const isDark = document.body.classList.contains('dark');
+            btn.textContent = isDark ? '☀️' : '🌙';
+            btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+        }
+
+        function loadLoginTheme() {
+            const theme = localStorage.getItem('theme') || 'light';
+            if (theme === 'dark') {
+                document.body.classList.add('dark');
+            }
+            updateThemeToggle();
+        }
+
+        window.addEventListener('load', loadLoginTheme);
+    </script>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes Library</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/notes.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Your study library, better organized.</div>
+        </div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell notes-page">
+                <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Notes Library</span>
+                    <button type="button" class="page-chip notes-tab-btn is-active" data-target="txl-section">TXL Resources</button>
+                    <button type="button" class="page-chip notes-tab-btn" data-target="mtl-section">MTL Resources</button>
+                    <button type="button" class="page-chip notes-tab-btn" data-target="col-section">COL Resources</button>
+                    <button type="button" class="page-chip notes-tab-btn" data-target="cpp-section">C++ Notes</button>
+                    <button type="button" class="page-chip notes-tab-btn" data-target="pyl-section">PYL Resources</button>
+                </div>
+                <div class="page-topbar-meta">
+                    <span class="page-chip">For <span data-user-name>Student</span></span>
+                </div>
+            </div>
+
+            <section class="hero-banner notes-hero">
+                <div class="notes-hero-grid">
+                    <div class="hero-copy">
+                        <span class="hero-eyebrow">Study Material</span>
+                        <h1>All your course material, arranged like it belongs here.</h1>
+                        <p class="section-subtitle">Freshly updated with COL Lab 10-11, C++ browser-openable code notes, PYL Tutorial 9 and 10, MTL New Tutorial 6, and American journal PDFs for major and minor.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card notes-section is-active" id="txl-section">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Collections</span>
+                        <h2>TXL material and personal uploads</h2>
+                        <p class="section-subtitle">One quick place for textile material, papers, and your own second semester uploads.</p>
+                    </div>
+                </div>
+
+                <div class="notes-container">
+                    <div class="notes-card" data-tone="reference">
+                        <div class="notes-card-icon">TX</div>
+                        <h3>Textile Material</h3>
+                        <a href="https://knowing-coffee-4ab.notion.site/IIT-Delhi-1db41c22fdb7802d897dcc2a290b7614" target="_blank" rel="noopener noreferrer">Full Material 4 Year Imp</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="exams">
+                        <div class="notes-card-icon">PP</div>
+                        <h3>Textile Papers</h3>
+                        <a href="https://textiletech.netlify.app/" target="_blank" rel="noopener noreferrer">Open Papers Archive</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="tutorials">
+                        <div class="notes-card-icon">UP</div>
+                        <h3>My Uploads</h3>
+                        <a href="https://drive.google.com/drive/folders/1T2spN3TzE1ilAFMhza-d_ak-YjnRn7ay?usp=drive_link" target="_blank" rel="noopener noreferrer">Google Drive Material</a>
+                        <a href="https://csciitd-my.sharepoint.com/:f:/g/personal/tt1251642_iitd_ac_in/IgDvp9Cy3o8iQp7q37JvUcerAQIZZzM5aEDbszq5ODoBgXQ?e=KaI9gQ" target="_blank" rel="noopener noreferrer">OneDrive Material</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section-card notes-section" id="mtl-section" hidden>
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Collections</span>
+                        <h2>MTL Tutorials and reference sets</h2>
+                        <p class="section-subtitle">Open what you need quickly without hunting through folders.</p>
+                    </div>
+                </div>
+
+                <div class="notes-container">
+                    <div class="notes-card" data-tone="tutorials">
+                        <div class="notes-card-icon">TT</div>
+                        <h3>Tutorials</h3>
+                        <a href="../assets/notes/mtl/Tutorial 1.pdf" target="_blank">Tutorial 1</a>
+                        <a href="../assets/notes/mtl/Tutorial 2.pdf" target="_blank">Tutorial 2</a>
+                        <a href="../assets/notes/mtl/Tutorial 3.pdf" target="_blank">Tutorial 3</a>
+                        <a href="../assets/notes/mtl/Tutorial 4.pdf" target="_blank">Tutorial 4</a>
+                        <a href="../assets/notes/mtl/Tutorial 5.pdf" target="_blank">Tutorial 5</a>
+                        <a href="../assets/notes/mtl/Tutorial 6.pdf" target="_blank">Tutorial 6</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="solutions">
+                        <div class="notes-card-icon">SL</div>
+                        <h3>Solutions</h3>
+                        <a href="../assets/notes/mtl/Tutorial 1 Solutions.pdf" target="_blank">Tutorial 1 Solution</a>
+                        <a href="../assets/notes/mtl/Tutorial 2 Solutions.pdf" target="_blank">Tutorial 2 Solution</a>
+                        <a href="../assets/notes/mtl/Tutorial 3 Solutions.pdf" target="_blank">Tutorial 3 Solution</a>
+                        <a href="../assets/notes/mtl/Tutorial 4 Solutions.pdf" target="_blank">Tutorial 4 Solution</a>
+                        <a href="../assets/notes/mtl/Tutorial 5 Solutions.pdf" target="_blank">Tutorial 5 Solution</a>
+                        <a href="../assets/notes/mtl/Tutorial 6 Solutions.pdf" target="_blank">Tutorial 6 Solution</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="fresh">
+                        <div class="notes-card-icon">RV</div>
+                        <h3>New Tutorials</h3>
+                        <a href="../assets/notes/mtl/Tutorial-1  mtl2.pdf" target="_blank">New Tutorial 1 Ready</a>
+                        <a href="../assets/notes/mtl/Tutorial-2  mtl2.pdf" target="_blank">New Tutorial 2 Ready</a>
+                        <a href="../assets/notes/mtl/Tutorial-3  mtl2.pdf" target="_blank">New Tutorial 3 Ready</a>
+                        <a href="../assets/notes/mtl/Tutorial-4  mtl2.pdf" target="_blank">New Tutorial 4 Ready</a>
+                        <a href="../assets/notes/mtl/Tutorial-5  mtl2.pdf" target="_blank">New Tutorial 5 Ready</a>
+                        <a href="../assets/notes/mtl/Tutorial-6  mtl2.pdf" target="_blank">New Tutorial 6 Ready</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="reference">
+                        <div class="notes-card-icon">RC</div>
+                        <h3>Lectures and Course Info</h3>
+                        <a href="../assets/notes/mtl/Course Information.pdf" target="_blank">Course Information</a>
+                        <a href="../assets/notes/mtl/Tutorial Timetable.pdf" target="_blank">Tutorial Timetable</a>
+                        <a href="https://owncloud.iitd.ac.in/nextcloud/index.php/s/9T8E8qMo3qCwB3i" target="_blank" rel="noopener noreferrer">Ekata Saha Ma'am Lectures</a>
+                        <a href="../assets/notes/mtl/MTL1002-book1.pdf" target="_blank">MTL1002 Book 1</a>
+                        <a href="../assets/notes/mtl/Pinakinath Sir Lectures (1-4)_ODEs.pdf" target="_blank">ODE Lectures 1-4</a>
+                        <a href="../assets/notes/mtl/Pinakinath Sir Lectures (5-6)_ODEs.pdf" target="_blank">ODE Lectures 5-6</a>
+                        <a href="../assets/notes/mtl/Pinakinath Sir Lectures (7-9)_ODEs.pdf" target="_blank">ODE Lectures 7-9</a>
+                    </div>
+                </div>
+
+                <div class="notes-action-row">
+                    <a href="../assets/notes/mtl/MTL_All_Files.zip" class="notes-cta-button" download>Download Full MTL Zip</a>
+                </div>
+            </section>
+
+            <section class="section-card notes-section" id="col-section" hidden>
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Collections</span>
+                        <h2>COL lectures and lab solutions</h2>
+                        <p class="section-subtitle">Use the compact tabs below to switch views and reduce scrolling.</p>
+                    </div>
+                </div>
+
+                <div class="notes-subtabs">
+                    <button type="button" class="notes-subtab-btn is-active" data-col-target="col-lectures">Lectures</button>
+                    <button type="button" class="notes-subtab-btn" data-col-target="col-labs">Labs</button>
+                </div>
+
+                <div class="notes-container notes-container-wide notes-subsection is-active" id="col-lectures">
+                    <div class="notes-card compact-resource-card" data-tone="reference">
+                        <div class="notes-card-icon">LC</div>
+                        <h3>Lecture Notes and Practice</h3>
+                        <a href="../assets/notes/col/@L01_Lec-01.pdf" target="_blank">Lecture 1 Notes</a>
+                        <a href="../assets/notes/col/@L02_variables-if-else 1.pdf" target="_blank">Lecture 2: Variables and If-Else</a>
+                        <a href="../assets/notes/col/@L03-L07-if_else-iteration-strings.pdf" target="_blank">Lectures 3-7: Loops and Strings</a>
+                        <a href="../assets/notes/col/@L08-L10-functions.pdf" target="_blank">Lectures 8-10: Functions</a>
+                        <a href="../assets/notes/col/@L11-L12_Lectures11-12.pdf" target="_blank">Lectures 11-12 Notes</a>
+                        <a href="../assets/notes/col/@L14-L17_structured_data_types.pdf" target="_blank">Lectures 14-17: Data Types</a>
+                        <a href="../assets/notes/col/@L18-L19_aliasing-invariants-dictionaries.pdf" target="_blank">Lectures 18-19: Dictionaries</a>
+                        <a href="../assets/notes/col/@L20-time-complexity.pdf" target="_blank">Lecture 20: Time Complexity</a>
+                        <a href="../assets/notes/col/@L21-Sorting.pdf" target="_blank">Lecture 21: Sorting</a>
+                        <a href="../assets/notes/col/@L22-L23-OOPs.pdf" target="_blank">Lectures 22-23: OOPs</a>
+                        <a href="../assets/notes/col/@Lec_24-Modules-and-Files.pdf" target="_blank">Lecture 24: Modules and Files</a>
+                        <a href="../assets/notes/col/@Lecture_Notes.pdf" target="_blank">Complete Lecture Notes</a>
+                        <a href="../assets/notes/col/Practice_sheets.pdf" target="_blank">COL Practice Sheet Updated</a>
+                    </div>
+                </div>
+
+                <div class="notes-container notes-container-wide notes-subsection" id="col-labs" hidden>
+                    <div class="notes-card lab-solutions-card" data-tone="labs">
+                        <div class="notes-card-icon">LB</div>
+                        <h3>Lab Sheets and Solutions</h3>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 01</span>
+                                <a href="../assets/notes/col/Lab-01.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab1q0.py" target="_blank">Question 0</a>
+                                <a href="../assets/notes/col/lab1q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab1q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab1q3.py" target="_blank">Question 3</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 02</span>
+                                <a href="../assets/notes/col/Lab-02.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab2q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab2q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab2q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab2q3b.py" target="_blank">Question 3B</a>
+                                <a href="../assets/notes/col/lab2q4_Palindrome.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 03</span>
+                                <a href="../assets/notes/col/Lab-03.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab3q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab3q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab3q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab3q4.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 04</span>
+                                <a href="../assets/notes/col/lab-04.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab4q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab4 q2.py" target="_blank">Question 2 Set A</a>
+                                <a href="../assets/notes/col/lab4q2.py" target="_blank">Question 2 Set B</a>
+                                <a href="../assets/notes/col/lab4q2(m2).py" target="_blank">Question 2 Method 2</a>
+                                <a href="../assets/notes/col/lab4q2(m3).py" target="_blank">Question 2 Method 3</a>
+                                <a href="../assets/notes/col/lab4q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab4q4.py" target="_blank">Question 4</a>
+                                <a href="../assets/notes/col/lab4q4(row).py" target="_blank">Question 4 Row Method</a>
+                                <a href="../assets/notes/col/lab4q4(effi).py" target="_blank">Question 4 Efficient</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 05</span>
+                                <a href="../assets/notes/col/Lab-05.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab5q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab5q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab5q2(effi).py" target="_blank">Question 2 Efficient</a>
+                                <a href="../assets/notes/col/lab5q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab5q4.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 06</span>
+                                <a href="../assets/notes/col/Lab-06.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab6q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab6q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab6q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab6q4.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 07</span>
+                                <a href="../assets/notes/col/Lab-07.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab7 (1).py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab7 (2).py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab7 (3).py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab7 (4).py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 08</span>
+                                <a href="../assets/notes/col/Lab-08.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab8_q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab8_q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab8_q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab8_q4.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 09</span>
+                                <a href="../assets/notes/col/Lab-09.pdf" target="_blank" class="lab-main-link">Lab Sheet</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab9q1.py" target="_blank">Question 1</a>
+                                <a href="../assets/notes/col/lab9q2.py" target="_blank">Question 2</a>
+                                <a href="../assets/notes/col/lab9q3.py" target="_blank">Question 3</a>
+                                <a href="../assets/notes/col/lab9q4.py" target="_blank">Question 4</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 10 Done</span>
+                                <a href="../assets/notes/col/Lab-10.pdf" target="_blank" class="lab-main-link">Lab 10 PDF</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab10q1.py" target="_blank">Question 1 Done</a>
+                                <a href="../assets/notes/col/lab10q2.py" target="_blank">Question 2 Done</a>
+                                <a href="../assets/notes/col/lab10q3.py" target="_blank">Question 3 Done</a>
+                                <a href="../assets/notes/col/lab10q4.py" target="_blank">Question 4 Done</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Lab 11 Done</span>
+                                <a href="../assets/notes/col/Lab-11.pdf" target="_blank" class="lab-main-link">Lab 11 PDF</a>
+                            </div>
+                            <div class="lab-solution-links">
+                                <a href="../assets/notes/col/lab11q1.py" target="_blank">Question 1 Done</a>
+                                <a href="../assets/notes/col/lab11q2.py" target="_blank">Question 2 Done</a>
+                                <a href="../assets/notes/col/lab11q3.py" target="_blank">Question 3 Done</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notes-action-row">
+                    <a href="../assets/notes/col/COL_Python_Files.zip" class="notes-cta-button" download>Download COL Python Zip</a>
+                </div>
+            </section>
+
+            <section class="section-card notes-section" id="cpp-section" hidden>
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Collections</span>
+                        <h2>C++ code notes</h2>
+                        <p class="section-subtitle">Structured like COL labs, with each code file opening directly in Chrome through the viewer.</p>
+                    </div>
+                </div>
+
+                <div class="notes-container notes-container-wide">
+                    <div class="notes-card lab-solutions-card" data-tone="labs">
+                        <div class="notes-card-icon">C++</div>
+                        <h3>C++ Notes and Code Files</h3>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>Revision Sheet</span>
+                                <a href="../assets/notes/c++/cpp_dsa_revision_sheet.html" target="_blank" class="lab-main-link">Open C++ Revision HTML</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>C++ Basics</span>
+                            </div>
+                            <div class="lab-solution-links cpp-code-links">
+                                <a href="../assets/notes/c++/1_c_start.cpp" target="_blank">1. Start</a>
+                                <a href="../assets/notes/c++/2_c_datatypes.cpp" target="_blank">2. Data Types</a>
+                                <a href="../assets/notes/c++/3_c_input.cpp" target="_blank">3. Input</a>
+                                <a href="../assets/notes/c++/4_c_ifelse.cpp" target="_blank">4. If-Else</a>
+                                <a href="../assets/notes/c++/5_6_c_loops.cpp" target="_blank">5-6. Loops</a>
+                                <a href="../assets/notes/c++/7_c_functions.cpp" target="_blank">7. Functions</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>C++ Arrays, Pointers, and OOP</span>
+                            </div>
+                            <div class="lab-solution-links cpp-code-links">
+                                <a href="../assets/notes/c++/8_c_array.cpp" target="_blank">8. Arrays</a>
+                                <a href="../assets/notes/c++/9_c_Pointers_References.cpp" target="_blank">9. Pointers and References</a>
+                                <a href="../assets/notes/c++/10_c_opps.cpp" target="_blank">10. OOPs</a>
+                                <a href="../assets/notes/c++/11_c_inheritance.cpp" target="_blank">11. Inheritance</a>
+                            </div>
+                        </div>
+
+                        <div class="lab-entry">
+                            <div class="lab-entry-head">
+                                <span>C++ STL</span>
+                            </div>
+                            <div class="lab-solution-links cpp-code-links">
+                                <a href="../assets/notes/c++/12_c_vector.cpp" target="_blank">12. Vector</a>
+                                <a href="../assets/notes/c++/13_c_pair.cpp" target="_blank">13. Pair</a>
+                                <a href="../assets/notes/c++/14_c_iterators.cpp" target="_blank">14. Iterators</a>
+                                <a href="../assets/notes/c++/15_c_map_set.cpp" target="_blank">15. Map and Set</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="notes-action-row">
+                    <a href="../assets/notes/CPlusPlus_Folder.zip" class="notes-cta-button" download>Download Full C++ Folder Zip</a>
+                </div>
+            </section>
+
+            <section class="section-card notes-section" id="pyl-section" hidden>
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Collections</span>
+                        <h2>PYL tutorials, quizzes, and exam papers</h2>
+                        <p class="section-subtitle">Organized from the `pyl` folder with clearer names for faster access.</p>
+                    </div>
+                </div>
+
+                <div class="notes-container">
+                    <div class="notes-card" data-tone="tutorials">
+                        <div class="notes-card-icon">TU</div>
+                        <h3>Tutorial Sheets</h3>
+                        <a href="../assets/notes/pyl/pyl1002_tut1_sp26_final.pdf" target="_blank">Tutorial 1 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut2_sp26.pdf" target="_blank">Tutorial 2 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut3_sp26.pdf" target="_blank">Tutorial 3 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut4_sp26.pdf" target="_blank">Tutorial 4 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut5_sp26.pdf" target="_blank">Tutorial 5 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut6_sp26.pdf" target="_blank">Tutorial 6 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut7_sp26.pdf" target="_blank">Tutorial 7 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut8_sp26.pdf" target="_blank">Tutorial 8 Sheet</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut9_sp26.pdf" target="_blank">Tutorial 9 Sheet Ready</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut10_sp26.pdf" target="_blank">Tutorial 10 Sheet Ready</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="solutions">
+                        <div class="notes-card-icon">SO</div>
+                        <h3>Tutorial Solutions</h3>
+                        <a href="../assets/notes/pyl/pyl1002_tut1sol_sp26.pdf" target="_blank">Tutorial 1 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut2sol_sp26.pdf" target="_blank">Tutorial 2 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut3sol_sp26.pdf" target="_blank">Tutorial 3 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut4sol_sp26.pdf" target="_blank">Tutorial 4 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_tut5sol_sp26.pdf" target="_blank">Tutorial 5 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_sol6_sp26.pdf" target="_blank">Tutorial 6 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_sol7_sp26.pdf" target="_blank">Tutorial 7 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_sol8_sp26.pdf" target="_blank">Tutorial 8 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_sol9_sp26.pdf" target="_blank">Tutorial 9 Solution Ready</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="exams">
+                        <div class="notes-card-icon">EX</div>
+                        <h3>Quizzes and Midsem</h3>
+                        <a href="../assets/notes/pyl/pyl1002_quiz1_paper26.pdf" target="_blank">Quiz 1 Paper</a>
+                        <a href="../assets/notes/pyl/pyl1002_quiz1_solution_sp26.pdf" target="_blank">Quiz 1 Solution</a>
+                        <a href="../assets/notes/pyl/pyl1002_midsem_exam_sp26.pdf" target="_blank">Midsem Paper</a>
+                        <a href="../assets/notes/pyl/pyl1002_midsem_soln_sp26.pdf" target="_blank">Midsem Solution</a>
+                    </div>
+
+                    <div class="notes-card" data-tone="reference">
+                        <div class="notes-card-icon">RD</div>
+                        <h3>Extra Reading</h3>
+                        <a href="../assets/notes/pyl/american research paper for major.pdf" target="_blank">American Journal for Major</a>
+                        <a href="../assets/notes/pyl/american research paper for minor.pdf" target="_blank">American Journal for Minor</a>
+                        <a href="../assets/notes/pyl/Shape_of_Drum.pdf" target="_blank">Shape of Drum</a>
+                    </div>
+                </div>
+
+                <div class="notes-action-row">
+                    <a href="../assets/notes/pyl/PYL_All_Files.zip" class="notes-cta-button" download>Download Full PYL Zip</a>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        checkLogin();
+        initializePortalShell();
+
+        const tabButtons = document.querySelectorAll(".notes-tab-btn");
+        const sections = document.querySelectorAll(".notes-section");
+        const colTabButtons = document.querySelectorAll(".notes-subtab-btn");
+        const colSections = document.querySelectorAll(".notes-subsection");
+        const pythonLinks = document.querySelectorAll('.lab-solution-links a[href$=".py"]');
+        const cppLinks = document.querySelectorAll('.cpp-code-links a[href$=".cpp"]');
+        const pageParams = new URLSearchParams(window.location.search);
+        const defaultTabId = "txl-section";
+        const defaultColTabId = "col-lectures";
+
+        function setActiveMainTab(targetId) {
+            const safeTargetId = targetId || defaultTabId;
+
+            tabButtons.forEach(function (tabButton) {
+                tabButton.classList.toggle("is-active", tabButton.getAttribute("data-target") === safeTargetId);
+            });
+
+            sections.forEach(function (section) {
+                const isTarget = section.id === safeTargetId;
+                section.hidden = !isTarget;
+                section.classList.toggle("is-active", isTarget);
+            });
+        }
+
+        function setActiveColTab(targetId) {
+            const safeTargetId = targetId || defaultColTabId;
+
+            colTabButtons.forEach(function (tabButton) {
+                tabButton.classList.toggle("is-active", tabButton.getAttribute("data-col-target") === safeTargetId);
+            });
+
+            colSections.forEach(function (section) {
+                const isTarget = section.id === safeTargetId;
+                section.hidden = !isTarget;
+                section.classList.toggle("is-active", isTarget);
+            });
+        }
+
+        pythonLinks.forEach(function (link) {
+            const filePath = link.getAttribute("href");
+            const title = link.textContent.trim();
+            const returnUrl = "notes.html?tab=col-section&colTab=col-labs";
+            link.setAttribute(
+                "href",
+                "code-viewer.html?file=" + encodeURIComponent(filePath) +
+                "&title=" + encodeURIComponent(title) +
+                "&language=" + encodeURIComponent("Python File") +
+                "&return=" + encodeURIComponent(returnUrl)
+            );
+        });
+
+        cppLinks.forEach(function (link) {
+            const filePath = link.getAttribute("href");
+            const title = link.textContent.trim();
+            const returnUrl = "notes.html?tab=cpp-section";
+            link.setAttribute(
+                "href",
+                "code-viewer.html?file=" + encodeURIComponent(filePath) +
+                "&title=" + encodeURIComponent(title) +
+                "&language=" + encodeURIComponent("C++ File") +
+                "&return=" + encodeURIComponent(returnUrl)
+            );
+        });
+
+        setActiveMainTab(pageParams.get("tab") || defaultTabId);
+        setActiveColTab(pageParams.get("colTab") || defaultColTabId);
+
+        tabButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const targetId = button.getAttribute("data-target");
+                setActiveMainTab(targetId);
+            });
+        });
+
+        colTabButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const targetId = button.getAttribute("data-col-target");
+                setActiveColTab(targetId);
+            });
+        });
+    });
+    </script>
+</body>
+</html>

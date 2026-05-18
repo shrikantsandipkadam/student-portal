@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resources</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="resources-page-view">
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block"><div class="brand-mark">CH</div><div class="brand-copy"><h2>CampusHelp</h2><p>IIT student workspace</p></div></div>
+        <div class="sidebar-user"><div class="sidebar-user-label">Signed In</div><div class="sidebar-user-name" data-user-name>Student</div><div class="sidebar-user-note">All useful links in one place.</div></div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a><a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a><a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a><a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a><a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a><a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a><a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a><a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a><a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a><a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a><a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links"><span class="external-links-title">Campus Links</span><div class="external-links-grid"><a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a><a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a><a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a><a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a></div></div>
+        <div class="sidebar-actions"><button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button><button class="sidebar-btn logout-btn" onclick="logout()">Logout</button></div>
+    </aside>
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar"><div class="page-topbar-meta"><span class="page-chip">Resources</span></div></div>
+            <section class="page-hero">
+                <div class="hero-copy"><span class="hero-eyebrow">Quick Access</span><h1>All useful links in one place.</h1><p>IITD links, attendance, timetable, study tools, and dashboard shortcuts.</p></div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">Dashboard Tools</span><h2>Portal shortcuts</h2><p class="section-subtitle">Open the pages you use most.</p></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="../index.html"><div class="quick-link-icon">DB</div><h3>Dashboard</h3><p>Main portal home.</p></a>
+                    <a class="quick-link-card" href="cgpa.html"><div class="quick-link-icon">CG</div><h3>CGPA</h3><p>SGPA and CGPA calculator.</p></a>
+                    <a class="quick-link-card" href="timetable.html"><div class="quick-link-icon">TT</div><h3>Timetable and Attendance</h3><p>Internal quick access page.</p></a>
+                    <a class="quick-link-card" href="notes.html"><div class="quick-link-icon">NT</div><h3>Notes</h3><p>Course files and sheets.</p></a>
+                    <a class="quick-link-card" href="planner.html"><div class="quick-link-icon">PL</div><h3>Planner</h3><p>Tasks and study plan.</p></a>
+                    <a class="quick-link-card" href="reminders.html"><div class="quick-link-icon">RM</div><h3>Reminders</h3><p>Deadlines and alerts.</p></a>
+                    <a class="quick-link-card" href="mess-menu.html"><div class="quick-link-icon">MS</div><h3>Mess Menu</h3><p>Meal schedule.</p></a>
+                    <a class="quick-link-card" href="profile.html"><div class="quick-link-icon">PR</div><h3>Profile</h3><p>Your student details.</p></a>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">IIT Delhi</span><h2>Official links</h2><p class="section-subtitle">Institute and campus services.</p></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://moodle.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">MD</div><h3>Moodle</h3><p>Course material and class updates.</p></a>
+                    <a class="quick-link-card" href="https://moodlenew.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">MN</div><h3>Moodle New</h3><p>New Moodle portal.</p></a>
+                    <a class="quick-link-card" href="https://eacademics.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">EA</div><h3>eAcademics</h3><p>ERP and academic records.</p></a>
+                    <a class="quick-link-card" href="https://webmail.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">WM</div><h3>Webmail</h3><p>Institute email.</p></a>
+                    <a class="quick-link-card" href="https://timetable.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">TT</div><h3>Time Table</h3><p>Official timetable portal.</p></a>
+                    <a class="quick-link-card" href="https://rollcall.iitd.ac.in/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">AT</div><h3>Attendance</h3><p>Roll call attendance.</p></a>
+                    <a class="quick-link-card" href="https://library.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">LB</div><h3>Central Library</h3><p>Books and digital access.</p></a>
+                    <a class="quick-link-card" href="https://csc.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">CS</div><h3>CSC</h3><p>Computer services.</p></a>
+                    <a class="quick-link-card" href="https://owncloud.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">OC</div><h3>OwnCloud</h3><p>Institute cloud storage.</p></a>
+                    <a class="quick-link-card" href="https://hospital.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">HP</div><h3>IITD Hospital</h3><p>Campus medical services.</p></a>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">Student Support</span><h2>Welfare and career</h2><p class="section-subtitle">Student help and placement links.</p></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://bsw.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">BW</div><h3>BSW</h3><p>Student welfare board.</p></a>
+                    <a class="quick-link-card" href="https://bswacademicportal.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">BA</div><h3>BSW Academic Portal</h3><p>Academic support portal.</p></a>
+                    <a class="quick-link-card" href="https://ocs.iitd.ac.in" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">OC</div><h3>OCS</h3><p>Career and placements.</p></a>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">Study Tools</span><h2>External academic and AI tools</h2><p class="section-subtitle">Useful class and productivity platforms.</p></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://piazza.com/class" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">PZ</div><h3>Piazza</h3><p>Course discussion and Q&amp;A.</p></a>
+                    <a class="quick-link-card" href="https://www.gradescope.com" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">GS</div><h3>Gradescope</h3><p>Submissions and grading.</p></a>
+                    <a class="quick-link-card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">AI</div><h3>ChatGPT</h3><p>Writing, coding, and study help.</p></a>
+                    <a class="quick-link-card" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">GM</div><h3>Gemini</h3><p>Research and productivity help.</p></a>
+                    <a class="quick-link-card" href="https://www.acadly.com/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">AC</div><h3>Acadly</h3><p>Classroom attendance support.</p></a>
+                </div>
+            </section>
+            <footer class="footer"><p>Contact: getcampushelp@gmail.com</p><p>IIT Student Portal Copyright 2026</p></footer>
+        </div>
+    </main>
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener("load",function(){checkLogin();initializePortalShell();});</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permutation Game</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .perm-wrap{display:grid;gap:24px}.perm-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:20px}.perm-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:28px;padding:28px;box-shadow:var(--shadow-soft)}.perm-card p,.perm-card h1,.perm-card h2,.perm-card h3{margin-top:0}.perm-card p{color:var(--text-muted);line-height:1.7}.perm-tag{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(15,23,42,.06);font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}.game-board{text-align:center}.star-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:28px 0 20px}.star{width:108px;height:108px;cursor:grab;transition:transform .35s ease;filter:drop-shadow(0 10px 18px rgba(15,23,42,.12))}.star:hover{transform:translateY(-4px)}.star.swapping{transition:transform .4s cubic-bezier(.68,-.55,.265,1.55);transform:scale(1.08) rotate(180deg)}.star.swapping text{transition:transform .4s cubic-bezier(.68,-.55,.265,1.55);transform:rotate(-180deg);transform-origin:center}.star svg{width:100%;height:100%}.stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 12px}.stat-box,.tip{padding:18px;border-radius:20px;background:rgba(148,163,184,.12);border:1px solid rgba(148,163,184,.18)}.stat-box span{display:block;color:var(--text-muted);font-size:.9rem;margin-bottom:8px}.stat-box strong{font-size:1.45rem}.feedback{min-height:30px;font-size:1.05rem;font-weight:600}.win{color:#15803d}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:14px}.actions button{border:none;border-radius:999px;padding:12px 20px;font-weight:700;cursor:pointer;background:linear-gradient(135deg,#0f172a,#1d4ed8);color:#fff}.notes{width:100%;min-height:220px;padding:16px;border-radius:20px;border:1px solid rgba(148,163,184,.28);box-sizing:border-box;resize:vertical;background:rgba(255,255,255,.8);color:var(--text-main);font:inherit;line-height:1.6}body.dark .notes{background:rgba(15,23,42,.72)}.tips{display:grid;gap:14px}@media (max-width:980px){.perm-grid{grid-template-columns:1fr}}@media (max-width:640px){.star{width:82px;height:82px}.stat-grid{grid-template-columns:1fr}.perm-card{padding:22px}}
+    </style>
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">CH</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Signed In</div>
+            <div class="sidebar-user-name" data-user-name>Student</div>
+            <div class="sidebar-user-note">Reset your focus with a quick puzzle break.</div>
+        </div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="external-links">
+            <span class="external-links-title">Campus Links</span>
+            <div class="external-links-grid">
+                <a href="https://moodle.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Moodle Learning Management">MD</a>
+                <a href="https://webmail.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Webmail">WM</a>
+                <a href="https://eacademics.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="eAcademics">EA</a>
+                <a href="https://library.iitd.ac.in/" target="_blank" rel="noopener noreferrer" class="ext-link" title="Library">LB</a>
+            </div>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell perm-wrap">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Permutation Game</span>
+                    <span class="page-chip">For <span data-user-name>Student</span></span>
+                </div>
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Focus Break</span>
+                    <span class="page-chip">Drag and Swap</span>
+                </div>
+            </div>
+
+            <section class="perm-grid">
+                <div class="perm-card">
+                    <span class="perm-tag">Logic Puzzle</span>
+                    <h1>Match the hidden permutation in as few swaps as possible.</h1>
+                    <p>Drag one star onto another to swap positions. After each move, the game shows how many stars are already in the correct place, so you can refine your next guess.</p>
+                </div>
+                <div class="perm-card">
+                    <span class="perm-tag">How To Play</span>
+                    <p>Each star represents one unique letter from A to H. Your visible order and the hidden target order are both shuffled. Keep swapping until all 8 positions are correct.</p>
+                </div>
+            </section>
+
+            <section class="perm-card game-board">
+                <h2>Permutation Guessing Game</h2>
+                <p>Swap stars until every position matches the target permutation.</p>
+                <div id="star-row" class="star-row"></div>
+                <div class="stat-grid">
+                    <div class="stat-box"><span>Swaps</span><strong id="swap-count">0</strong></div>
+                    <div class="stat-box"><span>Correct Positions</span><strong><span id="correct-count">0</span>/8</strong></div>
+                    <div class="stat-box"><span>Status</span><strong id="status-label">In Play</strong></div>
+                </div>
+                <div id="feedback" class="feedback"></div>
+                <div class="actions">
+                    <button type="button" onclick="resetGame()">New Round</button>
+                </div>
+            </section>
+
+            <section class="perm-grid">
+                <div class="perm-card">
+                    <h3>Strategy Notes</h3>
+                    <p>Use this scratchpad to track useful clues while you solve the puzzle.</p>
+                    <textarea id="notes-textarea" class="notes" placeholder="Write your strategy here...
+- Track which positions seem correct
+- Note patterns you notice
+- Plan your next swaps"></textarea>
+                </div>
+                <div class="perm-card">
+                    <h3>Quick Hints</h3>
+                    <div class="tips">
+                        <div class="tip"><strong>Start broad</strong><p>Test a few different positions early instead of forcing one star immediately.</p></div>
+                        <div class="tip"><strong>Watch the counter</strong><p>If the correct-position count rises, one or both moved stars likely improved.</p></div>
+                        <div class="tip"><strong>Keep notes short</strong><p>Small clues like "A maybe slot 3" are enough to guide your next move.</p></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+                <p>IIT Student Portal Copyright 2026</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        const colors=["#fffec8","#ffcda8","#dcf7a1","#a8d1ff","#d4ffff","#ffb8c1","#98e8c1","#d2c2f2"];
+        const letters=["A","B","C","D","E","F","G","H"];
+        const totalSlots=8;
+        const notesKey="permutationGameNotes";
+        let target=[],current=[],draggedIndex=null,swapCount=0;
+
+        function shuffle(arr){for(let i=arr.length-1;i>0;i-=1){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}}
+        function createStarSVG(color,letter){return `<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><polygon fill="${color}" stroke="#334155" stroke-width="2" points="30,4 36,22 55,22 40,33 46,51 30,40 14,51 20,33 5,22 24,22"/><text x="30" y="32" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle" dominant-baseline="middle">${letter}</text></svg>`;}
+        function drawStars(){const row=document.getElementById("star-row");row.innerHTML="";current.forEach((colorIndex,index)=>{const star=document.createElement("div");star.className="star";star.innerHTML=createStarSVG(colors[colorIndex],letters[colorIndex]);star.setAttribute("draggable","true");star.ondragstart=(event)=>handleDragStart(index,event);star.ondragover=(event)=>event.preventDefault();star.ondrop=(event)=>handleDrop(index,event);row.appendChild(star);});}
+        async function animateSwap(indexA,indexB){const stars=document.querySelectorAll(".star");const starA=stars[indexA];const starB=stars[indexB];if(!starA||!starB){return;}starA.classList.add("swapping");starB.classList.add("swapping");const colorA=starA.querySelector("polygon").getAttribute("fill");const colorB=starB.querySelector("polygon").getAttribute("fill");const textA=starA.querySelector("text").textContent;const textB=starB.querySelector("text").textContent;starA.querySelector("polygon").setAttribute("fill",colorB);starB.querySelector("polygon").setAttribute("fill",colorA);starA.querySelector("text").textContent=textB;starB.querySelector("text").textContent=textA;await new Promise((resolve)=>setTimeout(resolve,400));starA.classList.remove("swapping");starB.classList.remove("swapping");}
+        function handleDragStart(index,event){draggedIndex=index;event.dataTransfer.effectAllowed="move";}
+        async function handleDrop(dropIndex,event){event.preventDefault();if(draggedIndex===null||draggedIndex===dropIndex){return;}await animateSwap(draggedIndex,dropIndex);[current[draggedIndex],current[dropIndex]]=[current[dropIndex],current[draggedIndex]];swapCount+=1;draggedIndex=null;updateFeedback();drawStars();}
+        function updateFeedback(){const correctCount=current.filter((value,index)=>value===target[index]).length;const solved=correctCount===totalSlots;document.getElementById("swap-count").textContent=swapCount;document.getElementById("correct-count").textContent=correctCount;document.getElementById("status-label").textContent=solved?"Solved":"In Play";document.getElementById("feedback").innerHTML=solved?`Correct positions: ${correctCount}/${totalSlots} <span class="win">You matched the hidden permutation in ${swapCount} swaps!</span>`:`Correct positions: ${correctCount}/${totalSlots}`;}
+        function resetGame(){target=[...Array(totalSlots).keys()];current=[...Array(totalSlots).keys()];shuffle(target);shuffle(current);swapCount=0;draggedIndex=null;drawStars();updateFeedback();}
+        function loadNotes(){document.getElementById("notes-textarea").value=localStorage.getItem(notesKey)||"";}
+        function bindNotes(){const textarea=document.getElementById("notes-textarea");textarea.addEventListener("input",function(){localStorage.setItem(notesKey,textarea.value);});}
+        window.addEventListener("load",function(){checkLogin();initializePortalShell();resetGame();loadNotes();bindNotes();});
+    </script>
+</body>
+</html>

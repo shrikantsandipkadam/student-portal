@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Viewer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .code-viewer-shell {
+            max-width: 980px;
+            margin: 32px auto;
+            padding: 0 16px 32px;
+        }
+
+        .code-viewer-card {
+            padding: 24px;
+            border-radius: 28px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 255, 0.92));
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.12);
+        }
+
+        .code-viewer-topbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .code-viewer-title h1 {
+            margin: 0 0 6px;
+            font-size: clamp(1.5rem, 4vw, 2.4rem);
+        }
+
+        .code-viewer-title p {
+            margin: 0;
+            color: #64748b;
+        }
+
+        .code-viewer-back {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
+            box-shadow: 0 18px 30px rgba(37, 99, 235, 0.24);
+        }
+
+        .code-block {
+            margin: 0;
+            padding: 18px;
+            overflow: auto;
+            border-radius: 22px;
+            background: #0f172a;
+            color: #e2e8f0;
+            font: 500 0.96rem/1.7 Consolas, "Courier New", monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .code-error {
+            padding: 16px 18px;
+            border-radius: 18px;
+            background: rgba(239, 68, 68, 0.1);
+            color: #b91c1c;
+            font-weight: 700;
+        }
+
+        body.dark .code-viewer-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(30, 41, 59, 0.92));
+            border-color: rgba(148, 163, 184, 0.14);
+        }
+
+        body.dark .code-viewer-title p {
+            color: #cbd5e1;
+        }
+
+        body.dark .code-error {
+            background: rgba(239, 68, 68, 0.16);
+            color: #fecaca;
+        }
+
+        @media (max-width: 768px) {
+            .code-viewer-shell {
+                margin: 18px auto;
+                padding: 0 12px 24px;
+            }
+
+            .code-viewer-card {
+                padding: 16px;
+                border-radius: 22px;
+            }
+
+            .code-block {
+                padding: 14px;
+                border-radius: 16px;
+                font-size: 0.84rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="code-viewer-shell">
+        <section class="code-viewer-card">
+            <div class="code-viewer-topbar">
+                <div class="code-viewer-title">
+                    <p id="codeLanguage">Code File</p>
+                    <h1 id="codeTitle">Code Viewer</h1>
+                </div>
+                <a href="notes.html" class="code-viewer-back" id="codeViewerBackLink">Back To Notes</a>
+            </div>
+            <pre class="code-block" id="codeContent">Loading...</pre>
+        </section>
+    </main>
+
+    <script src="../js/main.js"></script>
+    <script>
+    (function () {
+        if (typeof initializePortalShell === "function") {
+            initializePortalShell();
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get("file");
+        const title = params.get("title") || "Code File";
+        const language = params.get("language") || "Code File";
+        const returnUrl = params.get("return") || "notes.html";
+        const titleNode = document.getElementById("codeTitle");
+        const languageNode = document.getElementById("codeLanguage");
+        const contentNode = document.getElementById("codeContent");
+        const backLinkNode = document.getElementById("codeViewerBackLink");
+
+        titleNode.textContent = title;
+        languageNode.textContent = language;
+        backLinkNode.setAttribute("href", returnUrl);
+
+        if (!file) {
+            contentNode.className = "code-error";
+            contentNode.textContent = "No file selected.";
+            return;
+        }
+
+        fetch(file)
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Unable to open this file.");
+                }
+                return response.text();
+            })
+            .then(function (content) {
+                contentNode.textContent = content;
+            })
+            .catch(function () {
+                contentNode.className = "code-error";
+                contentNode.textContent = "This file could not be opened in the viewer.";
+            });
+    }());
+    </script>
+</body>
+</html>
