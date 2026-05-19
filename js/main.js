@@ -67,16 +67,79 @@ function setActive() {
     });
 }
 
-function toggleTheme() {
-    document.body.classList.toggle("dark");
-    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+function orderSidebarNav() {
+    const nav = document.querySelector(".sidebar-nav");
+    if (!nav) {
+        return;
+    }
+
+    const preferredOrder = [
+        "index.html",
+        "notes.html",
+        "cgpa.html",
+        "planner.html",
+        "profile.html",
+        "timetable.html",
+        "resources.html",
+        "mess-menu.html",
+        "reminders.html",
+        "permutation.html",
+        "events.html"
+    ];
+
+    const links = Array.from(nav.querySelectorAll(".nav-link"));
+    links.sort((a, b) => {
+        const aHref = normalizePath(a.getAttribute("href") || "");
+        const bHref = normalizePath(b.getAttribute("href") || "");
+        const aIndex = preferredOrder.findIndex((item) => aHref.endsWith(item));
+        const bIndex = preferredOrder.findIndex((item) => bHref.endsWith(item));
+        const safeA = aIndex === -1 ? preferredOrder.length : aIndex;
+        const safeB = bIndex === -1 ? preferredOrder.length : bIndex;
+        return safeA - safeB;
+    });
+
+    links.forEach((link) => nav.appendChild(link));
+}
+
+function simplifyNavLabels() {
+    document.querySelectorAll(".sidebar-nav .nav-icon").forEach((icon) => {
+        icon.setAttribute("aria-hidden", "true");
+    });
+}
+
+const portalThemes = ["red", "green", "blue", "light", "dark"];
+
+function getStoredPortalTheme() {
+    const storedTheme = localStorage.getItem("portalTheme") || "red";
+    return portalThemes.includes(storedTheme) ? storedTheme : "red";
+}
+
+function applyPortalTheme(theme) {
+    const safeTheme = portalThemes.includes(theme) ? theme : "red";
+    document.body.classList.remove("dark", "theme-light", "theme-red", "theme-green", "theme-blue", "theme-dark");
+    document.body.classList.add("theme-" + safeTheme);
+    localStorage.setItem("portalTheme", safeTheme);
     updateThemeButtons();
 }
 
+function toggleTheme() {
+    const currentTheme = getStoredPortalTheme();
+    const nextTheme = portalThemes[(portalThemes.indexOf(currentTheme) + 1) % portalThemes.length];
+    applyPortalTheme(nextTheme);
+}
+
+function handleThemeButtonClick(event) {
+    const targetTheme = event.target && event.target.dataset ? event.target.dataset.theme : "";
+    if (portalThemes.includes(targetTheme)) {
+        applyPortalTheme(targetTheme);
+        return;
+    }
+
+    toggleTheme();
+}
+
 function loadTheme() {
-    const theme = localStorage.getItem("theme");
-    document.body.classList.toggle("dark", theme === "dark");
-    updateThemeButtons();
+    applyPortalTheme(getStoredPortalTheme());
 }
 
 function getCurrentUserName() {
@@ -111,17 +174,25 @@ function populateUserContext() {
 }
 
 function updateThemeButtons() {
-    const isDark = document.body.classList.contains("dark");
+    const currentTheme = getStoredPortalTheme();
+    const nextTheme = portalThemes[(portalThemes.indexOf(currentTheme) + 1) % portalThemes.length];
+    const label = nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1);
     const buttons = document.querySelectorAll(".theme-btn");
     const cornerThemeButtons = document.querySelectorAll("[data-corner-theme]");
+    const splitMarkup = '<span data-theme="red">R</span><span data-theme="green">G</span><span data-theme="blue">B</span><span data-theme="light">W</span><span data-theme="dark">D</span>';
 
     buttons.forEach((button) => {
-        button.textContent = isDark ? "Light Theme" : "Dark Theme";
+        button.innerHTML = splitMarkup;
+        button.setAttribute("aria-label", "Switch to " + label.toLowerCase() + " theme");
+        button.setAttribute("title", "Switch to " + label.toLowerCase() + " theme");
+        button.onclick = handleThemeButtonClick;
     });
 
     cornerThemeButtons.forEach((button) => {
-        button.textContent = isDark ? "Light" : "Dark";
-        button.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+        button.innerHTML = splitMarkup;
+        button.setAttribute("aria-label", "Switch to " + label.toLowerCase() + " theme");
+        button.setAttribute("title", "Switch to " + label.toLowerCase() + " theme");
+        button.onclick = handleThemeButtonClick;
     });
 }
 
@@ -196,16 +267,27 @@ function bindMobileSidebarLinks() {
 }
 
 function ensureCornerActions() {
+    if (document.querySelector(".sidebar")) {
+        return;
+    }
+
     if (document.querySelector(".corner-actions")) {
         return;
     }
 
+    const isPublicPage = document.body.classList.contains("public-page");
+    const homePath = window.location.pathname.includes("/pages/") ? "../index.html" : "index.html";
     const actions = document.createElement("div");
     actions.className = "corner-actions";
-    actions.innerHTML = `
-        <button class="corner-action-btn corner-theme-btn" type="button" data-corner-theme onclick="toggleTheme()">Dark</button>
-        <button class="corner-action-btn corner-logout-btn" type="button" onclick="logout()">Logout</button>
-    `;
+    actions.innerHTML = isPublicPage
+        ? `
+            <button class="corner-action-btn corner-theme-btn" type="button" data-corner-theme onclick="toggleTheme()">Green</button>
+            <button class="corner-action-btn corner-logout-btn" type="button" onclick="window.location.href='${homePath}'">Home</button>
+        `
+        : `
+            <button class="corner-action-btn corner-theme-btn" type="button" data-corner-theme onclick="toggleTheme()">Green</button>
+            <button class="corner-action-btn corner-logout-btn" type="button" onclick="logout()">Logout</button>
+        `;
 
     document.body.appendChild(actions);
 }
@@ -216,6 +298,8 @@ function initializePortalShell() {
     loadTheme();
     populateUserContext();
     enhanceSidebar();
+    orderSidebarNav();
+    simplifyNavLabels();
     bindMobileSidebarLinks();
     setActive();
     applySidebarState();

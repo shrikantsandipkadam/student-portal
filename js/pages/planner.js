@@ -35,6 +35,44 @@ function toggleOtherInput(selectId, inputId) {
     }
 }
 
+function syncToggleGroup(selectId) {
+    const select = document.getElementById(selectId);
+    const group = document.querySelector('[data-toggle-select="' + selectId + '"]');
+
+    if (!select || !group) {
+        return;
+    }
+
+    group.querySelectorAll("button").forEach(function (button) {
+        button.classList.toggle("is-active", button.dataset.value === select.value);
+    });
+}
+
+function bindToggleGroup(selectId, inputId) {
+    const select = document.getElementById(selectId);
+    const group = document.querySelector('[data-toggle-select="' + selectId + '"]');
+
+    if (!select || !group) {
+        return;
+    }
+
+    group.querySelectorAll("button").forEach(function (button) {
+        button.addEventListener("click", function () {
+            select.value = button.dataset.value || "";
+            select.dispatchEvent(new Event("change"));
+        });
+    });
+
+    select.addEventListener("change", function () {
+        syncToggleGroup(selectId);
+        if (inputId) {
+            toggleOtherInput(selectId, inputId);
+        }
+    });
+
+    syncToggleGroup(selectId);
+}
+
 function getSelectedValue(selectId, inputId) {
     const select = document.getElementById(selectId);
     const input = document.getElementById(inputId);
@@ -154,6 +192,8 @@ function addPlannerTask() {
     document.getElementById("plannerTask").value = "";
     toggleOtherInput("taskMain", "taskMainOther");
     toggleOtherInput("taskSubType", "taskSubTypeOther");
+    syncToggleGroup("taskMain");
+    syncToggleGroup("taskSubType");
 }
 
 function clearPlannerTasks() {
@@ -204,17 +244,8 @@ function loadPlannerTasks() {
     const taskMain = document.getElementById("taskMain");
     const taskSubType = document.getElementById("taskSubType");
 
-    if (taskMain) {
-        taskMain.addEventListener("change", function () {
-            toggleOtherInput("taskMain", "taskMainOther");
-        });
-    }
-
-    if (taskSubType) {
-        taskSubType.addEventListener("change", function () {
-            toggleOtherInput("taskSubType", "taskSubTypeOther");
-        });
-    }
+    bindToggleGroup("taskMain", "taskMainOther");
+    bindToggleGroup("taskSubType", "taskSubTypeOther");
 
     renderPlannerTasks();
 }

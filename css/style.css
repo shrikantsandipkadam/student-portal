@@ -1177,6 +1177,376 @@ body.dark .social-tag {
     }
 }
 
+/* Last layer must stay at the bottom because page CSS and earlier overrides are strong. */
+body:not(.login-page) {
+    --iitd-bg: #120006;
+    --iitd-panel: #21000c;
+    --iitd-line: #ff1f5d;
+    --iitd-text: #ffd6df;
+    --iitd-muted: #ff8fa9;
+    --iitd-hot: #ff2d62;
+    background:
+        linear-gradient(90deg, rgba(255, 31, 93, 0.18) 1px, transparent 1px) 0 138px / 28px 520px no-repeat,
+        linear-gradient(180deg, rgba(255, 31, 93, 0.16) 1px, transparent 1px) 0 138px / 100% 92px no-repeat,
+        radial-gradient(circle at 82% 16%, rgba(255, 31, 93, 0.13), transparent 22%),
+        var(--iitd-bg) !important;
+}
+
+body:not(.login-page) .sidebar,
+body:not(.login-page) .menu-btn {
+    background: rgba(18, 0, 6, 0.98) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .code-viewer-card,
+body:not(.login-page) .glass-panel,
+body:not(.login-page) .cgpa-hero,
+body:not(.login-page) .hero-copy,
+body:not(.login-page) .hero-panel,
+body:not(.login-page) .planner-hero,
+body:not(.login-page) .planner-clock-card,
+body:not(.login-page) .cgpa-card,
+body:not(.login-page) .summary-card,
+body:not(.login-page) .notes-card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .feature-pill,
+body:not(.login-page) .hub-item,
+body:not(.login-page) .pulse-card,
+body:not(.login-page) .stat-card,
+body:not(.login-page) .stat-box,
+body:not(.login-page) .day-card,
+body:not(.login-page) .subject-card,
+body:not(.login-page) .empty-state,
+body:not(.login-page) .compact-time-block,
+body:not(.login-page) .planner-list li,
+body:not(.login-page) .lab-entry,
+body:not(.login-page) .history-item,
+body:not(.login-page) .social-tag,
+body:not(.login-page) .info-row {
+    background: linear-gradient(180deg, rgba(48, 0, 17, 0.94), rgba(24, 0, 8, 0.96)) !important;
+    border-color: rgba(255, 31, 93, 0.82) !important;
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) label,
+body:not(.login-page) strong,
+body:not(.login-page) .stat-value,
+body:not(.login-page) .stat-box strong,
+body:not(.login-page) .live-clock,
+body:not(.login-page) .live-date {
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) span,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body:not(.login-page) .section-subtitle,
+body:not(.login-page) .support-text,
+body:not(.login-page) .selector-note,
+body:not(.login-page) .planner-subtitle,
+body:not(.login-page) .hero-text,
+body:not(.login-page) .summary-card p,
+body:not(.login-page) .subject-card p,
+body:not(.login-page) .empty-state p {
+    color: var(--iitd-muted) !important;
+}
+
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) .planner-kicker,
+body:not(.login-page) a,
+body:not(.login-page) .sidebar a,
+body:not(.login-page) .brand-mark,
+body:not(.login-page) .nav-icon,
+body:not(.login-page) .menu-btn {
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) input,
+body:not(.login-page) select,
+body:not(.login-page) textarea,
+body:not(.login-page) option {
+    background: #180007 !important;
+    color: var(--iitd-text) !important;
+    border-color: var(--iitd-line) !important;
+    caret-color: var(--iitd-hot);
+}
+
+body:not(.login-page) select:focus,
+body:not(.login-page) input:focus,
+body:not(.login-page) textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 31, 93, 0.22) !important;
+}
+
+body:not(.login-page) button,
+body:not(.login-page) .btn,
+body:not(.login-page) .primary-btn,
+body:not(.login-page) .secondary-btn,
+body:not(.login-page) .ghost-btn,
+body:not(.login-page) .notes-cta-button,
+body:not(.login-page) .remove-task-btn,
+body:not(.login-page) .remove-subject-btn,
+body:not(.login-page) .page-chip,
+body:not(.login-page) .notes-tab-btn,
+body:not(.login-page) .notes-subtab-btn {
+    background: rgba(255, 31, 93, 0.08) !important;
+    border-color: var(--iitd-line) !important;
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) button:hover,
+body:not(.login-page) .btn:hover,
+body:not(.login-page) .quick-link-card:hover,
+body:not(.login-page) .notes-card:hover {
+    background: rgba(255, 31, 93, 0.16) !important;
+}
+
+body:not(.login-page) .notes-tab-btn.is-active,
+body:not(.login-page) .notes-subtab-btn.is-active,
+body:not(.login-page) .planner-toggle-group button.is-active {
+    background: var(--iitd-hot) !important;
+    color: #180007 !important;
+    border-color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) .notes-card a {
+    background: rgba(255, 31, 93, 0.08) !important;
+    border-color: rgba(255, 31, 93, 0.42) !important;
+    color: var(--iitd-text) !important;
+}
+
+.planner-toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: -2px 0 14px 98px;
+}
+
+.planner-toggle-label {
+    margin: 14px 0 8px 98px;
+    color: var(--iitd-text);
+    font-weight: 900;
+}
+
+.planner-toggle-group button {
+    min-height: 42px;
+    padding: 10px 14px;
+    border-radius: 0;
+    font-size: 0.88rem;
+}
+
+.planner-form-card .field-row:has(#taskMain),
+.planner-form-card .field-row:has(#taskSubType) {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .planner-toggle-group,
+    .planner-toggle-label {
+        margin-left: 0;
+    }
+}
+
+/* Polished dark pass: remove the half-light/half-red feeling. */
+body:not(.login-page) {
+    --iitd-bg: #120006;
+    --iitd-panel: #21000c;
+    --iitd-panel-2: #2b0010;
+    --iitd-line: #ff1f5d;
+    --iitd-text: #ffd6df;
+    --iitd-muted: #ff8fa9;
+    --iitd-hot: #ff2d62;
+    background:
+        linear-gradient(90deg, rgba(255, 31, 93, 0.18) 1px, transparent 1px) 0 138px / 28px 520px no-repeat,
+        linear-gradient(180deg, rgba(255, 31, 93, 0.16) 1px, transparent 1px) 0 138px / 100% 92px no-repeat,
+        radial-gradient(circle at 82% 16%, rgba(255, 31, 93, 0.13), transparent 22%),
+        var(--iitd-bg) !important;
+}
+
+body:not(.login-page) .sidebar,
+body:not(.login-page) .menu-btn {
+    background: rgba(18, 0, 6, 0.98) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .code-viewer-card,
+body:not(.login-page) .glass-panel,
+body:not(.login-page) .cgpa-hero,
+body:not(.login-page) .hero-copy,
+body:not(.login-page) .hero-panel,
+body:not(.login-page) .planner-hero,
+body:not(.login-page) .planner-clock-card,
+body:not(.login-page) .cgpa-card,
+body:not(.login-page) .summary-card,
+body:not(.login-page) .notes-card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .feature-pill,
+body:not(.login-page) .hub-item,
+body:not(.login-page) .pulse-card,
+body:not(.login-page) .stat-card,
+body:not(.login-page) .stat-box,
+body:not(.login-page) .day-card,
+body:not(.login-page) .subject-card,
+body:not(.login-page) .empty-state,
+body:not(.login-page) .compact-time-block,
+body:not(.login-page) .planner-list li,
+body:not(.login-page) .lab-entry,
+body:not(.login-page) .history-item,
+body:not(.login-page) .social-tag,
+body:not(.login-page) .info-row {
+    background:
+        linear-gradient(180deg, rgba(48, 0, 17, 0.94), rgba(24, 0, 8, 0.96)) !important;
+    border-color: rgba(255, 31, 93, 0.82) !important;
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) label,
+body:not(.login-page) strong,
+body:not(.login-page) .stat-value,
+body:not(.login-page) .stat-box strong,
+body:not(.login-page) .live-clock,
+body:not(.login-page) .live-date {
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) span,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body:not(.login-page) .section-subtitle,
+body:not(.login-page) .support-text,
+body:not(.login-page) .selector-note,
+body:not(.login-page) .planner-subtitle,
+body:not(.login-page) .hero-text,
+body:not(.login-page) .summary-card p,
+body:not(.login-page) .subject-card p,
+body:not(.login-page) .empty-state p {
+    color: var(--iitd-muted) !important;
+}
+
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) .planner-kicker,
+body:not(.login-page) a,
+body:not(.login-page) .sidebar a,
+body:not(.login-page) .brand-mark,
+body:not(.login-page) .nav-icon,
+body:not(.login-page) .menu-btn {
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) input,
+body:not(.login-page) select,
+body:not(.login-page) textarea,
+body:not(.login-page) option {
+    background: #180007 !important;
+    color: var(--iitd-text) !important;
+    border-color: var(--iitd-line) !important;
+    caret-color: var(--iitd-hot);
+}
+
+body:not(.login-page) select:focus,
+body:not(.login-page) input:focus,
+body:not(.login-page) textarea:focus {
+    box-shadow: 0 0 0 3px rgba(255, 31, 93, 0.22) !important;
+}
+
+body:not(.login-page) button,
+body:not(.login-page) .btn,
+body:not(.login-page) .primary-btn,
+body:not(.login-page) .secondary-btn,
+body:not(.login-page) .ghost-btn,
+body:not(.login-page) .notes-cta-button,
+body:not(.login-page) .remove-task-btn,
+body:not(.login-page) .remove-subject-btn,
+body:not(.login-page) .page-chip,
+body:not(.login-page) .notes-tab-btn,
+body:not(.login-page) .notes-subtab-btn {
+    background: rgba(255, 31, 93, 0.08) !important;
+    border-color: var(--iitd-line) !important;
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) button:hover,
+body:not(.login-page) .btn:hover,
+body:not(.login-page) .quick-link-card:hover,
+body:not(.login-page) .notes-card:hover {
+    background: rgba(255, 31, 93, 0.16) !important;
+}
+
+body:not(.login-page) .notes-tab-btn.is-active,
+body:not(.login-page) .notes-subtab-btn.is-active,
+body:not(.login-page) .planner-toggle-group button.is-active {
+    background: var(--iitd-hot) !important;
+    color: #180007 !important;
+    border-color: var(--iitd-hot) !important;
+}
+
+.planner-toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: -2px 0 14px 98px;
+}
+
+.planner-toggle-label {
+    margin: 14px 0 8px 98px;
+    color: var(--iitd-text);
+    font-weight: 900;
+}
+
+.planner-toggle-group button {
+    min-height: 42px;
+    padding: 10px 14px;
+    border-radius: 0;
+    font-size: 0.88rem;
+}
+
+.planner-form-card .field-row:has(#taskMain),
+.planner-form-card .field-row:has(#taskSubType) {
+    display: none;
+}
+
+.notes-topbar .page-topbar-meta:first-child {
+    align-items: center;
+    gap: 10px;
+}
+
+body:not(.login-page) .notes-card a {
+    background: rgba(255, 31, 93, 0.08) !important;
+    border-color: rgba(255, 31, 93, 0.42) !important;
+    color: var(--iitd-text) !important;
+}
+
+@media (max-width: 768px) {
+    .planner-toggle-group {
+        margin-left: 0;
+    }
+
+    .planner-toggle-label {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 768px) {
     body {
         background-size: auto, cover;
@@ -1356,5 +1726,3845 @@ body.dark .social-tag {
     select,
     textarea {
         touch-action: manipulation;
+    }
+}
+
+/* Raw index-style interface shared by every portal page. */
+:root {
+    --bg-page: #1b0000;
+    --surface: rgba(38, 0, 0, 0.82);
+    --surface-strong: rgba(18, 0, 0, 0.96);
+    --surface-soft: rgba(255, 0, 63, 0.08);
+    --border: rgba(255, 0, 63, 0.78);
+    --text: #ff0a49;
+    --muted: rgba(255, 79, 115, 0.74);
+    --primary: #ff0040;
+    --primary-strong: #ff2f62;
+    --accent: #ff0040;
+    --sidebar-bg: rgba(23, 0, 0, 0.98);
+    --sidebar-border: rgba(255, 0, 63, 0.88);
+    --shadow-lg: none;
+    --shadow-md: none;
+    --radius-xl: 0;
+    --radius-lg: 0;
+    --radius-md: 0;
+    --page-grid: rgba(255, 0, 63, 0.38);
+    --surface-glow: linear-gradient(90deg, rgba(255, 0, 63, 0.08), transparent 54%);
+}
+
+body,
+body.dark,
+body.mess-page-view {
+    font-family: "Courier New", Courier, monospace;
+    color: var(--text);
+    background:
+        linear-gradient(90deg, var(--page-grid) 1px, transparent 1px) 0 220px / 20.5px 430px no-repeat,
+        linear-gradient(180deg, rgba(255, 0, 63, 0.32) 1px, transparent 1px) 0 220px / 100% 88px no-repeat,
+        radial-gradient(circle at 88% 82%, rgba(255, 0, 63, 0.18), transparent 14%),
+        #1b0000;
+    letter-spacing: 0;
+}
+
+body::before {
+    top: 218px;
+    left: 0;
+    right: 5%;
+    width: auto;
+    height: 1px;
+    border-radius: 0;
+    background: repeating-linear-gradient(90deg, rgba(255, 0, 63, 0.82) 0 6px, transparent 6px 12px);
+    filter: none;
+    z-index: 0;
+}
+
+body::after,
+body.mess-page-view::after {
+    left: 14px;
+    bottom: auto;
+    top: 238px;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    color: rgba(255, 0, 63, 0.62);
+    content: "C-26 .05   /   DASHBOARD";
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 0.78rem;
+    letter-spacing: 0.3em;
+    filter: none;
+    z-index: 0;
+}
+
+.main,
+.main.full {
+    position: relative;
+    z-index: 1;
+    margin-left: 0;
+    padding: 260px 28px 34px;
+}
+
+.page-shell {
+    max-width: 1800px;
+}
+
+.menu-btn {
+    top: 90px;
+    right: 34px;
+    left: auto;
+    width: 128px;
+    height: 68px;
+    display: inline-flex;
+    gap: 14px;
+    border-radius: 0;
+    border: 0;
+    border-left: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    box-shadow: none;
+    font-size: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.menu-btn::before {
+    content: "";
+    width: 34px;
+    height: 22px;
+    background: repeating-linear-gradient(180deg, var(--text) 0 4px, transparent 4px 9px);
+}
+
+.menu-btn::after {
+    content: "MENU";
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+}
+
+.menu-btn:hover,
+button:hover,
+.btn:hover {
+    transform: none;
+}
+
+.sidebar {
+    width: 100%;
+    height: 196px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr) auto;
+    align-items: stretch;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: 2px solid var(--border);
+    background: rgba(24, 0, 0, 0.98);
+    box-shadow: none;
+}
+
+.sidebar.hide {
+    transform: translateY(-100%);
+}
+
+.brand-block {
+    margin: 0;
+    padding: 0 32px;
+    border-right: 2px solid var(--border);
+    display: grid;
+    place-items: center;
+}
+
+.brand-mark {
+    width: 74px;
+    height: 64px;
+    border: 2px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--text);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.brand-copy,
+.sidebar-user,
+.external-links,
+.sidebar-links {
+    display: none;
+}
+
+.sidebar-section-title {
+    display: none;
+}
+
+.sidebar-nav {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 0 26px;
+}
+
+.sidebar a {
+    min-height: 100%;
+    padding: 0 18px;
+    border-radius: 0;
+    border-right: 1px solid rgba(255, 0, 63, 0.32);
+    color: var(--text);
+    font-weight: 800;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+    background: rgba(255, 0, 63, 0.14);
+    color: #ff2f62;
+    transform: none;
+}
+
+.nav-icon {
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background: transparent;
+    font-size: 0.78rem;
+}
+
+.sidebar-actions {
+    margin: 0 190px 0 0;
+    padding: 0 28px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-left: 2px solid var(--border);
+}
+
+.sidebar .sidebar-btn,
+.corner-action-btn,
+button,
+.btn {
+    border-radius: 0;
+    border: 2px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    box-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.sidebar .theme-btn,
+.sidebar .logout-btn,
+.corner-theme-btn,
+.corner-logout-btn {
+    background: transparent;
+    color: var(--text);
+}
+
+.corner-actions {
+    top: 106px;
+    right: 164px;
+    gap: 14px;
+}
+
+.corner-action-btn {
+    min-width: 76px;
+    height: 34px;
+    padding: 0 12px;
+    font-size: 0.86rem;
+    backdrop-filter: none;
+}
+
+.page-topbar {
+    padding: 0 0 28px 68px;
+}
+
+.page-chip,
+.notes-tab-btn,
+.notes-subtab-btn {
+    border-radius: 0;
+    border: 1px solid rgba(255, 0, 63, 0.72);
+    background: rgba(24, 0, 0, 0.78);
+    color: var(--text);
+    box-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.page-hero,
+.hero-banner,
+.section-card,
+.card,
+.glass-panel,
+.cgpa-hero,
+.planner-hero,
+.cgpa-card,
+.summary-card,
+.notes-card,
+.quick-link-card,
+.feature-pill,
+.hub-item,
+.pulse-card,
+.stat-card,
+.day-card {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(43, 0, 0, 0.84), rgba(20, 0, 0, 0.9));
+    color: var(--text);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.page-hero::before,
+.hero-banner::before,
+.section-card::before,
+.card::before,
+.glass-panel::before {
+    border-left: 8px solid rgba(255, 0, 63, 0.45);
+}
+
+.page-hero h1,
+.hero-banner h1,
+.main h1,
+.section-head h2,
+.card h3,
+.quick-link-card h3,
+.notes-card h3,
+.day-card h3 {
+    color: var(--text);
+    text-transform: uppercase;
+}
+
+.page-hero h1,
+.hero-banner h1 {
+    font-size: clamp(2.4rem, 9vw, 8rem);
+    line-height: 0.86;
+    font-weight: 900;
+}
+
+.hero-copy p,
+.hero-support p,
+.section-subtitle,
+.support-text,
+.quick-link-card p,
+.card p,
+.hub-item p,
+.pulse-card p,
+.selector-note,
+.tagline {
+    color: var(--muted);
+}
+
+.hero-eyebrow,
+.section-eyebrow,
+.eyebrow,
+.section-kicker,
+.planner-kicker {
+    color: var(--primary-strong);
+}
+
+input,
+select,
+textarea,
+body.dark input,
+body.dark select,
+body.dark textarea {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background: rgba(20, 0, 0, 0.96);
+    color: var(--text);
+    box-shadow: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 79, 115, 0.46);
+}
+
+.footer {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    box-shadow: none;
+}
+
+.quick-link-icon,
+.card-icon,
+.hub-item-mark,
+.pulse-badge,
+.notes-card-icon,
+.profile-avatar {
+    border-radius: 0;
+    border: 1px solid rgba(255, 0, 63, 0.72);
+    background: rgba(255, 0, 63, 0.1);
+    color: var(--text);
+}
+
+.mess-status-bar {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background: rgba(255, 0, 63, 0.16);
+    color: var(--text);
+}
+
+body .page-hero,
+body .hero-banner,
+body .section-card,
+body .card,
+body .glass-panel,
+body .cgpa-hero,
+body .planner-hero,
+body .cgpa-card,
+body .summary-card,
+body .notes-card,
+body .quick-link-card,
+body .feature-pill,
+body .hub-item,
+body .pulse-card,
+body .stat-card,
+body .day-card,
+body .planner-clock-card,
+body .stat-box,
+body .subject-group,
+body .empty-state,
+body .lab-entry {
+    border-radius: 0;
+    border-color: var(--border);
+    background: linear-gradient(180deg, rgba(43, 0, 0, 0.84), rgba(20, 0, 0, 0.9));
+    color: var(--text);
+    box-shadow: none;
+}
+
+body .quick-link-card,
+body .notes-card a,
+body .lab-solution-links a,
+body .notes-cta-button {
+    color: var(--text);
+}
+
+body .mess-status-bar,
+body .countdown {
+    color: var(--text);
+    background: rgba(255, 0, 63, 0.16);
+    border-color: var(--border);
+}
+
+body.login-page {
+    font-family: "Courier New", Courier, monospace;
+    background:
+        linear-gradient(90deg, rgba(255, 0, 63, 0.28) 1px, transparent 1px) 0 0 / 24px 100%,
+        radial-gradient(circle at 82% 18%, rgba(255, 0, 63, 0.18), transparent 18%),
+        #1b0000;
+    color: var(--text);
+}
+
+body.login-page .login-brand,
+body.login-page .login-card,
+body.login-page .feature-item,
+body.login-page .brand-logo {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(43, 0, 0, 0.84), rgba(20, 0, 0, 0.9));
+    box-shadow: none;
+    color: var(--text);
+}
+
+body.login-page .login-brand h1,
+body.login-page .login-card h2,
+body.login-page .login-card label,
+body.login-page .logo-mark,
+body.login-page .login-subtitle,
+body.login-page .login-note,
+body.login-page .login-contact {
+    color: var(--text);
+}
+
+body.login-page .login-btn,
+body.login-page .theme-toggle-btn {
+    border-radius: 0;
+    border: 2px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    box-shadow: none;
+}
+
+body.login-page .login-card input {
+    border-radius: 0;
+    border-color: var(--border);
+    background: rgba(20, 0, 0, 0.96);
+    color: var(--text);
+    box-shadow: none;
+}
+
+body.login-page .brand-logo {
+    width: 86px !important;
+    border-radius: 0 !important;
+}
+
+body.login-page .logo-mark {
+    font-size: 1.25rem !important;
+    letter-spacing: 0 !important;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: min(88vw, 360px);
+        height: 100vh;
+        display: block;
+        padding: 24px 16px;
+        border-right: 2px solid var(--border);
+        border-bottom: 0;
+        transform: translateX(-100%);
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar.hide {
+        transform: translateX(-100%);
+    }
+
+    .brand-block {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 0 20px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .brand-copy,
+    .sidebar-user,
+    .external-links {
+        display: block;
+    }
+
+    .sidebar-section-title {
+        display: block;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        padding: 12px 0;
+        overflow: visible;
+    }
+
+    .sidebar a {
+        min-height: auto;
+        padding: 14px 10px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 0, 63, 0.24);
+    }
+
+    .sidebar-actions {
+        min-width: 0;
+        margin: 0;
+        padding: 12px 0 0;
+        border-left: 0;
+        display: grid;
+    }
+
+    .main,
+    .main.full {
+        padding: 104px 16px 24px;
+    }
+
+    .menu-btn {
+        top: 18px;
+        right: 16px;
+        width: 104px;
+        height: 50px;
+    }
+
+    .corner-actions {
+        display: none;
+    }
+
+    .page-topbar {
+        padding: 0 116px 18px 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .main,
+    .main.full {
+        padding-top: 92px;
+    }
+
+    .page-hero h1,
+    .hero-banner h1 {
+        font-size: clamp(2rem, 14vw, 4.2rem);
+    }
+}
+
+/* Final pass: keep the raw IITD shell readable and aligned after page CSS loads. */
+body:not(.login-page) {
+    background:
+        linear-gradient(90deg, rgba(255, 0, 63, 0.26) 1px, transparent 1px) 0 142px / 22px 520px no-repeat,
+        linear-gradient(180deg, rgba(255, 0, 63, 0.26) 1px, transparent 1px) 0 142px / 100% 86px no-repeat,
+        #1a0000 !important;
+    color: #ff2d62 !important;
+    overflow-x: hidden;
+}
+
+body:not(.login-page) .sidebar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 138px !important;
+    display: grid !important;
+    grid-template-columns: 208px minmax(0, 1fr) 270px 150px !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-bottom: 2px solid #ff0040 !important;
+    background: rgba(26, 0, 0, 0.98) !important;
+    box-shadow: none !important;
+    transform: none !important;
+    z-index: 1100 !important;
+    overflow: hidden !important;
+}
+
+body:not(.login-page) .brand-block {
+    display: grid !important;
+    place-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-right: 2px solid #ff0040 !important;
+}
+
+body:not(.login-page) .brand-mark {
+    width: 110px !important;
+    height: 74px !important;
+    border-radius: 0 !important;
+    border: 2px solid #ff0040 !important;
+    background: transparent !important;
+    color: #ff2d62 !important;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
+}
+
+body:not(.login-page) .brand-copy,
+body:not(.login-page) .sidebar-user,
+body:not(.login-page) .external-links,
+body:not(.login-page) .sidebar-links,
+body:not(.login-page) .sidebar-section-title,
+body:not(.login-page) .corner-actions {
+    display: none !important;
+}
+
+body:not(.login-page) .sidebar-nav {
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    min-width: 0 !important;
+    height: 100% !important;
+    padding: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-color: #ff2d62 rgba(255, 0, 64, 0.14);
+    scrollbar-width: thin;
+}
+
+body:not(.login-page) .sidebar-nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+body:not(.login-page) .sidebar-nav::-webkit-scrollbar-track {
+    background: rgba(255, 0, 64, 0.12);
+}
+
+body:not(.login-page) .sidebar-nav::-webkit-scrollbar-thumb {
+    background: #ff2d62;
+}
+
+body:not(.login-page) .sidebar a {
+    min-height: 138px !important;
+    padding: 0 26px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-radius: 0 !important;
+    border-right: 1px solid rgba(255, 0, 64, 0.42) !important;
+    background: transparent !important;
+    color: #ff2d62 !important;
+    font-size: 1rem !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+}
+
+body:not(.login-page) .sidebar a.active,
+body:not(.login-page) .sidebar a:hover {
+    background: rgba(255, 0, 64, 0.16) !important;
+    color: #ff6f91 !important;
+}
+
+body:not(.login-page) .nav-icon {
+    color: #ff2d62 !important;
+    background: transparent !important;
+    border: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+body:not(.login-page) .sidebar-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    align-content: center !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 16px 20px !important;
+    border-left: 2px solid #ff0040 !important;
+}
+
+body:not(.login-page) .sidebar .sidebar-btn {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 8px 10px !important;
+    border-radius: 0 !important;
+    border: 2px solid #ff0040 !important;
+    background: transparent !important;
+    color: #ff2d62 !important;
+    box-shadow: none !important;
+    font-size: 0.86rem !important;
+    font-weight: 900 !important;
+    line-height: 1.15 !important;
+}
+
+body:not(.login-page) .menu-btn {
+    top: 0 !important;
+    right: 0 !important;
+    left: auto !important;
+    width: 150px !important;
+    height: 138px !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    border-left: 2px solid #ff0040 !important;
+    background: rgba(26, 0, 0, 0.98) !important;
+    color: #ff2d62 !important;
+    box-shadow: none !important;
+    z-index: 1200 !important;
+}
+
+body:not(.login-page) .main,
+body:not(.login-page) .main.full {
+    margin-left: 0 !important;
+    padding: 178px 48px 36px !important;
+}
+
+body:not(.login-page) .page-topbar {
+    padding: 0 0 26px !important;
+}
+
+body:not(.login-page) .page-chip,
+body:not(.login-page) .notes-tab-btn,
+body:not(.login-page) .notes-subtab-btn {
+    border-radius: 0 !important;
+    border: 1px solid #ff0040 !important;
+    background: rgba(38, 0, 0, 0.9) !important;
+    color: #ff7a99 !important;
+    box-shadow: none !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .code-viewer-card,
+body:not(.login-page) .glass-panel,
+body:not(.login-page) .cgpa-hero,
+body:not(.login-page) .hero-copy,
+body:not(.login-page) .hero-panel,
+body:not(.login-page) .planner-hero,
+body:not(.login-page) .planner-clock-card,
+body:not(.login-page) .cgpa-card,
+body:not(.login-page) .summary-card,
+body:not(.login-page) .notes-card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .feature-pill,
+body:not(.login-page) .hub-item,
+body:not(.login-page) .pulse-card,
+body:not(.login-page) .stat-card,
+body:not(.login-page) .stat-box,
+body:not(.login-page) .day-card,
+body:not(.login-page) .subject-card,
+body:not(.login-page) .empty-state,
+body:not(.login-page) .compact-time-block,
+body:not(.login-page) .planner-list li,
+body:not(.login-page) .lab-entry,
+body:not(.login-page) .history-item,
+body:not(.login-page) .social-tag,
+body:not(.login-page) .info-row {
+    border-radius: 0 !important;
+    border-color: #ff0040 !important;
+    background: rgba(42, 0, 0, 0.86) !important;
+    color: #ff7a99 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+body:not(.login-page) .code-block {
+    border-radius: 0 !important;
+    border: 1px solid #ff0040 !important;
+    background: #120006 !important;
+    color: #ffb3c2 !important;
+}
+
+body:not(.login-page) .code-viewer-shell {
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 42px 18px !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) label,
+body:not(.login-page) strong,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .planner-kicker,
+body:not(.login-page) .metric-label,
+body:not(.login-page) .metric-caption,
+body:not(.login-page) .stat-box span,
+body:not(.login-page) .stat-box strong,
+body:not(.login-page) .history-label,
+body:not(.login-page) .history-value,
+body:not(.login-page) .planner-list-header span,
+body:not(.login-page) .task-title,
+body:not(.login-page) .time-separator {
+    color: #ff7a99 !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) span,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body:not(.login-page) .section-subtitle,
+body:not(.login-page) .support-text,
+body:not(.login-page) .selector-note,
+body:not(.login-page) .planner-subtitle,
+body:not(.login-page) .hero-text,
+body:not(.login-page) .summary-card p,
+body:not(.login-page) .subject-card p,
+body:not(.login-page) .empty-state p {
+    color: #ff9aad !important;
+}
+
+body:not(.login-page) a {
+    color: #ff9aad !important;
+}
+
+body:not(.login-page) input,
+body:not(.login-page) select,
+body:not(.login-page) textarea {
+    border-radius: 0 !important;
+    border: 1px solid #ff0040 !important;
+    background: #f3eeee !important;
+    color: #132033 !important;
+    box-shadow: none !important;
+}
+
+body:not(.login-page) input::placeholder,
+body:not(.login-page) textarea::placeholder {
+    color: #ff6f91 !important;
+    opacity: 0.9 !important;
+}
+
+body:not(.login-page) button,
+body:not(.login-page) .btn,
+body:not(.login-page) .primary-btn,
+body:not(.login-page) .secondary-btn,
+body:not(.login-page) .ghost-btn,
+body:not(.login-page) .notes-cta-button,
+body:not(.login-page) .remove-task-btn,
+body:not(.login-page) .remove-subject-btn {
+    border-radius: 0 !important;
+    border: 2px solid #ff0040 !important;
+    background: rgba(255, 0, 64, 0.12) !important;
+    color: #ff2d62 !important;
+    box-shadow: none !important;
+    font-weight: 900 !important;
+}
+
+body:not(.login-page) .quick-link-icon,
+body:not(.login-page) .card-icon,
+body:not(.login-page) .notes-card-icon,
+body:not(.login-page) .subject-index,
+body:not(.login-page) .profile-avatar,
+body:not(.login-page) .hub-item-mark,
+body:not(.login-page) .pulse-badge {
+    border-radius: 0 !important;
+    border: 1px solid #ff0040 !important;
+    background: rgba(255, 0, 64, 0.14) !important;
+    color: #ff7a99 !important;
+}
+
+body:not(.login-page) .footer {
+    border-radius: 0 !important;
+    border: 1px solid #ff0040 !important;
+    background: transparent !important;
+    color: #ff9aad !important;
+}
+
+@media (max-width: 900px) {
+    body:not(.login-page) .sidebar {
+        width: min(88vw, 360px) !important;
+        height: 100vh !important;
+        display: block !important;
+        padding: 24px 16px !important;
+        border-right: 2px solid #ff0040 !important;
+        border-bottom: 0 !important;
+        transform: translateX(-100%) !important;
+        overflow-y: auto !important;
+    }
+
+    body:not(.login-page) .sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    body:not(.login-page) .brand-block {
+        display: flex !important;
+        justify-content: flex-start !important;
+        padding: 0 0 18px !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid #ff0040 !important;
+    }
+
+    body:not(.login-page) .brand-copy,
+    body:not(.login-page) .sidebar-user,
+    body:not(.login-page) .sidebar-section-title {
+        display: block !important;
+    }
+
+    body:not(.login-page) .sidebar-nav {
+        display: grid !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 12px 0 !important;
+    }
+
+    body:not(.login-page) .sidebar a {
+        min-height: auto !important;
+        padding: 13px 8px !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid rgba(255, 0, 64, 0.28) !important;
+    }
+
+    body:not(.login-page) .sidebar-actions {
+        padding: 12px 0 0 !important;
+        border-left: 0 !important;
+    }
+
+    body:not(.login-page) .menu-btn {
+        width: 118px !important;
+        height: 64px !important;
+    }
+
+    body:not(.login-page) .main,
+    body:not(.login-page) .main.full {
+        padding: 92px 16px 24px !important;
+    }
+}
+
+/* EOF color lock: this must remain after every earlier experimental rule. */
+body:not(.login-page) {
+    --iitd-bg: #120006;
+    --iitd-line: #ff1f5d;
+    --iitd-text: #ffd6df;
+    --iitd-muted: #ff8fa9;
+    --iitd-hot: #ff2d62;
+    background:
+        linear-gradient(90deg, rgba(255, 31, 93, 0.18) 1px, transparent 1px) 0 138px / 28px 520px no-repeat,
+        linear-gradient(180deg, rgba(255, 31, 93, 0.16) 1px, transparent 1px) 0 138px / 100% 92px no-repeat,
+        radial-gradient(circle at 82% 16%, rgba(255, 31, 93, 0.13), transparent 22%),
+        var(--iitd-bg) !important;
+}
+
+body:not(.login-page) .sidebar,
+body:not(.login-page) .menu-btn {
+    background: rgba(18, 0, 6, 0.98) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .hero-copy,
+body:not(.login-page) .hero-panel,
+body:not(.login-page) .planner-hero,
+body:not(.login-page) .planner-clock-card,
+body:not(.login-page) .cgpa-card,
+body:not(.login-page) .summary-card,
+body:not(.login-page) .notes-card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .feature-pill,
+body:not(.login-page) .stat-card,
+body:not(.login-page) .stat-box,
+body:not(.login-page) .subject-card,
+body:not(.login-page) .empty-state,
+body:not(.login-page) .compact-time-block,
+body:not(.login-page) .planner-list li,
+body:not(.login-page) .info-row {
+    background: linear-gradient(180deg, rgba(48, 0, 17, 0.94), rgba(24, 0, 8, 0.96)) !important;
+    border-color: rgba(255, 31, 93, 0.82) !important;
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) label,
+body:not(.login-page) strong {
+    color: var(--iitd-text) !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) span,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body:not(.login-page) .section-subtitle,
+body:not(.login-page) .support-text {
+    color: var(--iitd-muted) !important;
+}
+
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) .planner-kicker,
+body:not(.login-page) a,
+body:not(.login-page) .sidebar a,
+body:not(.login-page) .brand-mark,
+body:not(.login-page) .nav-icon,
+body:not(.login-page) .menu-btn {
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) input,
+body:not(.login-page) select,
+body:not(.login-page) textarea,
+body:not(.login-page) option {
+    background: #180007 !important;
+    color: var(--iitd-text) !important;
+    border-color: var(--iitd-line) !important;
+    box-shadow: none !important;
+}
+
+body:not(.login-page) button,
+body:not(.login-page) .btn,
+body:not(.login-page) .primary-btn,
+body:not(.login-page) .secondary-btn,
+body:not(.login-page) .ghost-btn,
+body:not(.login-page) .notes-cta-button,
+body:not(.login-page) .remove-task-btn,
+body:not(.login-page) .remove-subject-btn,
+body:not(.login-page) .page-chip,
+body:not(.login-page) .notes-tab-btn,
+body:not(.login-page) .notes-subtab-btn {
+    background: rgba(255, 31, 93, 0.08) !important;
+    border-color: var(--iitd-line) !important;
+    color: var(--iitd-hot) !important;
+}
+
+body:not(.login-page) .notes-tab-btn.is-active,
+body:not(.login-page) .notes-subtab-btn.is-active,
+body:not(.login-page) .planner-toggle-group button.is-active {
+    background: var(--iitd-hot) !important;
+    color: #180007 !important;
+}
+
+/* Three-colour portal themes. This replaces the old dark/light switch. */
+body.theme-red {
+    --theme-bg: #120006;
+    --theme-panel: #300011;
+    --theme-panel-deep: #180008;
+    --theme-line: #ff1f5d;
+    --theme-hot: #ff2d62;
+    --theme-text: #ffd6df;
+    --theme-muted: #ff8fa9;
+    --theme-active-text: #180007;
+}
+
+body.theme-green {
+    --theme-bg: #00140d;
+    --theme-panel: #002818;
+    --theme-panel-deep: #001b11;
+    --theme-line: #22e687;
+    --theme-hot: #39ff9a;
+    --theme-text: #d8ffe9;
+    --theme-muted: #8fffc2;
+    --theme-active-text: #00140d;
+}
+
+body.theme-blue {
+    --theme-bg: #031026;
+    --theme-panel: #061e42;
+    --theme-panel-deep: #04162f;
+    --theme-line: #38a8ff;
+    --theme-hot: #65c4ff;
+    --theme-text: #d8efff;
+    --theme-muted: #9ad8ff;
+    --theme-active-text: #031026;
+}
+
+body.theme-red:not(.login-page),
+body.theme-green:not(.login-page),
+body.theme-blue:not(.login-page),
+body.login-page.theme-red,
+body.login-page.theme-green,
+body.login-page.theme-blue {
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--theme-line) 20%, transparent) 1px, transparent 1px) 0 138px / 28px 520px no-repeat,
+        linear-gradient(180deg, color-mix(in srgb, var(--theme-line) 16%, transparent) 1px, transparent 1px) 0 138px / 100% 92px no-repeat,
+        radial-gradient(circle at 82% 16%, color-mix(in srgb, var(--theme-hot) 14%, transparent), transparent 22%),
+        var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+body.login-page.theme-red,
+body.login-page.theme-green,
+body.login-page.theme-blue {
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 0 / 28px 100%,
+        radial-gradient(circle at 82% 18%, color-mix(in srgb, var(--theme-hot) 16%, transparent), transparent 22%),
+        var(--theme-bg) !important;
+}
+
+body.theme-red:not(.login-page) .sidebar,
+body.theme-green:not(.login-page) .sidebar,
+body.theme-blue:not(.login-page) .sidebar,
+body.theme-red:not(.login-page) .menu-btn,
+body.theme-green:not(.login-page) .menu-btn,
+body.theme-blue:not(.login-page) .menu-btn {
+    background: color-mix(in srgb, var(--theme-bg) 96%, black) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-red:not(.login-page) .page-hero,
+body.theme-green:not(.login-page) .page-hero,
+body.theme-blue:not(.login-page) .page-hero,
+body.theme-red:not(.login-page) .hero-banner,
+body.theme-green:not(.login-page) .hero-banner,
+body.theme-blue:not(.login-page) .hero-banner,
+body.theme-red:not(.login-page) .section-card,
+body.theme-green:not(.login-page) .section-card,
+body.theme-blue:not(.login-page) .section-card,
+body.theme-red:not(.login-page) .card,
+body.theme-green:not(.login-page) .card,
+body.theme-blue:not(.login-page) .card,
+body.theme-red:not(.login-page) .hero-copy,
+body.theme-green:not(.login-page) .hero-copy,
+body.theme-blue:not(.login-page) .hero-copy,
+body.theme-red:not(.login-page) .hero-panel,
+body.theme-green:not(.login-page) .hero-panel,
+body.theme-blue:not(.login-page) .hero-panel,
+body.theme-red:not(.login-page) .cgpa-card,
+body.theme-green:not(.login-page) .cgpa-card,
+body.theme-blue:not(.login-page) .cgpa-card,
+body.theme-red:not(.login-page) .summary-card,
+body.theme-green:not(.login-page) .summary-card,
+body.theme-blue:not(.login-page) .summary-card,
+body.theme-red:not(.login-page) .notes-card,
+body.theme-green:not(.login-page) .notes-card,
+body.theme-blue:not(.login-page) .notes-card,
+body.theme-red:not(.login-page) .quick-link-card,
+body.theme-green:not(.login-page) .quick-link-card,
+body.theme-blue:not(.login-page) .quick-link-card,
+body.theme-red:not(.login-page) .feature-pill,
+body.theme-green:not(.login-page) .feature-pill,
+body.theme-blue:not(.login-page) .feature-pill,
+body.theme-red:not(.login-page) .stat-card,
+body.theme-green:not(.login-page) .stat-card,
+body.theme-blue:not(.login-page) .stat-card,
+body.theme-red:not(.login-page) .stat-box,
+body.theme-green:not(.login-page) .stat-box,
+body.theme-blue:not(.login-page) .stat-box,
+body.theme-red:not(.login-page) .subject-card,
+body.theme-green:not(.login-page) .subject-card,
+body.theme-blue:not(.login-page) .subject-card,
+body.theme-red:not(.login-page) .planner-hero,
+body.theme-green:not(.login-page) .planner-hero,
+body.theme-blue:not(.login-page) .planner-hero,
+body.theme-red:not(.login-page) .planner-clock-card,
+body.theme-green:not(.login-page) .planner-clock-card,
+body.theme-blue:not(.login-page) .planner-clock-card,
+body.login-page.theme-red .login-brand,
+body.login-page.theme-green .login-brand,
+body.login-page.theme-blue .login-brand,
+body.login-page.theme-red .login-card,
+body.login-page.theme-green .login-card,
+body.login-page.theme-blue .login-card,
+body.login-page.theme-red .feature-item,
+body.login-page.theme-green .feature-item,
+body.login-page.theme-blue .feature-item,
+body.login-page.theme-red .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--theme-panel) 94%, black), var(--theme-panel-deep)) !important;
+    border-color: color-mix(in srgb, var(--theme-line) 82%, transparent) !important;
+    color: var(--theme-text) !important;
+    box-shadow: none !important;
+}
+
+body.theme-red:not(.login-page) h1,
+body.theme-green:not(.login-page) h1,
+body.theme-blue:not(.login-page) h1,
+body.theme-red:not(.login-page) h2,
+body.theme-green:not(.login-page) h2,
+body.theme-blue:not(.login-page) h2,
+body.theme-red:not(.login-page) h3,
+body.theme-green:not(.login-page) h3,
+body.theme-blue:not(.login-page) h3,
+body.theme-red:not(.login-page) h4,
+body.theme-green:not(.login-page) h4,
+body.theme-blue:not(.login-page) h4,
+body.theme-red:not(.login-page) label,
+body.theme-green:not(.login-page) label,
+body.theme-blue:not(.login-page) label,
+body.theme-red:not(.login-page) strong,
+body.theme-green:not(.login-page) strong,
+body.theme-blue:not(.login-page) strong,
+body.login-page.theme-red h1,
+body.login-page.theme-green h1,
+body.login-page.theme-blue h1,
+body.login-page.theme-red h2,
+body.login-page.theme-green h2,
+body.login-page.theme-blue h2,
+body.login-page.theme-red label,
+body.login-page.theme-green label,
+body.login-page.theme-blue label,
+body.login-page.theme-red .logo-mark,
+body.login-page.theme-green .logo-mark,
+body.login-page.theme-blue .logo-mark {
+    color: var(--theme-text) !important;
+}
+
+body.theme-red:not(.login-page) p,
+body.theme-green:not(.login-page) p,
+body.theme-blue:not(.login-page) p,
+body.theme-red:not(.login-page) span,
+body.theme-green:not(.login-page) span,
+body.theme-blue:not(.login-page) span,
+body.login-page.theme-red p,
+body.login-page.theme-green p,
+body.login-page.theme-blue p,
+body.login-page.theme-red span,
+body.login-page.theme-green span,
+body.login-page.theme-blue span {
+    color: var(--theme-muted) !important;
+}
+
+body.theme-red:not(.login-page) a,
+body.theme-green:not(.login-page) a,
+body.theme-blue:not(.login-page) a,
+body.theme-red:not(.login-page) .sidebar a,
+body.theme-green:not(.login-page) .sidebar a,
+body.theme-blue:not(.login-page) .sidebar a,
+body.theme-red:not(.login-page) .brand-mark,
+body.theme-green:not(.login-page) .brand-mark,
+body.theme-blue:not(.login-page) .brand-mark,
+body.theme-red:not(.login-page) .nav-icon,
+body.theme-green:not(.login-page) .nav-icon,
+body.theme-blue:not(.login-page) .nav-icon,
+body.theme-red:not(.login-page) .section-eyebrow,
+body.theme-green:not(.login-page) .section-eyebrow,
+body.theme-blue:not(.login-page) .section-eyebrow,
+body.theme-red:not(.login-page) .hero-eyebrow,
+body.theme-green:not(.login-page) .hero-eyebrow,
+body.theme-blue:not(.login-page) .hero-eyebrow {
+    color: var(--theme-hot) !important;
+}
+
+body.theme-red:not(.login-page) input,
+body.theme-green:not(.login-page) input,
+body.theme-blue:not(.login-page) input,
+body.theme-red:not(.login-page) select,
+body.theme-green:not(.login-page) select,
+body.theme-blue:not(.login-page) select,
+body.theme-red:not(.login-page) textarea,
+body.theme-green:not(.login-page) textarea,
+body.theme-blue:not(.login-page) textarea,
+body.login-page.theme-red input,
+body.login-page.theme-green input,
+body.login-page.theme-blue input {
+    background: color-mix(in srgb, var(--theme-bg) 88%, black) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-red:not(.login-page) button,
+body.theme-green:not(.login-page) button,
+body.theme-blue:not(.login-page) button,
+body.theme-red:not(.login-page) .btn,
+body.theme-green:not(.login-page) .btn,
+body.theme-blue:not(.login-page) .btn,
+body.theme-red:not(.login-page) .page-chip,
+body.theme-green:not(.login-page) .page-chip,
+body.theme-blue:not(.login-page) .page-chip,
+body.theme-red:not(.login-page) .notes-tab-btn,
+body.theme-green:not(.login-page) .notes-tab-btn,
+body.theme-blue:not(.login-page) .notes-tab-btn,
+body.theme-red:not(.login-page) .planner-toggle-group button,
+body.theme-green:not(.login-page) .planner-toggle-group button,
+body.theme-blue:not(.login-page) .planner-toggle-group button,
+body.login-page.theme-red button,
+body.login-page.theme-green button,
+body.login-page.theme-blue button {
+    background: color-mix(in srgb, var(--theme-hot) 8%, transparent) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-red:not(.login-page) .notes-tab-btn.is-active,
+body.theme-green:not(.login-page) .notes-tab-btn.is-active,
+body.theme-blue:not(.login-page) .notes-tab-btn.is-active,
+body.theme-red:not(.login-page) .planner-toggle-group button.is-active,
+body.theme-green:not(.login-page) .planner-toggle-group button.is-active,
+body.theme-blue:not(.login-page) .planner-toggle-group button.is-active {
+    background: var(--theme-hot) !important;
+    color: var(--theme-active-text) !important;
+}
+
+/* Colour-only consistency pass. Do not change layout here. */
+body.theme-light {
+    --theme-bg: #eef5ff;
+    --theme-panel: #ffffff;
+    --theme-panel-deep: #f6fbff;
+    --theme-line: #2f80ed;
+    --theme-hot: #1f6feb;
+    --theme-text: #132033;
+    --theme-muted: #52657d;
+    --theme-active-text: #ffffff;
+    --theme-input-bg: #ffffff;
+    --border: var(--theme-line);
+    --text: var(--theme-hot);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-border: var(--theme-line);
+    --page-grid: color-mix(in srgb, var(--theme-line) 32%, transparent);
+}
+
+body.theme-red {
+    --theme-bg: #120006;
+    --theme-panel: #300011;
+    --theme-panel-deep: #180008;
+    --theme-line: #ff1f5d;
+    --theme-hot: #ff2d62;
+    --theme-text: #ffd6df;
+    --theme-muted: #ff8fa9;
+    --theme-active-text: #180007;
+    --theme-input-bg: #180007;
+    --border: var(--theme-line);
+    --text: var(--theme-hot);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-border: var(--theme-line);
+    --page-grid: color-mix(in srgb, var(--theme-line) 32%, transparent);
+}
+
+body.theme-green {
+    --theme-bg: #00140d;
+    --theme-panel: #002818;
+    --theme-panel-deep: #001b11;
+    --theme-line: #22e687;
+    --theme-hot: #39ff9a;
+    --theme-text: #d8ffe9;
+    --theme-muted: #8fffc2;
+    --theme-active-text: #00140d;
+    --theme-input-bg: #001b11;
+    --border: var(--theme-line);
+    --text: var(--theme-hot);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-border: var(--theme-line);
+    --page-grid: color-mix(in srgb, var(--theme-line) 32%, transparent);
+}
+
+body.theme-blue {
+    --theme-bg: #031026;
+    --theme-panel: #061e42;
+    --theme-panel-deep: #04162f;
+    --theme-line: #38a8ff;
+    --theme-hot: #65c4ff;
+    --theme-text: #d8efff;
+    --theme-muted: #9ad8ff;
+    --theme-active-text: #031026;
+    --theme-input-bg: #04162f;
+    --border: var(--theme-line);
+    --text: var(--theme-hot);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-border: var(--theme-line);
+    --page-grid: color-mix(in srgb, var(--theme-line) 32%, transparent);
+}
+
+body.theme-light,
+body.theme-red,
+body.theme-green,
+body.theme-blue {
+    color: var(--theme-text) !important;
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 138px / 28px 520px no-repeat,
+        linear-gradient(180deg, color-mix(in srgb, var(--theme-line) 14%, transparent) 1px, transparent 1px) 0 138px / 100% 92px no-repeat,
+        radial-gradient(circle at 82% 16%, color-mix(in srgb, var(--theme-hot) 13%, transparent), transparent 22%),
+        var(--theme-bg) !important;
+}
+
+body.theme-light *,
+body.theme-light *::before,
+body.theme-light *::after,
+body.theme-red *,
+body.theme-red *::before,
+body.theme-red *::after,
+body.theme-green *,
+body.theme-green *::before,
+body.theme-green *::after,
+body.theme-blue *,
+body.theme-blue *::before,
+body.theme-blue *::after {
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-light::before,
+body.theme-red::before,
+body.theme-green::before,
+body.theme-blue::before {
+    background: repeating-linear-gradient(90deg, var(--theme-line) 0 6px, transparent 6px 12px) !important;
+}
+
+body.theme-light::after,
+body.theme-red::after,
+body.theme-green::after,
+body.theme-blue::after {
+    color: var(--theme-line) !important;
+}
+
+body.theme-light .sidebar,
+body.theme-red .sidebar,
+body.theme-green .sidebar,
+body.theme-blue .sidebar,
+body.theme-light .menu-btn,
+body.theme-red .menu-btn,
+body.theme-green .menu-btn,
+body.theme-blue .menu-btn {
+    background: var(--theme-bg) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .cgpa-hero,
+body.theme-red .cgpa-hero,
+body.theme-green .cgpa-hero,
+body.theme-blue .cgpa-hero,
+body.theme-light .code-viewer-card,
+body.theme-red .code-viewer-card,
+body.theme-green .code-viewer-card,
+body.theme-blue .code-viewer-card,
+body.theme-light .glass-card,
+body.theme-red .glass-card,
+body.theme-green .glass-card,
+body.theme-blue .glass-card,
+body.theme-light .glass-panel,
+body.theme-red .glass-panel,
+body.theme-green .glass-panel,
+body.theme-blue .glass-panel,
+body.theme-light .compact-time-block,
+body.theme-red .compact-time-block,
+body.theme-green .compact-time-block,
+body.theme-blue .compact-time-block,
+body.theme-light .planner-list li,
+body.theme-red .planner-list li,
+body.theme-green .planner-list li,
+body.theme-blue .planner-list li,
+body.theme-light .lab-entry,
+body.theme-red .lab-entry,
+body.theme-green .lab-entry,
+body.theme-blue .lab-entry,
+body.theme-light .info-row,
+body.theme-red .info-row,
+body.theme-green .info-row,
+body.theme-blue .info-row,
+body.theme-light .social-tag,
+body.theme-red .social-tag,
+body.theme-green .social-tag,
+body.theme-blue .social-tag {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-light .sidebar-nav::-webkit-scrollbar-thumb,
+body.theme-red .sidebar-nav::-webkit-scrollbar-thumb,
+body.theme-green .sidebar-nav::-webkit-scrollbar-thumb,
+body.theme-blue .sidebar-nav::-webkit-scrollbar-thumb {
+    background: var(--theme-hot) !important;
+}
+
+body.theme-light .sidebar-nav,
+body.theme-red .sidebar-nav,
+body.theme-green .sidebar-nav,
+body.theme-blue .sidebar-nav {
+    scrollbar-color: var(--theme-hot) color-mix(in srgb, var(--theme-hot) 14%, transparent) !important;
+}
+
+body.theme-light .sidebar a.active,
+body.theme-light .sidebar a:hover,
+body.theme-red .sidebar a.active,
+body.theme-red .sidebar a:hover,
+body.theme-green .sidebar a.active,
+body.theme-green .sidebar a:hover,
+body.theme-blue .sidebar a.active,
+body.theme-blue .sidebar a:hover {
+    background: color-mix(in srgb, var(--theme-hot) 18%, transparent) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .page-hero,
+body.theme-red .page-hero,
+body.theme-green .page-hero,
+body.theme-blue .page-hero,
+body.theme-light .hero-banner,
+body.theme-red .hero-banner,
+body.theme-green .hero-banner,
+body.theme-blue .hero-banner,
+body.theme-light .section-card,
+body.theme-red .section-card,
+body.theme-green .section-card,
+body.theme-blue .section-card,
+body.theme-light .card,
+body.theme-red .card,
+body.theme-green .card,
+body.theme-blue .card,
+body.theme-light .hero-copy,
+body.theme-red .hero-copy,
+body.theme-green .hero-copy,
+body.theme-blue .hero-copy,
+body.theme-light .hero-panel,
+body.theme-red .hero-panel,
+body.theme-green .hero-panel,
+body.theme-blue .hero-panel,
+body.theme-light .planner-hero,
+body.theme-red .planner-hero,
+body.theme-green .planner-hero,
+body.theme-blue .planner-hero,
+body.theme-light .planner-clock-card,
+body.theme-red .planner-clock-card,
+body.theme-green .planner-clock-card,
+body.theme-blue .planner-clock-card,
+body.theme-light .planner-card,
+body.theme-red .planner-card,
+body.theme-green .planner-card,
+body.theme-blue .planner-card,
+body.theme-light .cgpa-card,
+body.theme-red .cgpa-card,
+body.theme-green .cgpa-card,
+body.theme-blue .cgpa-card,
+body.theme-light .summary-card,
+body.theme-red .summary-card,
+body.theme-green .summary-card,
+body.theme-blue .summary-card,
+body.theme-light .notes-hero,
+body.theme-red .notes-hero,
+body.theme-green .notes-hero,
+body.theme-blue .notes-hero,
+body.theme-light .notes-card,
+body.theme-red .notes-card,
+body.theme-green .notes-card,
+body.theme-blue .notes-card,
+body.theme-light .quick-link-card,
+body.theme-red .quick-link-card,
+body.theme-green .quick-link-card,
+body.theme-blue .quick-link-card,
+body.theme-light .feature-pill,
+body.theme-red .feature-pill,
+body.theme-green .feature-pill,
+body.theme-blue .feature-pill,
+body.theme-light .hub-item,
+body.theme-red .hub-item,
+body.theme-green .hub-item,
+body.theme-blue .hub-item,
+body.theme-light .pulse-card,
+body.theme-red .pulse-card,
+body.theme-green .pulse-card,
+body.theme-blue .pulse-card,
+body.theme-light .stat-card,
+body.theme-red .stat-card,
+body.theme-green .stat-card,
+body.theme-blue .stat-card,
+body.theme-light .stat-box,
+body.theme-red .stat-box,
+body.theme-green .stat-box,
+body.theme-blue .stat-box,
+body.theme-light .day-card,
+body.theme-red .day-card,
+body.theme-green .day-card,
+body.theme-blue .day-card,
+body.theme-light .subject-card,
+body.theme-red .subject-card,
+body.theme-green .subject-card,
+body.theme-blue .subject-card,
+body.theme-light .empty-state,
+body.theme-red .empty-state,
+body.theme-green .empty-state,
+body.theme-blue .empty-state,
+body.theme-light .history-item,
+body.theme-red .history-item,
+body.theme-green .history-item,
+body.theme-blue .history-item,
+body.login-page.theme-light .login-brand,
+body.login-page.theme-red .login-brand,
+body.login-page.theme-green .login-brand,
+body.login-page.theme-blue .login-brand,
+body.login-page.theme-light .login-card,
+body.login-page.theme-red .login-card,
+body.login-page.theme-green .login-card,
+body.login-page.theme-blue .login-card,
+body.login-page.theme-light .feature-item,
+body.login-page.theme-red .feature-item,
+body.login-page.theme-green .feature-item,
+body.login-page.theme-blue .feature-item,
+body.login-page.theme-light .brand-logo,
+body.login-page.theme-red .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-light h1,
+body.theme-red h1,
+body.theme-green h1,
+body.theme-blue h1,
+body.theme-light h2,
+body.theme-red h2,
+body.theme-green h2,
+body.theme-blue h2,
+body.theme-light h3,
+body.theme-red h3,
+body.theme-green h3,
+body.theme-blue h3,
+body.theme-light h4,
+body.theme-red h4,
+body.theme-green h4,
+body.theme-blue h4,
+body.theme-light label,
+body.theme-red label,
+body.theme-green label,
+body.theme-blue label,
+body.theme-light strong,
+body.theme-red strong,
+body.theme-green strong,
+body.theme-blue strong {
+    color: var(--theme-text) !important;
+}
+
+body.theme-light p,
+body.theme-red p,
+body.theme-green p,
+body.theme-blue p,
+body.theme-light span,
+body.theme-red span,
+body.theme-green span,
+body.theme-blue span,
+body.theme-light small,
+body.theme-red small,
+body.theme-green small,
+body.theme-blue small,
+body.theme-light li,
+body.theme-red li,
+body.theme-green li,
+body.theme-blue li {
+    color: var(--theme-muted) !important;
+}
+
+body.theme-light a,
+body.theme-red a,
+body.theme-green a,
+body.theme-blue a,
+body.theme-light .section-eyebrow,
+body.theme-red .section-eyebrow,
+body.theme-green .section-eyebrow,
+body.theme-blue .section-eyebrow,
+body.theme-light .hero-eyebrow,
+body.theme-red .hero-eyebrow,
+body.theme-green .hero-eyebrow,
+body.theme-blue .hero-eyebrow,
+body.theme-light .eyebrow,
+body.theme-red .eyebrow,
+body.theme-green .eyebrow,
+body.theme-blue .eyebrow,
+body.theme-light .section-kicker,
+body.theme-red .section-kicker,
+body.theme-green .section-kicker,
+body.theme-blue .section-kicker,
+body.theme-light .planner-kicker,
+body.theme-red .planner-kicker,
+body.theme-green .planner-kicker,
+body.theme-blue .planner-kicker,
+body.theme-light .brand-mark,
+body.theme-red .brand-mark,
+body.theme-green .brand-mark,
+body.theme-blue .brand-mark,
+body.theme-light .nav-icon,
+body.theme-red .nav-icon,
+body.theme-green .nav-icon,
+body.theme-blue .nav-icon {
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light button,
+body.theme-red button,
+body.theme-green button,
+body.theme-blue button,
+body.theme-light .btn,
+body.theme-red .btn,
+body.theme-green .btn,
+body.theme-blue .btn,
+body.theme-light .page-chip,
+body.theme-red .page-chip,
+body.theme-green .page-chip,
+body.theme-blue .page-chip,
+body.theme-light .notes-tab-btn,
+body.theme-red .notes-tab-btn,
+body.theme-green .notes-tab-btn,
+body.theme-blue .notes-tab-btn,
+body.theme-light .notes-subtab-btn,
+body.theme-red .notes-subtab-btn,
+body.theme-green .notes-subtab-btn,
+body.theme-blue .notes-subtab-btn {
+    background: color-mix(in srgb, var(--theme-hot) 12%, transparent) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .theme-btn,
+body.theme-red .theme-btn,
+body.theme-green .theme-btn,
+body.theme-blue .theme-btn,
+body.theme-light .corner-theme-btn,
+body.theme-red .corner-theme-btn,
+body.theme-green .corner-theme-btn,
+body.theme-blue .corner-theme-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border-color: var(--theme-line) !important;
+    color: #ffffff !important;
+}
+
+body.theme-light .theme-btn span,
+body.theme-red .theme-btn span,
+body.theme-green .theme-btn span,
+body.theme-blue .theme-btn span,
+body.theme-light .corner-theme-btn span,
+body.theme-red .corner-theme-btn span,
+body.theme-green .corner-theme-btn span,
+body.theme-blue .corner-theme-btn span,
+body.login-page.theme-light .theme-toggle-btn span,
+body.login-page.theme-red .theme-toggle-btn span,
+body.login-page.theme-green .theme-toggle-btn span,
+body.login-page.theme-blue .theme-toggle-btn span {
+    display: grid !important;
+    place-items: center !important;
+    min-height: 100% !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+}
+
+body.theme-light .theme-btn span:nth-child(1),
+body.theme-red .theme-btn span:nth-child(1),
+body.theme-green .theme-btn span:nth-child(1),
+body.theme-blue .theme-btn span:nth-child(1),
+body.theme-light .corner-theme-btn span:nth-child(1),
+body.theme-red .corner-theme-btn span:nth-child(1),
+body.theme-green .corner-theme-btn span:nth-child(1),
+body.theme-blue .corner-theme-btn span:nth-child(1),
+body.login-page.theme-light .theme-toggle-btn span:nth-child(1),
+body.login-page.theme-red .theme-toggle-btn span:nth-child(1),
+body.login-page.theme-green .theme-toggle-btn span:nth-child(1),
+body.login-page.theme-blue .theme-toggle-btn span:nth-child(1) {
+    background: #e11d48 !important;
+}
+
+body.theme-light .theme-btn span:nth-child(2),
+body.theme-red .theme-btn span:nth-child(2),
+body.theme-green .theme-btn span:nth-child(2),
+body.theme-blue .theme-btn span:nth-child(2),
+body.theme-light .corner-theme-btn span:nth-child(2),
+body.theme-red .corner-theme-btn span:nth-child(2),
+body.theme-green .corner-theme-btn span:nth-child(2),
+body.theme-blue .corner-theme-btn span:nth-child(2),
+body.login-page.theme-light .theme-toggle-btn span:nth-child(2),
+body.login-page.theme-red .theme-toggle-btn span:nth-child(2),
+body.login-page.theme-green .theme-toggle-btn span:nth-child(2),
+body.login-page.theme-blue .theme-toggle-btn span:nth-child(2) {
+    background: #16a34a !important;
+}
+
+body.theme-light .theme-btn span:nth-child(3),
+body.theme-red .theme-btn span:nth-child(3),
+body.theme-green .theme-btn span:nth-child(3),
+body.theme-blue .theme-btn span:nth-child(3),
+body.theme-light .corner-theme-btn span:nth-child(3),
+body.theme-red .corner-theme-btn span:nth-child(3),
+body.theme-green .corner-theme-btn span:nth-child(3),
+body.theme-blue .corner-theme-btn span:nth-child(3),
+body.login-page.theme-light .theme-toggle-btn span:nth-child(3),
+body.login-page.theme-red .theme-toggle-btn span:nth-child(3),
+body.login-page.theme-green .theme-toggle-btn span:nth-child(3),
+body.login-page.theme-blue .theme-toggle-btn span:nth-child(3) {
+    background: #2563eb !important;
+}
+
+body.theme-light .theme-btn span:nth-child(4),
+body.theme-red .theme-btn span:nth-child(4),
+body.theme-green .theme-btn span:nth-child(4),
+body.theme-blue .theme-btn span:nth-child(4),
+body.theme-light .corner-theme-btn span:nth-child(4),
+body.theme-red .corner-theme-btn span:nth-child(4),
+body.theme-green .corner-theme-btn span:nth-child(4),
+body.theme-blue .corner-theme-btn span:nth-child(4),
+body.login-page.theme-light .theme-toggle-btn span:nth-child(4),
+body.login-page.theme-red .theme-toggle-btn span:nth-child(4),
+body.login-page.theme-green .theme-toggle-btn span:nth-child(4),
+body.login-page.theme-blue .theme-toggle-btn span:nth-child(4) {
+    background: #f8fafc !important;
+    color: #111827 !important;
+}
+
+/* Absolute final theme wash: active theme colour must win everywhere. */
+body.theme-light {
+    --theme-glass: rgba(238, 245, 255, 0.78);
+    --theme-glass-strong: rgba(255, 255, 255, 0.9);
+    --theme-line-soft: rgba(47, 128, 237, 0.34);
+    --theme-shadow-soft: rgba(31, 111, 235, 0.16);
+}
+
+body.theme-red {
+    --theme-glass: rgba(18, 0, 6, 0.76);
+    --theme-glass-strong: rgba(48, 0, 17, 0.9);
+    --theme-line-soft: rgba(255, 31, 93, 0.36);
+    --theme-shadow-soft: rgba(255, 31, 93, 0.16);
+}
+
+body.theme-green {
+    --theme-glass: rgba(0, 20, 13, 0.76);
+    --theme-glass-strong: rgba(0, 40, 24, 0.9);
+    --theme-line-soft: rgba(34, 230, 135, 0.36);
+    --theme-shadow-soft: rgba(34, 230, 135, 0.16);
+}
+
+body.theme-blue {
+    --theme-glass: rgba(3, 16, 38, 0.76);
+    --theme-glass-strong: rgba(6, 30, 66, 0.9);
+    --theme-line-soft: rgba(56, 168, 255, 0.36);
+    --theme-shadow-soft: rgba(56, 168, 255, 0.16);
+}
+
+body.theme-light,
+body.theme-red,
+body.theme-green,
+body.theme-blue {
+    --iitd-line: var(--theme-line);
+    --iitd-hot: var(--theme-hot);
+    --iitd-text: var(--theme-text);
+    --iitd-muted: var(--theme-muted);
+    --surface: var(--theme-panel);
+    --surface-strong: var(--theme-panel-deep);
+    --surface-soft: color-mix(in srgb, var(--theme-hot) 10%, transparent);
+    --border: var(--theme-line);
+    --text: var(--theme-text);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-bg: var(--theme-glass);
+    --sidebar-border: var(--theme-line);
+    --page-grid: var(--theme-line-soft);
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 142px / 22px 520px no-repeat,
+        linear-gradient(180deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 142px / 100% 86px no-repeat,
+        var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-light::before,
+body.theme-red::before,
+body.theme-green::before,
+body.theme-blue::before {
+    background: repeating-linear-gradient(90deg, var(--theme-line) 0 6px, transparent 6px 12px) !important;
+}
+
+body.theme-light::after,
+body.theme-red::after,
+body.theme-green::after,
+body.theme-blue::after {
+    color: var(--theme-line) !important;
+}
+
+body.theme-light .sidebar,
+body.theme-red .sidebar,
+body.theme-green .sidebar,
+body.theme-blue .sidebar {
+    background: var(--theme-glass) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(16px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.25) !important;
+    box-shadow: 0 18px 50px var(--theme-shadow-soft) !important;
+}
+
+body.theme-light .menu-btn,
+body.theme-red .menu-btn,
+body.theme-green .menu-btn,
+body.theme-blue .menu-btn {
+    z-index: 4000 !important;
+    pointer-events: auto !important;
+    background: var(--theme-glass-strong) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+    box-shadow: 0 12px 32px var(--theme-shadow-soft) !important;
+}
+
+body.theme-light .menu-btn::before,
+body.theme-red .menu-btn::before,
+body.theme-green .menu-btn::before,
+body.theme-blue .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot) 0 4px, transparent 4px 9px) !important;
+}
+
+body.theme-light .menu-btn::after,
+body.theme-red .menu-btn::after,
+body.theme-green .menu-btn::after,
+body.theme-blue .menu-btn::after {
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .sidebar a,
+body.theme-red .sidebar a,
+body.theme-green .sidebar a,
+body.theme-blue .sidebar a,
+body.theme-light .brand-mark,
+body.theme-red .brand-mark,
+body.theme-green .brand-mark,
+body.theme-blue .brand-mark,
+body.theme-light .nav-icon,
+body.theme-red .nav-icon,
+body.theme-green .nav-icon,
+body.theme-blue .nav-icon {
+    border-color: var(--theme-line-soft) !important;
+    color: var(--theme-hot) !important;
+    background-color: transparent !important;
+}
+
+body.theme-light .sidebar a.active,
+body.theme-light .sidebar a:hover,
+body.theme-red .sidebar a.active,
+body.theme-red .sidebar a:hover,
+body.theme-green .sidebar a.active,
+body.theme-green .sidebar a:hover,
+body.theme-blue .sidebar a.active,
+body.theme-blue .sidebar a:hover {
+    background: color-mix(in srgb, var(--theme-hot) 18%, transparent) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .sidebar-actions,
+body.theme-red .sidebar-actions,
+body.theme-green .sidebar-actions,
+body.theme-blue .sidebar-actions {
+    background: transparent !important;
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-light .logout-btn,
+body.theme-red .logout-btn,
+body.theme-green .logout-btn,
+body.theme-blue .logout-btn,
+body.theme-light .corner-logout-btn,
+body.theme-red .corner-logout-btn,
+body.theme-green .corner-logout-btn,
+body.theme-blue .corner-logout-btn {
+    background: color-mix(in srgb, var(--theme-hot) 10%, transparent) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .page-chip,
+body.theme-red .page-chip,
+body.theme-green .page-chip,
+body.theme-blue .page-chip,
+body.theme-light .notes-tab-btn,
+body.theme-red .notes-tab-btn,
+body.theme-green .notes-tab-btn,
+body.theme-blue .notes-tab-btn,
+body.theme-light .notes-subtab-btn,
+body.theme-red .notes-subtab-btn,
+body.theme-green .notes-subtab-btn,
+body.theme-blue .notes-subtab-btn {
+    background: color-mix(in srgb, var(--theme-hot) 12%, var(--theme-panel)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .page-hero,
+body.theme-red .page-hero,
+body.theme-green .page-hero,
+body.theme-blue .page-hero,
+body.theme-light .section-card,
+body.theme-red .section-card,
+body.theme-green .section-card,
+body.theme-blue .section-card,
+body.theme-light .card,
+body.theme-red .card,
+body.theme-green .card,
+body.theme-blue .card,
+body.theme-light .hero-copy,
+body.theme-red .hero-copy,
+body.theme-green .hero-copy,
+body.theme-blue .hero-copy,
+body.theme-light .hero-panel,
+body.theme-red .hero-panel,
+body.theme-green .hero-panel,
+body.theme-blue .hero-panel,
+body.theme-light .cgpa-hero,
+body.theme-red .cgpa-hero,
+body.theme-green .cgpa-hero,
+body.theme-blue .cgpa-hero,
+body.theme-light .cgpa-card,
+body.theme-red .cgpa-card,
+body.theme-green .cgpa-card,
+body.theme-blue .cgpa-card,
+body.theme-light .summary-card,
+body.theme-red .summary-card,
+body.theme-green .summary-card,
+body.theme-blue .summary-card,
+body.theme-light .planner-hero,
+body.theme-red .planner-hero,
+body.theme-green .planner-hero,
+body.theme-blue .planner-hero,
+body.theme-light .planner-clock-card,
+body.theme-red .planner-clock-card,
+body.theme-green .planner-clock-card,
+body.theme-blue .planner-clock-card,
+body.theme-light .planner-card,
+body.theme-red .planner-card,
+body.theme-green .planner-card,
+body.theme-blue .planner-card,
+body.theme-light .notes-hero,
+body.theme-red .notes-hero,
+body.theme-green .notes-hero,
+body.theme-blue .notes-hero,
+body.theme-light .notes-card,
+body.theme-red .notes-card,
+body.theme-green .notes-card,
+body.theme-blue .notes-card,
+body.theme-light .quick-link-card,
+body.theme-red .quick-link-card,
+body.theme-green .quick-link-card,
+body.theme-blue .quick-link-card,
+body.theme-light .feature-pill,
+body.theme-red .feature-pill,
+body.theme-green .feature-pill,
+body.theme-blue .feature-pill,
+body.theme-light .hub-item,
+body.theme-red .hub-item,
+body.theme-green .hub-item,
+body.theme-blue .hub-item,
+body.theme-light .pulse-card,
+body.theme-red .pulse-card,
+body.theme-green .pulse-card,
+body.theme-blue .pulse-card,
+body.theme-light .stat-card,
+body.theme-red .stat-card,
+body.theme-green .stat-card,
+body.theme-blue .stat-card,
+body.theme-light .stat-box,
+body.theme-red .stat-box,
+body.theme-green .stat-box,
+body.theme-blue .stat-box,
+body.theme-light .day-card,
+body.theme-red .day-card,
+body.theme-green .day-card,
+body.theme-blue .day-card,
+body.theme-light .subject-card,
+body.theme-red .subject-card,
+body.theme-green .subject-card,
+body.theme-blue .subject-card,
+body.theme-light .empty-state,
+body.theme-red .empty-state,
+body.theme-green .empty-state,
+body.theme-blue .empty-state,
+body.theme-light .history-item,
+body.theme-red .history-item,
+body.theme-green .history-item,
+body.theme-blue .history-item,
+body.theme-light .info-row,
+body.theme-red .info-row,
+body.theme-green .info-row,
+body.theme-blue .info-row,
+body.theme-light .social-tag,
+body.theme-red .social-tag,
+body.theme-green .social-tag,
+body.theme-blue .social-tag,
+body.theme-light .profile-avatar,
+body.theme-red .profile-avatar,
+body.theme-green .profile-avatar,
+body.theme-blue .profile-avatar,
+body.theme-light .profile-page .profile-showcase .section-card:first-child,
+body.theme-red .profile-page .profile-showcase .section-card:first-child,
+body.theme-green .profile-page .profile-showcase .section-card:first-child,
+body.theme-blue .profile-page .profile-showcase .section-card:first-child,
+body.theme-light .progress-track-soft,
+body.theme-red .progress-track-soft,
+body.theme-green .progress-track-soft,
+body.theme-blue .progress-track-soft {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-light .page-hero::before,
+body.theme-red .page-hero::before,
+body.theme-green .page-hero::before,
+body.theme-blue .page-hero::before,
+body.theme-light .hero-banner::before,
+body.theme-red .hero-banner::before,
+body.theme-green .hero-banner::before,
+body.theme-blue .hero-banner::before,
+body.theme-light .section-card::before,
+body.theme-red .section-card::before,
+body.theme-green .section-card::before,
+body.theme-blue .section-card::before,
+body.theme-light .card::before,
+body.theme-red .card::before,
+body.theme-green .card::before,
+body.theme-blue .card::before,
+body.theme-light .glass-panel::before,
+body.theme-red .glass-panel::before,
+body.theme-green .glass-panel::before,
+body.theme-blue .glass-panel::before {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--theme-hot) 12%, transparent), transparent) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-light h1,
+body.theme-light h2,
+body.theme-light h3,
+body.theme-light h4,
+body.theme-light label,
+body.theme-light strong,
+body.theme-red h1,
+body.theme-red h2,
+body.theme-red h3,
+body.theme-red h4,
+body.theme-red label,
+body.theme-red strong,
+body.theme-green h1,
+body.theme-green h2,
+body.theme-green h3,
+body.theme-green h4,
+body.theme-green label,
+body.theme-green strong,
+body.theme-blue h1,
+body.theme-blue h2,
+body.theme-blue h3,
+body.theme-blue h4,
+body.theme-blue label,
+body.theme-blue strong {
+    color: var(--theme-text) !important;
+}
+
+body.theme-light p,
+body.theme-light span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.theme-light small,
+body.theme-light li,
+body.theme-red p,
+body.theme-red span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.theme-red small,
+body.theme-red li,
+body.theme-green p,
+body.theme-green span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.theme-green small,
+body.theme-green li,
+body.theme-blue p,
+body.theme-blue span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.theme-blue small,
+body.theme-blue li {
+    color: var(--theme-muted) !important;
+}
+
+body.theme-light a,
+body.theme-red a,
+body.theme-green a,
+body.theme-blue a,
+body.theme-light .section-eyebrow,
+body.theme-red .section-eyebrow,
+body.theme-green .section-eyebrow,
+body.theme-blue .section-eyebrow,
+body.theme-light .hero-eyebrow,
+body.theme-red .hero-eyebrow,
+body.theme-green .hero-eyebrow,
+body.theme-blue .hero-eyebrow,
+body.theme-light .eyebrow,
+body.theme-red .eyebrow,
+body.theme-green .eyebrow,
+body.theme-blue .eyebrow,
+body.theme-light .section-kicker,
+body.theme-red .section-kicker,
+body.theme-green .section-kicker,
+body.theme-blue .section-kicker,
+body.theme-light .planner-kicker,
+body.theme-red .planner-kicker,
+body.theme-green .planner-kicker,
+body.theme-blue .planner-kicker,
+body.theme-light .history-value,
+body.theme-red .history-value,
+body.theme-green .history-value,
+body.theme-blue .history-value {
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light input,
+body.theme-light select,
+body.theme-light textarea,
+body.theme-light option,
+body.theme-red input,
+body.theme-red select,
+body.theme-red textarea,
+body.theme-red option,
+body.theme-green input,
+body.theme-green select,
+body.theme-green textarea,
+body.theme-green option,
+body.theme-blue input,
+body.theme-blue select,
+body.theme-blue textarea,
+body.theme-blue option {
+    background: var(--theme-input-bg) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+/* Final final override: keep selector visible and remove red badges outside red theme. */
+body.login-page .theme-toggle-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    height: 76px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.login-page .theme-toggle-btn span {
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body.theme-light .quick-link-icon,
+body.theme-green .quick-link-icon,
+body.theme-blue .quick-link-icon,
+body.theme-dark .quick-link-icon,
+body.theme-light .card-icon,
+body.theme-green .card-icon,
+body.theme-blue .card-icon,
+body.theme-dark .card-icon,
+body.theme-light .notes-card-icon,
+body.theme-green .notes-card-icon,
+body.theme-blue .notes-card-icon,
+body.theme-dark .notes-card-icon,
+body.theme-light .subject-index,
+body.theme-green .subject-index,
+body.theme-blue .subject-index,
+body.theme-dark .subject-index,
+body.theme-light .profile-avatar,
+body.theme-green .profile-avatar,
+body.theme-blue .profile-avatar,
+body.theme-dark .profile-avatar,
+body.theme-light .hub-item-mark,
+body.theme-green .hub-item-mark,
+body.theme-blue .hub-item-mark,
+body.theme-dark .hub-item-mark,
+body.theme-light .pulse-badge,
+body.theme-green .pulse-badge,
+body.theme-blue .pulse-badge,
+body.theme-dark .pulse-badge,
+body.theme-light .mini-link-mark,
+body.theme-green .mini-link-mark,
+body.theme-blue .mini-link-mark,
+body.theme-dark .mini-link-mark,
+body.login-page.theme-light .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo,
+body.login-page.theme-dark .brand-logo {
+    background: color-mix(in srgb, var(--theme-hot) 14%, var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+/* Final UI repair: clean nav names, stable themes, compact IITD, usable actions. */
+body.theme-red,
+body.theme-green,
+body.theme-blue,
+body.theme-light,
+body.theme-dark {
+    color: var(--theme-text) !important;
+}
+
+body:not(.login-page).theme-red .sidebar,
+body:not(.login-page).theme-green .sidebar,
+body:not(.login-page).theme-blue .sidebar,
+body:not(.login-page).theme-light .sidebar,
+body:not(.login-page).theme-dark .sidebar {
+    grid-template-columns: 190px minmax(0, 1fr) 560px !important;
+    background: var(--theme-glass) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body:not(.login-page) .brand-block {
+    width: 190px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    border-right: 2px solid var(--theme-line) !important;
+}
+
+body:not(.login-page) .brand-mark {
+    width: 126px !important;
+    height: 86px !important;
+    margin: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    border: 2px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-hot) 8%, transparent) !important;
+    color: var(--theme-hot) !important;
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+}
+
+body:not(.login-page) .sidebar-nav .nav-icon {
+    display: none !important;
+}
+
+body:not(.login-page) .sidebar-nav .nav-link {
+    gap: 0 !important;
+    justify-content: center !important;
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .sidebar-nav .nav-link span:last-child {
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .sidebar-actions {
+    display: grid !important;
+    grid-template-columns: minmax(360px, 1fr) 54px !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-width: 520px !important;
+    margin: 0 170px 0 0 !important;
+    padding: 16px 18px !important;
+    border-left: 2px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-bg) 72%, transparent) !important;
+    backdrop-filter: blur(18px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.25) !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn,
+body:not(.login-page) .corner-theme-btn {
+    width: 100% !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    border: 1px solid var(--theme-line) !important;
+    background: transparent !important;
+    overflow: hidden !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn span,
+body:not(.login-page) .corner-theme-btn span {
+    display: grid !important;
+    place-items: center !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+    color: #fff !important;
+    font-weight: 900 !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn,
+body:not(.login-page) .corner-logout-btn {
+    width: 54px !important;
+    min-width: 54px !important;
+    height: 54px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    border: 1px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-hot) 12%, transparent) !important;
+    color: var(--theme-hot) !important;
+    font-size: 0 !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn::after,
+body:not(.login-page) .corner-logout-btn::after {
+    content: "LO";
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+body:not(.login-page) .menu-btn {
+    width: 160px !important;
+    height: 58px !important;
+    top: 96px !important;
+    right: 26px !important;
+    z-index: 7000 !important;
+    pointer-events: auto !important;
+    border: 1px solid var(--theme-line) !important;
+    background: var(--theme-glass-strong) !important;
+    color: var(--theme-hot) !important;
+    box-shadow: 0 12px 30px var(--theme-shadow-soft) !important;
+}
+
+body:not(.login-page) .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot) 0 4px, transparent 4px 9px) !important;
+}
+
+body:not(.login-page) .menu-btn::after {
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .hub-item,
+body:not(.login-page) .pulse-card,
+body:not(.login-page) .footer {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .section-card {
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) strong {
+    color: var(--theme-text) !important;
+    opacity: 1 !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body:not(.login-page) span:not(.theme-btn span):not(.corner-theme-btn span) {
+    color: var(--theme-muted) !important;
+    opacity: 1 !important;
+}
+
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) a {
+    color: var(--theme-hot) !important;
+    opacity: 1 !important;
+}
+
+body:not(.login-page) .main {
+    padding-top: 252px !important;
+}
+
+body:not(.login-page) .page-shell {
+    max-width: 1760px !important;
+}
+
+body:not(.login-page) .quick-links-grid,
+body:not(.login-page) .portal-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+}
+
+body:not(.login-page) .footer,
+body:not(.login-page) .footer p {
+    background: var(--theme-panel) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-muted) !important;
+}
+
+@media (max-width: 900px) {
+    body:not(.login-page).theme-red .sidebar,
+    body:not(.login-page).theme-green .sidebar,
+    body:not(.login-page).theme-blue .sidebar,
+    body:not(.login-page).theme-light .sidebar,
+    body:not(.login-page).theme-dark .sidebar {
+        grid-template-columns: 1fr !important;
+    }
+
+    body:not(.login-page) .sidebar-actions {
+        grid-template-columns: minmax(0, 1fr) 54px !important;
+        min-width: 0 !important;
+        margin: 14px 0 0 !important;
+        padding: 12px 0 0 !important;
+        border-left: 0 !important;
+    }
+
+    body:not(.login-page) .menu-btn {
+        top: 18px !important;
+        right: 16px !important;
+        width: 128px !important;
+        height: 58px !important;
+    }
+}
+
+/* Final portal shell/theme authority. Keep this at EOF. */
+body.theme-red {
+    --theme-bg: #120006;
+    --theme-panel: #21000c;
+    --theme-panel-deep: #160007;
+    --theme-line: #ff2d62;
+    --theme-hot: #ff5f86;
+    --theme-text: #ffe5ec;
+    --theme-muted: #ffacc0;
+    --theme-active-text: #120006;
+    --theme-input-bg: #190008;
+    --theme-glass: rgba(18, 0, 6, 0.84);
+    --theme-glass-strong: rgba(33, 0, 12, 0.92);
+    --theme-line-soft: rgba(255, 45, 98, 0.35);
+    --theme-shadow-soft: rgba(255, 45, 98, 0.18);
+}
+
+body.theme-green {
+    --theme-bg: #00140d;
+    --theme-panel: #002818;
+    --theme-panel-deep: #001b11;
+    --theme-line: #22e687;
+    --theme-hot: #54ffac;
+    --theme-text: #e2ffef;
+    --theme-muted: #9bffc9;
+    --theme-active-text: #00140d;
+    --theme-input-bg: #001b11;
+    --theme-glass: rgba(0, 20, 13, 0.84);
+    --theme-glass-strong: rgba(0, 40, 24, 0.92);
+    --theme-line-soft: rgba(34, 230, 135, 0.35);
+    --theme-shadow-soft: rgba(34, 230, 135, 0.18);
+}
+
+body.theme-blue {
+    --theme-bg: #031026;
+    --theme-panel: #061e42;
+    --theme-panel-deep: #04162f;
+    --theme-line: #38a8ff;
+    --theme-hot: #74caff;
+    --theme-text: #e3f3ff;
+    --theme-muted: #aadfff;
+    --theme-active-text: #031026;
+    --theme-input-bg: #04162f;
+    --theme-glass: rgba(3, 16, 38, 0.84);
+    --theme-glass-strong: rgba(6, 30, 66, 0.92);
+    --theme-line-soft: rgba(56, 168, 255, 0.35);
+    --theme-shadow-soft: rgba(56, 168, 255, 0.18);
+}
+
+body.theme-light {
+    --theme-bg: #f7f8fb;
+    --theme-panel: #ffffff;
+    --theme-panel-deep: #f0f2f6;
+    --theme-line: #111827;
+    --theme-hot: #111827;
+    --theme-text: #111827;
+    --theme-muted: #4b5563;
+    --theme-active-text: #ffffff;
+    --theme-input-bg: #ffffff;
+    --theme-glass: rgba(247, 248, 251, 0.86);
+    --theme-glass-strong: rgba(255, 255, 255, 0.94);
+    --theme-line-soft: rgba(17, 24, 39, 0.22);
+    --theme-shadow-soft: rgba(17, 24, 39, 0.14);
+}
+
+body.theme-dark {
+    --theme-bg: #05070c;
+    --theme-panel: #0d1320;
+    --theme-panel-deep: #070b12;
+    --theme-line: #8b9bb3;
+    --theme-hot: #d7e2f2;
+    --theme-text: #eef4ff;
+    --theme-muted: #9aa8bd;
+    --theme-active-text: #05070c;
+    --theme-input-bg: #090f19;
+    --theme-glass: rgba(5, 7, 12, 0.84);
+    --theme-glass-strong: rgba(13, 19, 32, 0.94);
+    --theme-line-soft: rgba(139, 155, 179, 0.34);
+    --theme-shadow-soft: rgba(215, 226, 242, 0.13);
+}
+
+body.theme-red,
+body.theme-green,
+body.theme-blue,
+body.theme-light,
+body.theme-dark {
+    --iitd-bg: var(--theme-bg);
+    --iitd-line: var(--theme-line);
+    --iitd-hot: var(--theme-hot);
+    --iitd-text: var(--theme-text);
+    --iitd-muted: var(--theme-muted);
+    --bg-page: var(--theme-bg);
+    --surface: var(--theme-panel);
+    --surface-strong: var(--theme-panel-deep);
+    --surface-soft: color-mix(in srgb, var(--theme-hot) 9%, transparent);
+    --border: var(--theme-line);
+    --text: var(--theme-text);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-bg: var(--theme-glass);
+    --sidebar-border: var(--theme-line);
+    --page-grid: var(--theme-line-soft);
+    background:
+        linear-gradient(90deg, var(--theme-line-soft) 1px, transparent 1px) 0 142px / 24px 520px no-repeat,
+        linear-gradient(180deg, var(--theme-line-soft) 1px, transparent 1px) 0 142px / 100% 86px no-repeat,
+        var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-red *,
+body.theme-green *,
+body.theme-blue *,
+body.theme-light *,
+body.theme-dark *,
+body.theme-red *::before,
+body.theme-green *::before,
+body.theme-blue *::before,
+body.theme-light *::before,
+body.theme-dark *::before,
+body.theme-red *::after,
+body.theme-green *::after,
+body.theme-blue *::after,
+body.theme-light *::after,
+body.theme-dark *::after {
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-red::before,
+body.theme-green::before,
+body.theme-blue::before,
+body.theme-light::before,
+body.theme-dark::before {
+    background: repeating-linear-gradient(90deg, var(--theme-line) 0 6px, transparent 6px 12px) !important;
+}
+
+body.theme-red::after,
+body.theme-green::after,
+body.theme-blue::after,
+body.theme-light::after,
+body.theme-dark::after {
+    color: var(--theme-line) !important;
+}
+
+body:not(.login-page).theme-red .sidebar,
+body:not(.login-page).theme-green .sidebar,
+body:not(.login-page).theme-blue .sidebar,
+body:not(.login-page).theme-light .sidebar,
+body:not(.login-page).theme-dark .sidebar {
+    grid-template-columns: 240px minmax(0, 1fr) 610px !important;
+    background: var(--theme-glass) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(18px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.25) !important;
+    box-shadow: 0 18px 52px var(--theme-shadow-soft) !important;
+}
+
+body:not(.login-page) .brand-block {
+    width: 240px !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: grid !important;
+    place-items: center !important;
+    border-right: 2px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-hot) 5%, transparent) !important;
+}
+
+body:not(.login-page) .brand-mark {
+    width: 166px !important;
+    height: 112px !important;
+    margin: 0 !important;
+    border: 3px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-hot) 8%, transparent) !important;
+    color: var(--theme-hot) !important;
+    display: grid !important;
+    place-items: center !important;
+    font-size: 2.3rem !important;
+    font-weight: 900 !important;
+}
+
+body:not(.login-page) .sidebar-nav,
+body:not(.login-page) .sidebar a,
+body:not(.login-page) .nav-icon {
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .sidebar a.active,
+body:not(.login-page) .sidebar a:hover {
+    background: color-mix(in srgb, var(--theme-hot) 13%, transparent) !important;
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .page-hero,
+body:not(.login-page) .hero-banner,
+body:not(.login-page) .section-card,
+body:not(.login-page) .card,
+body:not(.login-page) .hero-copy,
+body:not(.login-page) .hero-panel,
+body:not(.login-page) .cgpa-hero,
+body:not(.login-page) .cgpa-card,
+body:not(.login-page) .summary-card,
+body:not(.login-page) .planner-hero,
+body:not(.login-page) .planner-clock-card,
+body:not(.login-page) .planner-card,
+body:not(.login-page) .notes-hero,
+body:not(.login-page) .notes-card,
+body:not(.login-page) .quick-link-card,
+body:not(.login-page) .feature-pill,
+body:not(.login-page) .hub-item,
+body:not(.login-page) .pulse-card,
+body:not(.login-page) .stat-card,
+body:not(.login-page) .stat-box,
+body:not(.login-page) .day-card,
+body:not(.login-page) .subject-card,
+body:not(.login-page) .empty-state,
+body:not(.login-page) .history-item,
+body:not(.login-page) .info-row,
+body:not(.login-page) .social-tag,
+body:not(.login-page) .compact-time-block,
+body:not(.login-page) .planner-list li,
+body:not(.login-page) .lab-entry,
+body:not(.login-page) .footer,
+body.login-page .login-brand,
+body.login-page .login-card,
+body.login-page .feature-item,
+body.login-page .brand-logo {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+    box-shadow: none !important;
+}
+
+body:not(.login-page) h1,
+body:not(.login-page) h2,
+body:not(.login-page) h3,
+body:not(.login-page) h4,
+body:not(.login-page) label,
+body:not(.login-page) strong,
+body.login-page h1,
+body.login-page h2,
+body.login-page label,
+body.login-page strong {
+    color: var(--theme-text) !important;
+}
+
+body:not(.login-page) p,
+body:not(.login-page) small,
+body:not(.login-page) li,
+body.login-page p,
+body.login-page small {
+    color: var(--theme-muted) !important;
+}
+
+body:not(.login-page) span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.login-page span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span) {
+    color: var(--theme-muted) !important;
+}
+
+body:not(.login-page) a,
+body:not(.login-page) .section-eyebrow,
+body:not(.login-page) .hero-eyebrow,
+body:not(.login-page) .eyebrow,
+body:not(.login-page) .section-kicker,
+body:not(.login-page) .planner-kicker,
+body.login-page .login-kicker {
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) input,
+body:not(.login-page) select,
+body:not(.login-page) textarea,
+body:not(.login-page) option,
+body.login-page input {
+    background: var(--theme-input-bg) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body:not(.login-page) .quick-link-icon,
+body:not(.login-page) .card-icon,
+body:not(.login-page) .notes-card-icon,
+body:not(.login-page) .subject-index,
+body:not(.login-page) .profile-avatar,
+body:not(.login-page) .hub-item-mark,
+body:not(.login-page) .pulse-badge,
+body:not(.login-page) .mini-link-mark {
+    background: color-mix(in srgb, var(--theme-hot) 14%, var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .page-hero::before,
+body:not(.login-page) .hero-banner::before,
+body:not(.login-page) .section-card::before,
+body:not(.login-page) .card::before,
+body:not(.login-page) .glass-panel::before,
+body:not(.login-page) .quick-link-card::before,
+body:not(.login-page) .notes-card::before {
+    background: linear-gradient(90deg, color-mix(in srgb, var(--theme-hot) 14%, transparent), transparent) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body:not(.login-page) .footer {
+    margin-top: 34px !important;
+    background: var(--theme-panel) !important;
+    border: 1px solid var(--theme-line) !important;
+    color: var(--theme-muted) !important;
+}
+
+body:not(.login-page) .footer p,
+body:not(.login-page) .footer span {
+    color: var(--theme-muted) !important;
+}
+
+body:not(.login-page) .menu-btn {
+    position: fixed !important;
+    top: 92px !important;
+    right: 28px !important;
+    left: auto !important;
+    width: 132px !important;
+    height: 74px !important;
+    z-index: 6000 !important;
+    pointer-events: auto !important;
+    border: 1px solid var(--theme-line) !important;
+    background: var(--theme-glass-strong) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+    box-shadow: 0 12px 32px var(--theme-shadow-soft) !important;
+}
+
+body:not(.login-page) .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot) 0 4px, transparent 4px 9px) !important;
+}
+
+body:not(.login-page) .menu-btn::after {
+    color: var(--theme-hot) !important;
+}
+
+body:not(.login-page) .sidebar.hide {
+    transform: translateY(-100%) !important;
+}
+
+body:not(.login-page) .sidebar.open {
+    transform: translateX(0) !important;
+}
+
+body:not(.login-page) .main.full {
+    margin-left: 0 !important;
+}
+
+body:not(.login-page) .sidebar-actions {
+    display: grid !important;
+    grid-template-columns: minmax(340px, 1fr) 58px !important;
+    align-items: center !important;
+    gap: 16px !important;
+    min-width: 560px !important;
+    margin: 0 168px 0 0 !important;
+    padding: 18px 20px !important;
+    border-left: 2px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-bg) 70%, transparent) !important;
+    backdrop-filter: blur(18px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.25) !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn,
+body:not(.login-page) .corner-theme-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 58px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--theme-line) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn span,
+body:not(.login-page) .corner-theme-btn span {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn,
+body:not(.login-page) .corner-logout-btn {
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 58px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--theme-line) !important;
+    background: color-mix(in srgb, var(--theme-hot) 12%, transparent) !important;
+    color: var(--theme-hot) !important;
+    font-size: 0 !important;
+    box-shadow: 0 10px 26px var(--theme-shadow-soft) !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn::after,
+body:not(.login-page) .corner-logout-btn::after {
+    content: "LO";
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: inherit;
+}
+
+@media (max-width: 900px) {
+    body:not(.login-page) .sidebar.hide {
+        transform: translateX(-100%) !important;
+    }
+
+    body:not(.login-page).theme-red .sidebar,
+    body:not(.login-page).theme-green .sidebar,
+    body:not(.login-page).theme-blue .sidebar,
+    body:not(.login-page).theme-light .sidebar,
+    body:not(.login-page).theme-dark .sidebar {
+        grid-template-columns: 1fr !important;
+    }
+
+    body:not(.login-page) .brand-block {
+        width: auto !important;
+        height: auto !important;
+    }
+
+    body:not(.login-page) .brand-mark {
+        width: 112px !important;
+        height: 78px !important;
+        font-size: 1.65rem !important;
+    }
+
+    body:not(.login-page) .sidebar-actions {
+        grid-template-columns: minmax(0, 1fr) 54px !important;
+        min-width: 0 !important;
+        margin: 14px 0 0 !important;
+        padding: 12px 0 0 !important;
+        border-left: 0 !important;
+        background: transparent !important;
+    }
+
+    body:not(.login-page) .menu-btn {
+        top: 18px !important;
+        right: 16px !important;
+        width: 118px !important;
+        height: 64px !important;
+    }
+}
+
+/* Header action repair: working menu toggle, full colour switch, round logout. */
+body:not(.login-page) .menu-btn {
+    position: fixed !important;
+    top: 92px !important;
+    right: 28px !important;
+    left: auto !important;
+    width: 132px !important;
+    height: 74px !important;
+    z-index: 6000 !important;
+    pointer-events: auto !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-bg, #061528) 70%, transparent) !important;
+    color: var(--theme-hot, var(--text)) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+}
+
+body:not(.login-page) .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot, var(--text)) 0 4px, transparent 4px 9px) !important;
+}
+
+body:not(.login-page) .menu-btn::after {
+    color: var(--theme-hot, var(--text)) !important;
+}
+
+body:not(.login-page) .sidebar.hide {
+    transform: translateY(-100%) !important;
+}
+
+body:not(.login-page) .sidebar.open {
+    transform: translateX(0) !important;
+}
+
+body:not(.login-page) .main.full {
+    margin-left: 0 !important;
+}
+
+body:not(.login-page) .sidebar-actions {
+    display: grid !important;
+    grid-template-columns: minmax(260px, 340px) 56px !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-width: 430px !important;
+    margin: 0 210px 0 0 !important;
+    padding: 14px 20px !important;
+    border-left: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-bg, #061528) 64%, transparent) !important;
+    backdrop-filter: blur(18px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.25) !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn,
+body:not(.login-page) .corner-theme-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 52px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn span,
+body:not(.login-page) .corner-theme-btn span {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn,
+body:not(.login-page) .corner-logout-btn {
+    width: 56px !important;
+    min-width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-hot, var(--text)) 12%, transparent) !important;
+    color: var(--theme-hot, var(--text)) !important;
+    font-size: 0 !important;
+    box-shadow: 0 10px 26px var(--theme-shadow-soft, rgba(0, 0, 0, 0.16)) !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn::after,
+body:not(.login-page) .corner-logout-btn::after {
+    content: "LO";
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: inherit;
+}
+
+@media (max-width: 900px) {
+    body:not(.login-page) .sidebar.hide {
+        transform: translateX(-100%) !important;
+    }
+
+    body:not(.login-page) .sidebar-actions {
+        grid-template-columns: minmax(0, 1fr) 54px !important;
+        min-width: 0 !important;
+        margin: 14px 0 0 !important;
+        padding: 12px 0 0 !important;
+        border-left: 0 !important;
+        background: transparent !important;
+    }
+
+    body:not(.login-page) .menu-btn {
+        top: 18px !important;
+        right: 16px !important;
+        width: 118px !important;
+        height: 64px !important;
+    }
+}
+
+body.theme-light .quick-link-card::before,
+body.theme-green .quick-link-card::before,
+body.theme-blue .quick-link-card::before,
+body.theme-dark .quick-link-card::before,
+body.theme-light .card::before,
+body.theme-green .card::before,
+body.theme-blue .card::before,
+body.theme-dark .card::before,
+body.theme-light .notes-card::before,
+body.theme-green .notes-card::before,
+body.theme-blue .notes-card::before,
+body.theme-dark .notes-card::before,
+body.theme-light .page-hero::before,
+body.theme-green .page-hero::before,
+body.theme-blue .page-hero::before,
+body.theme-dark .page-hero::before,
+body.theme-light .section-card::before,
+body.theme-green .section-card::before,
+body.theme-blue .section-card::before,
+body.theme-dark .section-card::before {
+    background: linear-gradient(90deg, var(--theme-hot), color-mix(in srgb, var(--theme-hot) 40%, transparent)) !important;
+    border-color: var(--theme-line) !important;
+}
+
+/* Final final override: keep selector visible and remove red badges outside red theme. */
+body.login-page .theme-toggle-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    height: 76px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.login-page .theme-toggle-btn span {
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body.theme-light .quick-link-icon,
+body.theme-green .quick-link-icon,
+body.theme-blue .quick-link-icon,
+body.theme-dark .quick-link-icon,
+body.theme-light .card-icon,
+body.theme-green .card-icon,
+body.theme-blue .card-icon,
+body.theme-dark .card-icon,
+body.theme-light .notes-card-icon,
+body.theme-green .notes-card-icon,
+body.theme-blue .notes-card-icon,
+body.theme-dark .notes-card-icon,
+body.theme-light .subject-index,
+body.theme-green .subject-index,
+body.theme-blue .subject-index,
+body.theme-dark .subject-index,
+body.theme-light .profile-avatar,
+body.theme-green .profile-avatar,
+body.theme-blue .profile-avatar,
+body.theme-dark .profile-avatar,
+body.theme-light .hub-item-mark,
+body.theme-green .hub-item-mark,
+body.theme-blue .hub-item-mark,
+body.theme-dark .hub-item-mark,
+body.theme-light .pulse-badge,
+body.theme-green .pulse-badge,
+body.theme-blue .pulse-badge,
+body.theme-dark .pulse-badge,
+body.theme-light .mini-link-mark,
+body.theme-green .mini-link-mark,
+body.theme-blue .mini-link-mark,
+body.theme-dark .mini-link-mark,
+body.login-page.theme-light .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo,
+body.login-page.theme-dark .brand-logo {
+    background: color-mix(in srgb, var(--theme-hot) 14%, var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .quick-link-card::before,
+body.theme-green .quick-link-card::before,
+body.theme-blue .quick-link-card::before,
+body.theme-dark .quick-link-card::before,
+body.theme-light .card::before,
+body.theme-green .card::before,
+body.theme-blue .card::before,
+body.theme-dark .card::before,
+body.theme-light .notes-card::before,
+body.theme-green .notes-card::before,
+body.theme-blue .notes-card::before,
+body.theme-dark .notes-card::before,
+body.theme-light .page-hero::before,
+body.theme-green .page-hero::before,
+body.theme-blue .page-hero::before,
+body.theme-dark .page-hero::before,
+body.theme-light .section-card::before,
+body.theme-green .section-card::before,
+body.theme-blue .section-card::before,
+body.theme-dark .section-card::before {
+    background: linear-gradient(90deg, var(--theme-hot), color-mix(in srgb, var(--theme-hot) 40%, transparent)) !important;
+    border-color: var(--theme-line) !important;
+}
+
+/* EOF override: selector sizing and non-red theme badge cleanup. */
+body.login-page .theme-toggle-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    height: 76px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.login-page .theme-toggle-btn span {
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body.theme-light .quick-link-icon,
+body.theme-green .quick-link-icon,
+body.theme-blue .quick-link-icon,
+body.theme-dark .quick-link-icon,
+body.theme-light .card-icon,
+body.theme-green .card-icon,
+body.theme-blue .card-icon,
+body.theme-dark .card-icon,
+body.theme-light .notes-card-icon,
+body.theme-green .notes-card-icon,
+body.theme-blue .notes-card-icon,
+body.theme-dark .notes-card-icon,
+body.theme-light .subject-index,
+body.theme-green .subject-index,
+body.theme-blue .subject-index,
+body.theme-dark .subject-index,
+body.theme-light .profile-avatar,
+body.theme-green .profile-avatar,
+body.theme-blue .profile-avatar,
+body.theme-dark .profile-avatar,
+body.theme-light .hub-item-mark,
+body.theme-green .hub-item-mark,
+body.theme-blue .hub-item-mark,
+body.theme-dark .hub-item-mark,
+body.theme-light .pulse-badge,
+body.theme-green .pulse-badge,
+body.theme-blue .pulse-badge,
+body.theme-dark .pulse-badge,
+body.theme-light .mini-link-mark,
+body.theme-green .mini-link-mark,
+body.theme-blue .mini-link-mark,
+body.theme-dark .mini-link-mark,
+body.login-page.theme-light .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo,
+body.login-page.theme-dark .brand-logo {
+    background: color-mix(in srgb, var(--theme-hot) 14%, var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-light .quick-link-card::before,
+body.theme-green .quick-link-card::before,
+body.theme-blue .quick-link-card::before,
+body.theme-dark .quick-link-card::before,
+body.theme-light .card::before,
+body.theme-green .card::before,
+body.theme-blue .card::before,
+body.theme-dark .card::before,
+body.theme-light .notes-card::before,
+body.theme-green .notes-card::before,
+body.theme-blue .notes-card::before,
+body.theme-dark .notes-card::before,
+body.theme-light .page-hero::before,
+body.theme-green .page-hero::before,
+body.theme-blue .page-hero::before,
+body.theme-dark .page-hero::before,
+body.theme-light .section-card::before,
+body.theme-green .section-card::before,
+body.theme-blue .section-card::before,
+body.theme-dark .section-card::before {
+    background: linear-gradient(90deg, var(--theme-hot), color-mix(in srgb, var(--theme-hot) 40%, transparent)) !important;
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-light .theme-btn,
+body.theme-red .theme-btn,
+body.theme-green .theme-btn,
+body.theme-blue .theme-btn,
+body.theme-dark .theme-btn,
+body.theme-light .corner-theme-btn,
+body.theme-red .corner-theme-btn,
+body.theme-green .corner-theme-btn,
+body.theme-blue .corner-theme-btn,
+body.theme-dark .corner-theme-btn {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+body.theme-light .progress-track-soft span,
+body.theme-red .progress-track-soft span,
+body.theme-green .progress-track-soft span,
+body.theme-blue .progress-track-soft span,
+body.theme-light .progress-fill,
+body.theme-red .progress-fill,
+body.theme-green .progress-fill,
+body.theme-blue .progress-fill {
+    background: var(--theme-hot) !important;
+}
+
+/* Dark theme plus five-way theme selector. Red remains the default in JS. */
+body.theme-dark {
+    --theme-bg: #05070c;
+    --theme-panel: #0d1320;
+    --theme-panel-deep: #070b12;
+    --theme-line: #8b9bb3;
+    --theme-hot: #d7e2f2;
+    --theme-text: #eef4ff;
+    --theme-muted: #9aa8bd;
+    --theme-active-text: #05070c;
+    --theme-input-bg: #090f19;
+    --theme-glass: rgba(5, 7, 12, 0.78);
+    --theme-glass-strong: rgba(13, 19, 32, 0.92);
+    --theme-line-soft: rgba(139, 155, 179, 0.34);
+    --theme-shadow-soft: rgba(215, 226, 242, 0.13);
+    --iitd-line: var(--theme-line);
+    --iitd-hot: var(--theme-hot);
+    --iitd-text: var(--theme-text);
+    --iitd-muted: var(--theme-muted);
+    --surface: var(--theme-panel);
+    --surface-strong: var(--theme-panel-deep);
+    --surface-soft: color-mix(in srgb, var(--theme-hot) 10%, transparent);
+    --border: var(--theme-line);
+    --text: var(--theme-text);
+    --muted: var(--theme-muted);
+    --primary: var(--theme-hot);
+    --primary-strong: var(--theme-hot);
+    --accent: var(--theme-hot);
+    --sidebar-bg: var(--theme-glass);
+    --sidebar-border: var(--theme-line);
+    --page-grid: var(--theme-line-soft);
+    background:
+        linear-gradient(90deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 142px / 22px 520px no-repeat,
+        linear-gradient(180deg, color-mix(in srgb, var(--theme-line) 18%, transparent) 1px, transparent 1px) 0 142px / 100% 86px no-repeat,
+        var(--theme-bg) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-dark::before {
+    background: repeating-linear-gradient(90deg, var(--theme-line) 0 6px, transparent 6px 12px) !important;
+}
+
+body.theme-dark::after {
+    color: var(--theme-line) !important;
+}
+
+body.theme-dark *,
+body.theme-dark *::before,
+body.theme-dark *::after {
+    border-color: var(--theme-line) !important;
+}
+
+body.theme-dark .sidebar {
+    background: var(--theme-glass) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(16px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.25) !important;
+    box-shadow: 0 18px 50px var(--theme-shadow-soft) !important;
+}
+
+body.theme-dark .menu-btn {
+    z-index: 4000 !important;
+    pointer-events: auto !important;
+    background: var(--theme-glass-strong) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+    box-shadow: 0 12px 32px var(--theme-shadow-soft) !important;
+}
+
+body.theme-dark .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot) 0 4px, transparent 4px 9px) !important;
+}
+
+body.theme-dark .menu-btn::after,
+body.theme-dark .sidebar a,
+body.theme-dark .brand-mark,
+body.theme-dark .nav-icon,
+body.theme-dark a,
+body.theme-dark .section-eyebrow,
+body.theme-dark .hero-eyebrow,
+body.theme-dark .eyebrow,
+body.theme-dark .section-kicker,
+body.theme-dark .planner-kicker,
+body.theme-dark .history-value {
+    color: var(--theme-hot) !important;
+}
+
+body.theme-dark .page-hero,
+body.theme-dark .section-card,
+body.theme-dark .card,
+body.theme-dark .hero-copy,
+body.theme-dark .hero-panel,
+body.theme-dark .cgpa-hero,
+body.theme-dark .cgpa-card,
+body.theme-dark .summary-card,
+body.theme-dark .planner-hero,
+body.theme-dark .planner-clock-card,
+body.theme-dark .planner-card,
+body.theme-dark .notes-hero,
+body.theme-dark .notes-card,
+body.theme-dark .quick-link-card,
+body.theme-dark .feature-pill,
+body.theme-dark .hub-item,
+body.theme-dark .pulse-card,
+body.theme-dark .stat-card,
+body.theme-dark .stat-box,
+body.theme-dark .day-card,
+body.theme-dark .subject-card,
+body.theme-dark .empty-state,
+body.theme-dark .history-item,
+body.theme-dark .info-row,
+body.theme-dark .social-tag,
+body.theme-dark .profile-avatar,
+body.theme-dark .profile-page .profile-showcase .section-card:first-child,
+body.theme-dark .progress-track-soft,
+body.login-page.theme-dark .login-brand,
+body.login-page.theme-dark .login-card,
+body.login-page.theme-dark .feature-item,
+body.login-page.theme-dark .brand-logo {
+    background: linear-gradient(180deg, var(--theme-panel), var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3,
+body.theme-dark h4,
+body.theme-dark label,
+body.theme-dark strong {
+    color: var(--theme-text) !important;
+}
+
+body.theme-dark p,
+body.theme-dark span:not(.theme-btn span):not(.corner-theme-btn span):not(.theme-toggle-btn span),
+body.theme-dark small,
+body.theme-dark li {
+    color: var(--theme-muted) !important;
+}
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea,
+body.theme-dark option {
+    background: var(--theme-input-bg) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+
+body.theme-dark .page-chip,
+body.theme-dark .notes-tab-btn,
+body.theme-dark .notes-subtab-btn,
+body.theme-dark .logout-btn,
+body.theme-dark .corner-logout-btn {
+    background: color-mix(in srgb, var(--theme-hot) 12%, var(--theme-panel)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+body.theme-dark .progress-track-soft span,
+body.theme-dark .progress-fill {
+    background: var(--theme-hot) !important;
+}
+
+body.theme-light .theme-btn,
+body.theme-red .theme-btn,
+body.theme-green .theme-btn,
+body.theme-blue .theme-btn,
+body.theme-dark .theme-btn,
+body.theme-light .corner-theme-btn,
+body.theme-red .corner-theme-btn,
+body.theme-green .corner-theme-btn,
+body.theme-blue .corner-theme-btn,
+body.theme-dark .corner-theme-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    grid-template-columns: repeat(5, 1fr) !important;
+}
+
+body.theme-dark .theme-btn,
+body.theme-dark .corner-theme-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    display: grid !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+}
+
+body.theme-dark .theme-btn span,
+body.theme-dark .corner-theme-btn span,
+body.login-page.theme-dark .theme-toggle-btn span {
+    display: grid !important;
+    place-items: center !important;
+    min-height: 100% !important;
+    font-weight: 900 !important;
+}
+
+body.theme-dark .theme-btn span:nth-child(1),
+body.theme-dark .corner-theme-btn span:nth-child(1),
+body.login-page.theme-dark .theme-toggle-btn span:nth-child(1) {
+    background: #e11d48 !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .theme-btn span:nth-child(2),
+body.theme-dark .corner-theme-btn span:nth-child(2),
+body.login-page.theme-dark .theme-toggle-btn span:nth-child(2) {
+    background: #16a34a !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .theme-btn span:nth-child(3),
+body.theme-dark .corner-theme-btn span:nth-child(3),
+body.login-page.theme-dark .theme-toggle-btn span:nth-child(3) {
+    background: #2563eb !important;
+    color: #ffffff !important;
+}
+
+body.theme-dark .theme-btn span:nth-child(4),
+body.theme-dark .corner-theme-btn span:nth-child(4),
+body.login-page.theme-dark .theme-toggle-btn span:nth-child(4) {
+    background: #f8fafc !important;
+    color: #111827 !important;
+}
+
+body.theme-light .theme-btn span:nth-child(5),
+body.theme-red .theme-btn span:nth-child(5),
+body.theme-green .theme-btn span:nth-child(5),
+body.theme-blue .theme-btn span:nth-child(5),
+body.theme-dark .theme-btn span:nth-child(5),
+body.theme-light .corner-theme-btn span:nth-child(5),
+body.theme-red .corner-theme-btn span:nth-child(5),
+body.theme-green .corner-theme-btn span:nth-child(5),
+body.theme-blue .corner-theme-btn span:nth-child(5),
+body.theme-dark .corner-theme-btn span:nth-child(5),
+body.login-page.theme-light .theme-toggle-btn span:nth-child(5),
+body.login-page.theme-red .theme-toggle-btn span:nth-child(5),
+body.login-page.theme-green .theme-toggle-btn span:nth-child(5),
+body.login-page.theme-blue .theme-toggle-btn span:nth-child(5),
+body.login-page.theme-dark .theme-toggle-btn span:nth-child(5) {
+    background: #111827 !important;
+    color: #ffffff !important;
+}
+
+body.theme-light .notes-tab-btn.is-active,
+body.theme-red .notes-tab-btn.is-active,
+body.theme-green .notes-tab-btn.is-active,
+body.theme-blue .notes-tab-btn.is-active,
+body.theme-light .notes-subtab-btn.is-active,
+body.theme-red .notes-subtab-btn.is-active,
+body.theme-green .notes-subtab-btn.is-active,
+body.theme-blue .notes-subtab-btn.is-active,
+body.theme-light .planner-toggle-group button.is-active,
+body.theme-red .planner-toggle-group button.is-active,
+body.theme-green .planner-toggle-group button.is-active,
+body.theme-blue .planner-toggle-group button.is-active {
+    background: var(--theme-hot) !important;
+    border-color: var(--theme-hot) !important;
+    color: var(--theme-active-text) !important;
+}
+
+body.theme-light input,
+body.theme-red input,
+body.theme-green input,
+body.theme-blue input,
+body.theme-light select,
+body.theme-red select,
+body.theme-green select,
+body.theme-blue select,
+body.theme-light textarea,
+body.theme-red textarea,
+body.theme-green textarea,
+body.theme-blue textarea,
+body.theme-light option,
+body.theme-red option,
+body.theme-green option,
+body.theme-blue option {
+    background: var(--theme-input-bg) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-text) !important;
+}
+/* EOF cleanup must stay last. */
+body.login-page .theme-toggle-btn,
+body.login-page.theme-light .theme-toggle-btn,
+body.login-page.theme-red .theme-toggle-btn,
+body.login-page.theme-green .theme-toggle-btn,
+body.login-page.theme-blue .theme-toggle-btn,
+body.login-page.theme-dark .theme-toggle-btn {
+    width: 110px !important;
+    min-width: 110px !important;
+    height: 76px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+body.login-page .theme-toggle-btn span {
+    min-width: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body.theme-light .quick-link-icon,
+body.theme-green .quick-link-icon,
+body.theme-blue .quick-link-icon,
+body.theme-dark .quick-link-icon,
+body.theme-light .card-icon,
+body.theme-green .card-icon,
+body.theme-blue .card-icon,
+body.theme-dark .card-icon,
+body.theme-light .notes-card-icon,
+body.theme-green .notes-card-icon,
+body.theme-blue .notes-card-icon,
+body.theme-dark .notes-card-icon,
+body.theme-light .subject-index,
+body.theme-green .subject-index,
+body.theme-blue .subject-index,
+body.theme-dark .subject-index,
+body.theme-light .profile-avatar,
+body.theme-green .profile-avatar,
+body.theme-blue .profile-avatar,
+body.theme-dark .profile-avatar,
+body.theme-light .hub-item-mark,
+body.theme-green .hub-item-mark,
+body.theme-blue .hub-item-mark,
+body.theme-dark .hub-item-mark,
+body.theme-light .pulse-badge,
+body.theme-green .pulse-badge,
+body.theme-blue .pulse-badge,
+body.theme-dark .pulse-badge,
+body.theme-light .mini-link-mark,
+body.theme-green .mini-link-mark,
+body.theme-blue .mini-link-mark,
+body.theme-dark .mini-link-mark,
+body.login-page.theme-light .brand-logo,
+body.login-page.theme-green .brand-logo,
+body.login-page.theme-blue .brand-logo,
+body.login-page.theme-dark .brand-logo {
+    background: color-mix(in srgb, var(--theme-hot) 14%, var(--theme-panel-deep)) !important;
+    border-color: var(--theme-line) !important;
+    color: var(--theme-hot) !important;
+}
+
+/* EOF header action repair: working menu toggle, full colour switch, round logout. */
+body:not(.login-page) .menu-btn {
+    position: fixed !important;
+    top: 92px !important;
+    right: 28px !important;
+    left: auto !important;
+    width: 132px !important;
+    height: 74px !important;
+    z-index: 6000 !important;
+    pointer-events: auto !important;
+    border-radius: 0 !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-bg, #061528) 70%, transparent) !important;
+    color: var(--theme-hot, var(--text)) !important;
+    backdrop-filter: blur(18px) saturate(1.35) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.35) !important;
+}
+
+body:not(.login-page) .menu-btn::before {
+    background: repeating-linear-gradient(180deg, var(--theme-hot, var(--text)) 0 4px, transparent 4px 9px) !important;
+}
+
+body:not(.login-page) .menu-btn::after {
+    color: var(--theme-hot, var(--text)) !important;
+}
+
+body:not(.login-page) .sidebar.hide {
+    transform: translateY(-100%) !important;
+}
+
+body:not(.login-page) .sidebar.open {
+    transform: translateX(0) !important;
+}
+
+body:not(.login-page) .main.full {
+    margin-left: 0 !important;
+}
+
+body:not(.login-page) .sidebar-actions {
+    display: grid !important;
+    grid-template-columns: minmax(260px, 340px) 56px !important;
+    align-items: center !important;
+    gap: 14px !important;
+    min-width: 430px !important;
+    margin: 0 210px 0 0 !important;
+    padding: 14px 20px !important;
+    border-left: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-bg, #061528) 64%, transparent) !important;
+    backdrop-filter: blur(18px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(1.25) !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn,
+body:not(.login-page) .corner-theme-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 52px !important;
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+
+body:not(.login-page) .sidebar .theme-btn span,
+body:not(.login-page) .corner-theme-btn span {
+    display: grid !important;
+    place-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 0 !important;
+    color: #ffffff !important;
+    font-weight: 900 !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn,
+body:not(.login-page) .corner-logout-btn {
+    width: 56px !important;
+    min-width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    border: 1px solid var(--theme-line, var(--border)) !important;
+    background: color-mix(in srgb, var(--theme-hot, var(--text)) 12%, transparent) !important;
+    color: var(--theme-hot, var(--text)) !important;
+    font-size: 0 !important;
+    box-shadow: 0 10px 26px var(--theme-shadow-soft, rgba(0, 0, 0, 0.16)) !important;
+}
+
+body:not(.login-page) .sidebar .logout-btn::after,
+body:not(.login-page) .corner-logout-btn::after {
+    content: "LO";
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 0.95rem;
+    font-weight: 900;
+    color: inherit;
+}
+
+@media (max-width: 900px) {
+    body:not(.login-page) .sidebar.hide {
+        transform: translateX(-100%) !important;
+    }
+
+    body:not(.login-page) .sidebar-actions {
+        grid-template-columns: minmax(0, 1fr) 54px !important;
+        min-width: 0 !important;
+        margin: 14px 0 0 !important;
+        padding: 12px 0 0 !important;
+        border-left: 0 !important;
+        background: transparent !important;
+    }
+
+    body:not(.login-page) .menu-btn {
+        top: 18px !important;
+        right: 16px !important;
+        width: 118px !important;
+        height: 64px !important;
     }
 }

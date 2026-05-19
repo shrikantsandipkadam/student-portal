@@ -599,7 +599,7 @@ const courseCatalog = {
             sem3: [
                 { code: "SBL1100", name: "Biology for Engineers: Microbes in Health and Disease", credits: 2, graded: true, category: "Institute Core" },
                 { code: "SBP1100", name: "Experimental Biology for Engineers", credits: 1, graded: true, category: "Lab" },
-                { code: "MTL1208", name: "Introduction to Probability and Statistics", credits: 4, graded: true, category: "Institute Core" },
+                { code: "MTL2008", name: "Introduction to Probability and Statistics", credits: 4, graded: true, category: "Institute Core" },
                 { code: "TXL2201", name: "Yarn Manufacture I", credits: 3, graded: true, category: "Department Core" },
                 { code: "TXP2201", name: "Yarn Manufacture Laboratory-I", credits: 1, graded: true, category: "Lab" },
                 { code: "TXL2101", name: "Chemistry and Physics of Polymers", credits: 3, graded: true, category: "Department Core" },

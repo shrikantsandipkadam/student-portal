@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Workspace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block"><div class="brand-mark">IITD</div><div class="brand-copy"><h2>CampusHelp</h2><p>IIT student workspace</p></div></div>
+        <div class="sidebar-user"><div class="sidebar-user-label">Signed In</div><div class="sidebar-user-name" data-user-name>Student</div><div class="sidebar-user-note">Java and OOP practice.</div></div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
+        <div class="sidebar-actions"><button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button><button class="sidebar-btn logout-btn" onclick="logout()">Logout</button></div>
+    </aside>
+
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar"><div class="page-topbar-meta"><span class="page-chip">Java Workspace</span><span class="page-chip">OOP + DSA</span></div></div>
+
+            <section class="page-hero">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow">Programming</span>
+                    <h1>Java page for clean practice.</h1>
+                    <p>Use this as your Java launch board for OOP, collections, DSA patterns, and interview-style practice.</p>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card"><span class="stat-label">Track</span><span class="stat-value">OOP</span></div>
+                    <div class="stat-card"><span class="stat-label">Focus</span><span class="stat-value">DSA</span></div>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">Java Links</span><h2>Core references</h2><p class="section-subtitle">Solid resources without clutter.</p></div></div>
+                <div class="quick-links-grid">
+                    <a class="quick-link-card" href="https://docs.oracle.com/javase/tutorial/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">OR</div><h3>Oracle Tutorial</h3><p>Official Java basics and OOP.</p></a>
+                    <a class="quick-link-card" href="https://dev.java/learn/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">JV</div><h3>Dev Java Learn</h3><p>Modern Java learning path.</p></a>
+                    <a class="quick-link-card" href="https://www.geeksforgeeks.org/java/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">DS</div><h3>Java DSA</h3><p>Practice and concept refreshers.</p></a>
+                    <a class="quick-link-card" href="https://leetcode.com/problemset/" target="_blank" rel="noopener noreferrer"><div class="quick-link-icon">LC</div><h3>LeetCode</h3><p>Problem practice in Java.</p></a>
+                </div>
+            </section>
+
+            <section class="section-card">
+                <div class="section-head"><div><span class="section-eyebrow">Roadmap</span><h2>Study order</h2></div></div>
+                <div class="feature-band">
+                    <div class="feature-pill"><strong>1. Syntax</strong><span class="support-text">Classes, methods, arrays, strings.</span></div>
+                    <div class="feature-pill"><strong>2. OOP</strong><span class="support-text">Inheritance, interfaces, abstraction.</span></div>
+                    <div class="feature-pill"><strong>3. Collections</strong><span class="support-text">List, Set, Map, Queue, PriorityQueue.</span></div>
+                    <div class="feature-pill"><strong>4. DSA</strong><span class="support-text">Recursion, trees, graphs, DP.</span></div>
+                </div>
+            </section>
+
+            <footer class="footer"><p>Contact: getcampushelp@gmail.com</p><p>IIT Student Portal Copyright 2026</p></footer>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/main.js"></script>
+    <script>window.addEventListener("load",function(){checkLogin();initializePortalShell();});</script>
+</body>
+</html>

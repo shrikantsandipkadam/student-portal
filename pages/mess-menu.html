@@ -1,137 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Mess Menu</title>
+    <meta charset="UTF-8">
+    <title>Mess Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/mess-menu.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/pages/mess-menu.css">
-
-<!-- OneSignal Push Notifications -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-
-<script>
-window.OneSignalDeferred = window.OneSignalDeferred || [];
-
-OneSignalDeferred.push(async function(OneSignal) {
-
-await OneSignal.init({
-appId: "c58ef1a2-27ae-40d6-90b1-357933776dac",
-
-autoRegister: true,
-
-notifyButton: {
-enable: true
-}
-
-});
-
-});
-</script>
-
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+    window.OneSignalDeferred = window.OneSignalDeferred || [];
+    OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+            appId: "c58ef1a2-27ae-40d6-90b1-357933776dac",
+            autoRegister: true,
+            notifyButton: { enable: true }
+        });
+    });
+    </script>
 </head>
 
+<body class="public-page mess-page-view">
+    <div class="menu-btn" onclick="toggleSidebar()">&#9776;</div>
 
-<body onload="checkLogin()">
+    <aside class="sidebar" id="sidebar">
+        <div class="brand-block">
+            <div class="brand-mark">IITD</div>
+            <div class="brand-copy">
+                <h2>CampusHelp</h2>
+                <p>IIT student workspace</p>
+            </div>
+        </div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <h2>🍽 Nilgiri Mess Dashboard</h2>
-    <p class="tagline">Today's meals & weekly schedule</p>
+        <div class="sidebar-user">
+            <div class="sidebar-user-label">Public Access</div>
+            <div class="sidebar-user-name">Nilgiri Mess</div>
+            <div class="sidebar-user-note">Meal schedule without login.</div>
+        </div>
 
-<div>
+        <div class="sidebar-section-title">Navigate</div>
+        <nav class="sidebar-nav">
+            <a href="../index.html" class="nav-link"><span class="nav-icon">DB</span><span>Dashboard</span></a>
+            <a href="cgpa.html" class="nav-link"><span class="nav-icon">CG</span><span>CGPA</span></a>
+            <a href="timetable.html" class="nav-link"><span class="nav-icon">TT</span><span>Timetable and Attendance</span></a>
+            <a href="notes.html" class="nav-link"><span class="nav-icon">NT</span><span>Notes</span></a>
+            <a href="planner.html" class="nav-link"><span class="nav-icon">PL</span><span>Planner</span></a>
+            <a href="reminders.html" class="nav-link"><span class="nav-icon">RM</span><span>Reminders</span></a>
+            <a href="resources.html" class="nav-link"><span class="nav-icon">RS</span><span>Resources</span></a>
+            <a href="mess-menu.html" class="nav-link"><span class="nav-icon">MS</span><span>Mess Menu</span></a>
+            <a href="permutation.html" class="nav-link"><span class="nav-icon">PG</span><span>Permutation Game</span></a>
+            <a href="events.html" class="nav-link"><span class="nav-icon">EV</span><span>Events</span></a>
+            <a href="profile.html" class="nav-link"><span class="nav-icon">PR</span><span>Profile</span></a>
+        </nav>
 
-<button onclick="window.location.href='../index.html'" class="home-btn">
-Home
-</button>
+        <div class="sidebar-actions">
+            <button class="sidebar-btn theme-btn" onclick="toggleTheme()">Switch Theme</button>
+            <button class="sidebar-btn logout-btn" onclick="window.location.href='../index.html'">Home</button>
+        </div>
+    </aside>
 
-<button onclick="logout()">
-Logout
-</button>
+    <main class="main">
+        <div class="page-shell">
+            <div class="page-topbar">
+                <div class="page-topbar-meta">
+                    <span class="page-chip">Nilgiri Mess Dashboard</span>
+                    <span class="page-chip">Today's meals & weekly schedule</span>
+                </div>
+            </div>
 
-</div>
+            <section class="live-section section-card">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Live Mess Meals</span>
+                        <h2>Now and next</h2>
+                    </div>
+                </div>
+                <div class="mess-status-bar" id="messStatusBar"></div>
+                <div id="liveMenu"></div>
+            </section>
 
-</div>
+            <section class="manual-section section-card">
+                <div class="section-head">
+                    <div>
+                        <span class="section-eyebrow">Browse Weekly Menu</span>
+                        <h2>Weekly schedule</h2>
+                        <p class="selector-note">Select day and meal to view specific mess schedule</p>
+                    </div>
+                </div>
 
-</div>
+                <div class="selectors">
+                    <select id="daySelect">
+                        <option value="week">Full Week</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
+                        <option value="sunday">Sunday</option>
+                    </select>
 
+                    <select id="mealSelect">
+                        <option value="">Select Meal</option>
+                        <option value="breakfast">Breakfast (07:00-09:30)</option>
+                        <option value="lunch">Lunch (12:00-14:00)</option>
+                        <option value="evening">Evening (16:30-17:30)</option>
+                        <option value="dinner">Dinner (19:00-21:00)</option>
+                        <option value="all">All Meals</option>
+                    </select>
 
-<!-- LIVE MESS SECTION -->
-<section class="live-section">
+                    <button onclick="loadMenu()">Show Menu</button>
+                </div>
 
-<h2>🍽 Live Mess Meals</h2>
+                <div id="menuContainer" class="menu-container"></div>
+            </section>
 
-<!-- STATUS BAR -->
-<div class="mess-status-bar" id="messStatusBar"></div>
+            <footer class="footer">
+                <p>Contact: getcampushelp@gmail.com</p>
+            </footer>
+        </div>
+    </main>
 
-<!-- LIVE MENU CARDS -->
-<div id="liveMenu"></div>
-
-</section>
-
-
-<!-- WEEKLY MENU BROWSER -->
-<section class="manual-section">
-
-<h2>📅 Browse Weekly Menu</h2>
-
-<p class="selector-note">
-Select day and meal to view specific mess schedule
-</p>
-
-<div class="selectors">
-
-<select id="daySelect">
-
-<option value="week">Full Week</option>
-<option value="monday">Monday</option>
-<option value="tuesday">Tuesday</option>
-<option value="wednesday">Wednesday</option>
-<option value="thursday">Thursday</option>
-<option value="friday">Friday</option>
-<option value="saturday">Saturday</option>
-<option value="sunday">Sunday</option>
-
-</select>
-
-
-<select id="mealSelect">
-
-<option value="">Select Meal</option>
-<option value="breakfast">Breakfast (07:00-09:30)</option>
-<option value="lunch">Lunch (12:00-14:00)</option>
-<option value="evening">Evening (16:30-17:30)</option>
-<option value="dinner">Dinner (19:00-21:00)</option>
-<option value="all">All Meals</option>
-
-</select>
-
-
-<button onclick="loadMenu()">
-Show Menu
-</button>
-
-</div>
-
-
-<div id="menuContainer" class="menu-container"></div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer class="footer">
-
-<p>
-Contact: getcampushelp@gmail.com
-</p>
-
-</footer>
-
-
-<script src="../js/main.js"></script>
-<script src="../js/pages/mess-menu.js"></script>
-
+    <script src="../js/main.js"></script>
+    <script src="../js/pages/mess-menu.js"></script>
+    <script>
+    window.addEventListener("load", function () {
+        initializePortalShell();
+    });
+    </script>
 </body>
 </html>

@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="css/pages/login.css">
 </head>
 <body class="login-page">
-    <button class="theme-toggle-btn" onclick="toggleLoginTheme()" title="Toggle Dark Mode">🌙</button>
+    <button class="theme-toggle-btn" onclick="handleLoginThemeButtonClick(event)" title="Switch colour theme"><span data-theme="red">R</span><span data-theme="green">G</span><span data-theme="blue">B</span><span data-theme="light">W</span><span data-theme="dark">D</span></button>
 
     <main class="login-shell">
         <section class="login-brand">
             <div class="brand-logo">
-                <div class="logo-mark">CH</div>
+                <div class="logo-mark">IITD</div>
             </div>
             <p class="login-kicker">IIT Delhi 2026</p>
             <h1>Welcome Back</h1>
@@ -62,27 +62,48 @@
     </main>
 
     <script>
-        // Dark theme toggle for login page
-        function toggleLoginTheme() {
-            document.body.classList.toggle('dark');
-            const isDark = document.body.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const loginThemes = ["red", "green", "blue", "light", "dark"];
+
+        function getLoginTheme() {
+            const storedTheme = localStorage.getItem("portalTheme") || "red";
+            return loginThemes.includes(storedTheme) ? storedTheme : "red";
+        }
+
+        function applyLoginTheme(theme) {
+            const safeTheme = loginThemes.includes(theme) ? theme : "red";
+            document.body.classList.remove("dark", "theme-light", "theme-red", "theme-green", "theme-blue", "theme-dark");
+            document.body.classList.add("theme-" + safeTheme);
+            localStorage.setItem("portalTheme", safeTheme);
             updateThemeToggle();
+        }
+
+        function toggleLoginTheme() {
+            const currentTheme = getLoginTheme();
+            const nextTheme = loginThemes[(loginThemes.indexOf(currentTheme) + 1) % loginThemes.length];
+            applyLoginTheme(nextTheme);
+        }
+
+        function handleLoginThemeButtonClick(event) {
+            const targetTheme = event.target && event.target.dataset ? event.target.dataset.theme : "";
+            if (loginThemes.includes(targetTheme)) {
+                applyLoginTheme(targetTheme);
+                return;
+            }
+
+            toggleLoginTheme();
         }
 
         function updateThemeToggle() {
             const btn = document.querySelector('.theme-toggle-btn');
-            const isDark = document.body.classList.contains('dark');
-            btn.textContent = isDark ? '☀️' : '🌙';
-            btn.title = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            const currentTheme = getLoginTheme();
+            const nextTheme = loginThemes[(loginThemes.indexOf(currentTheme) + 1) % loginThemes.length];
+            const label = nextTheme.charAt(0).toUpperCase() + nextTheme.slice(1);
+            btn.innerHTML = '<span data-theme="red">R</span><span data-theme="green">G</span><span data-theme="blue">B</span><span data-theme="light">W</span><span data-theme="dark">D</span>';
+            btn.title = 'Switch to ' + label.toLowerCase() + ' theme';
         }
 
         function loadLoginTheme() {
-            const theme = localStorage.getItem('theme') || 'light';
-            if (theme === 'dark') {
-                document.body.classList.add('dark');
-            }
-            updateThemeToggle();
+            applyLoginTheme(getLoginTheme());
         }
 
         window.addEventListener('load', loadLoginTheme);
